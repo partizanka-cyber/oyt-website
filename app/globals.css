@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat);
+
+  /* OYT Brand Colors */
+  --color-pink: #ef60a3;
+  --color-pink-light: #ffcbea;
+  --color-lavender: #9f96eb;
+  --color-purple: #a965dd;
+  --color-black: #000000;
+  --color-gray-light: #f1f1f1;
+  --color-white: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
