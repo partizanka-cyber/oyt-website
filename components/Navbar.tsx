@@ -33,11 +33,12 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/brand/logo-black.svg"
+            src="/brand/logo-black.png"
             alt="OYT — Outsource Your Tasks"
-            width={80}
-            height={30}
+            width={717}
+            height={260}
             priority
+            unoptimized
             className="h-8 w-auto"
           />
         </Link>

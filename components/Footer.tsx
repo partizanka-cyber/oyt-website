@@ -9,10 +9,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Image
-              src="/brand/logo-white.svg"
+              src="/brand/logo-white.png"
               alt="OYT — Outsource Your Tasks"
-              width={80}
-              height={30}
+              width={717}
+              height={260}
+              unoptimized
               className="h-8 w-auto mb-4"
             />
             <p className="text-sm text-gray-400 leading-relaxed">
