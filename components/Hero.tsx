@@ -1,126 +1,133 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import Image from "next/image";
 
-const BOOKING_URL = "https://link.outsourceyourtasks.com/widget/booking/pQ2qZBcQtTxPzQktc3m2";
-
-const stats = [
-  { value: "200+", label: "Placements Completed" },
-  { value: "60+", label: "Companies Served" },
-  { value: "<7%", label: "Replacement Rate" },
-  { value: "2–3 Wks", label: "To Your Shortlist" },
-];
-
-const regions = [
-  "Asia",
-  "Latin America",
-  "Europe",
-  "Africa",
-  "United States",
-  "Canada",
-];
+const BOOKING_URL =
+  "https://link.outsourceyourtasks.com/widget/booking/pQ2qZBcQtTxPzQktc3m2";
 
 export default function Hero() {
-  const tickerRef = useRef<HTMLDivElement>(null);
-
   return (
-    <section className="bg-white overflow-hidden">
-      {/* Main hero */}
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3] animate-pulse" />
-            Boutique Global Staffing — Flat Fee, No Markup
-          </div>
+    <section className="bg-white min-h-[90vh] flex items-center">
+      <div className="max-w-7xl mx-auto px-6 py-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl font-extrabold text-black leading-[1.05] tracking-tight mb-6">
-            Stop Hiring.{" "}
-            <span className="text-[#ef60a3]">Let Us Do It.</span>
-          </h1>
+          {/* LEFT — Text content */}
+          <div className="flex flex-col items-start">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
+              Boutique Global Staffing — Flat Fee, No Markup
+            </div>
 
-          {/* Subheadline */}
-          <div className="mb-6">
-            <p className="text-2xl md:text-3xl font-semibold text-black leading-snug">
-              We find, screen, and interview your next great hire.
-            </p>
-            <p className="text-xl md:text-2xl font-medium text-gray-500 leading-snug mt-2">
-              Globally sourced, college educated — so you get world-class talent
-              at a fraction of what local hiring costs.
-            </p>
-          </div>
+            {/* Headline */}
+            <h1 className="text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
+              <span className="text-black">Stop Hiring.</span>
+              <br />
+              <span className="text-[#ef60a3]">Let Us Do It.</span>
+            </h1>
 
-          {/* Differentiator */}
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mb-10 border-l-4 border-[#ef60a3] pl-4">
-            Tried offshore before and it didn't work out? That's because you
-            never saw who you were hiring. Every OYT candidate comes with a full
-            video interview — so you choose with your eyes open.
-          </p>
+            {/* Subheadline */}
+            <div className="mb-8">
+              <p className="text-xl md:text-2xl font-bold text-black leading-snug">
+                We find, screen, and interview your next great hire.
+              </p>
+              <p className="text-lg md:text-xl font-normal text-gray-500 leading-snug mt-2">
+                Globally sourced, college educated — so you get world-class
+                talent at a fraction of what local hiring costs.
+              </p>
+            </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-14">
+            {/* CTA */}
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#ef60a3] text-white font-bold text-base px-8 py-4 rounded-full hover:bg-[#d94f8e] transition-all duration-200 shadow-lg shadow-[#ef60a3]/25 hover:shadow-[#ef60a3]/40 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center bg-[#ef60a3] text-white font-bold text-base px-8 py-4 rounded-full hover:bg-[#d94f8e] transition-all duration-200 shadow-lg shadow-[#ef60a3]/20 hover:shadow-[#ef60a3]/40 hover:-translate-y-0.5"
             >
               Book a Talent Strategy Call
-              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="ml-2 w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </a>
-            <Link
-              href="/how-it-works"
-              className="inline-flex items-center justify-center bg-black text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-200 hover:-translate-y-0.5"
-            >
-              See How It Works
-            </Link>
           </div>
 
-          {/* Three-strip */}
-          <div className="flex flex-wrap gap-6 text-sm font-semibold text-gray-400 uppercase tracking-widest">
-            {["No resume pile", "No wasted interviews", "Just the right person"].map(
-              (item, i) => (
-                <span key={item} className="flex items-center gap-2">
-                  {i > 0 && <span className="text-[#ef60a3]">·</span>}
-                  {item}
-                </span>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+          {/* RIGHT — Candidate video card */}
+          <div className="flex items-center justify-center lg:justify-end">
+            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-sm">
 
-      {/* Geography ticker */}
-      <div className="bg-black py-4 overflow-hidden">
-        <div className="flex animate-[scroll_20s_linear_infinite] whitespace-nowrap">
-          {[...regions, ...regions, ...regions].map((region, i) => (
-            <span key={i} className="inline-flex items-center gap-3 mx-6 text-sm font-medium text-white/70">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
-              {region}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Stats bar */}
-      <div className="bg-[#f1f1f1]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl md:text-5xl font-extrabold text-black mb-1">
-                  {stat.value}
+              {/* Video thumbnail */}
+              <div className="relative w-full aspect-[4/3] bg-gray-100">
+                <Image
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=450&fit=crop"
+                  alt="Candidate video interview"
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                {/* Play button overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+                  <div className="w-14 h-14 rounded-full bg-[#ef60a3] flex items-center justify-center shadow-lg">
+                    <svg
+                      className="w-6 h-6 text-white ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                  {stat.label}
+                {/* Duration badge */}
+                <div className="absolute bottom-3 left-3 bg-black/70 text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z" />
+                  </svg>
+                  24:38
                 </div>
               </div>
-            ))}
+
+              {/* Candidate info */}
+              <div className="p-5">
+                <h3 className="text-xl font-extrabold text-black">
+                  Maria Santos
+                </h3>
+                <p className="text-sm text-gray-500 mb-4">Account Manager</p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="inline-flex items-center gap-1 text-xs text-gray-600 bg-gray-100 px-3 py-1.5 rounded-full">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Buenos Aires, Argentina
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-xs text-[#a965dd] bg-[#f3eeff] px-3 py-1.5 rounded-full">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+                    </svg>
+                    Bachelor of Science (BS)
+                  </span>
+                </div>
+
+                {/* View Interview button */}
+                <button className="w-full bg-[#ef60a3] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d94f8e] transition-colors">
+                  View Interview
+                </button>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
