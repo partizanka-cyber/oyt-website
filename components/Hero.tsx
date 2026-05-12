@@ -68,7 +68,7 @@ export default function Hero() {
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[4/3] bg-gray-100">
                 <Image
-                  src="/images/candidate-hero.png"
+                  src="/images/candidates-hero.png"
                   alt="Candidate video interview"
                   fill
                   className="object-cover object-top"
