@@ -68,10 +68,10 @@ export default function Hero() {
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[4/3] bg-gray-100">
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=450&fit=crop"
+                  src="/images/candidate-hero.png"
                   alt="Candidate video interview"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   unoptimized
                 />
                 {/* Play button overlay */}
@@ -100,18 +100,18 @@ export default function Hero() {
                 <h3 className="text-xl font-extrabold text-black">
                   Maria Santos
                 </h3>
-                <p className="text-sm text-gray-500 mb-4">Account Manager</p>
+                <p className="text-sm font-medium text-black mb-4">Account Manager</p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-5">
-                  <span className="inline-flex items-center gap-1 text-xs text-gray-600 bg-gray-100 px-3 py-1.5 rounded-full">
+                  <span className="inline-flex items-center gap-1.5 text-xs text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     Buenos Aires, Argentina
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs text-[#a965dd] bg-[#f3eeff] px-3 py-1.5 rounded-full">
+                  <span className="inline-flex items-center gap-1.5 text-xs text-[#a965dd] bg-white border border-[#a965dd]/30 px-3 py-1.5 rounded-full">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path d="M12 14l9-5-9-5-9 5 9 5z" />
                       <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
@@ -121,7 +121,7 @@ export default function Hero() {
                 </div>
 
                 {/* View Interview button */}
-                <button className="w-full bg-[#ef60a3] text-white font-bold text-sm py-3.5 rounded-xl hover:bg-[#d94f8e] transition-colors">
+                <button className="w-full bg-[#ef60a3] text-white font-bold text-sm py-4 rounded-2xl hover:bg-[#d94f8e] transition-colors">
                   View Interview
                 </button>
               </div>
