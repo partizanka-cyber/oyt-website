@@ -68,7 +68,7 @@ export default function Hero() {
               <div className="relative w-full aspect-[4/3] bg-gray-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/Images/candidates-hero.png"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=450&fit=crop&crop=face"
                   alt="Candidate video interview"
                   className="absolute inset-0 w-full h-full object-cover object-top"
                 />
