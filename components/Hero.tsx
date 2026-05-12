@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 const BOOKING_URL =
   "https://link.outsourceyourtasks.com/widget/booking/pQ2qZBcQtTxPzQktc3m2";
@@ -67,12 +66,11 @@ export default function Hero() {
 
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[4/3] bg-gray-100">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/candidates-hero.png"
                   alt="Candidate video interview"
-                  fill
-                  className="object-cover object-top"
-                  unoptimized
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                 />
                 {/* Play button overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/10">
