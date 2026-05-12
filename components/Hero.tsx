@@ -28,10 +28,10 @@ export default function Hero() {
 
             {/* Subheadline */}
             <div className="mb-8">
-              <p className="text-xl md:text-2xl font-bold text-black leading-snug">
+              <p className="text-lg md:text-xl font-bold text-black leading-snug whitespace-nowrap">
                 We find, screen, and interview your next great hire.
               </p>
-              <p className="text-lg md:text-xl font-normal text-gray-500 leading-snug mt-2">
+              <p className="text-base md:text-lg font-normal text-gray-500 leading-snug mt-2">
                 Globally sourced, college educated — so you get world-class
                 talent at a fraction of what local hiring costs.
               </p>

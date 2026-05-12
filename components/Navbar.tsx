@@ -4,6 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const BOOKING_URL =
+  "https://link.outsourceyourtasks.com/widget/booking/pQ2qZBcQtTxPzQktc3m2";
+
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "How It Works", href: "/how-it-works" },
@@ -31,7 +34,7 @@ export default function Navbar() {
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex flex-col items-start">
           <Image
             src="/brand/logo-black.png"
             alt="OYT — Outsource Your Tasks"
@@ -41,6 +44,9 @@ export default function Navbar() {
             unoptimized
             className="h-8 w-auto"
           />
+          <span className="text-[10px] font-semibold tracking-widest uppercase text-gray-400 mt-0.5 leading-none">
+            Outsource Your Tasks
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -87,10 +93,12 @@ export default function Navbar() {
         {/* CTA button */}
         <div className="hidden lg:block">
           <Link
-            href="/pricing"
-            className="bg-[#ef60a3] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#d94f8e] transition-colors"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#ef60a3] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#d94f8e] transition-colors whitespace-nowrap"
           >
-            Get Started
+            Book a Talent Strategy Call
           </Link>
         </div>
 
@@ -139,11 +147,13 @@ export default function Navbar() {
             )
           )}
           <Link
-            href="/pricing"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2 bg-[#ef60a3] text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center hover:bg-[#d94f8e] transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            Get Started
+            Book a Talent Strategy Call
           </Link>
         </div>
       )}
