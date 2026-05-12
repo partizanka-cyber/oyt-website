@@ -7,9 +7,9 @@ const BOOKING_URL =
 
 export default function Hero() {
   return (
-    <section className="bg-white min-h-[90vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-6 py-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="bg-white">
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* LEFT — Text content */}
           <div className="flex flex-col items-start">
@@ -62,8 +62,8 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — Candidate video card */}
-          <div className="flex items-center justify-center lg:justify-end">
-            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-sm">
+          <div>
+            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
 
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[4/3] bg-gray-100">
