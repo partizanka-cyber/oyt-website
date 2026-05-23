@@ -61,8 +61,8 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — Candidate video card */}
-          <div className="lg:pl-4">
-            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md mx-auto">
+          <div>
+            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md">
 
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[4/3] bg-gray-100">
