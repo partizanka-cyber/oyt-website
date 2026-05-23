@@ -34,7 +34,7 @@ export default function Navbar() {
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex flex-col items-start">
+        <Link href="/" className="flex items-center">
           <Image
             src="/brand/logo-black.png"
             alt="OYT — Outsource Your Tasks"
@@ -44,9 +44,6 @@ export default function Navbar() {
             unoptimized
             className="h-8 w-auto"
           />
-          <span className="text-[10px] font-semibold tracking-widest uppercase text-gray-400 mt-0.5 leading-none">
-            Outsource Your Tasks
-          </span>
         </Link>
 
         {/* Desktop nav */}
