@@ -14,7 +14,7 @@ export default function Hero() {
           <div className="flex flex-col items-start justify-between h-full">
             <div>
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+              <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8 mt-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
                 Boutique Global Staffing — Flat Fee, No Markup
               </div>
