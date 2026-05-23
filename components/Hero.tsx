@@ -7,7 +7,7 @@ const BOOKING_URL =
 export default function Hero() {
   return (
     <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20 w-full">
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* LEFT — Text content */}
