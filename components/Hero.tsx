@@ -27,7 +27,7 @@ export default function Hero() {
               </h1>
 
               {/* Subheadline */}
-              <div className="mb-4">
+              <div className="mb-2">
                 <p className="text-lg md:text-xl font-bold text-black leading-snug whitespace-nowrap">
                   We find, screen, and interview your next great hire.
                 </p>
