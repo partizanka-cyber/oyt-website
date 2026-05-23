@@ -17,9 +17,9 @@ export default function Footer() {
               className="h-8 w-auto mb-4"
             />
             <p className="text-sm text-gray-400 leading-relaxed">
-              Boutique global staffing for growing companies. We find the right
-              person — offshore, nearshore, or US local — and back every hire
-              with a 12-month warranty.
+              Boutique global staffing for growing companies. We source offshore,
+              nearshore, and US local talent and back every hire with a
+              12-month replacement warranty.
             </p>
           </div>
 
