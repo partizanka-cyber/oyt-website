@@ -36,6 +36,11 @@ export default function Hero() {
                   talent at a fraction of what local hiring costs.
                 </p>
               </div>
+
+              {/* Trust badges */}
+              <p className="text-sm font-semibold text-gray-600 tracking-wide mb-4">
+                Pre-Vetted · Video-Interviewed · Ready to Hire
+              </p>
             </div>
 
             {/* CTA */}
