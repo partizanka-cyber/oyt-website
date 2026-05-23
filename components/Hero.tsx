@@ -32,7 +32,7 @@ export default function Hero() {
                   We find, screen, and interview your next great hire.
                 </p>
                 <p className="text-base md:text-lg font-normal text-gray-500 leading-snug mt-2">
-                  Globally sourced, college educated — so you get world-class
+                  Globally sourced and college educated, so you get world-class
                   talent at a fraction of what local hiring costs.
                 </p>
               </div>
