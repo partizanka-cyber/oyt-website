@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — Candidate video card */}
-          <div className="h-full flex items-stretch">
+          <div className="h-full flex items-stretch mt-6">
             <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md flex flex-col">
 
               {/* Video thumbnail */}
