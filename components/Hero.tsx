@@ -8,10 +8,10 @@ export default function Hero() {
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center max-w-5xl mx-auto">
 
           {/* LEFT — Text content */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start lg:pr-4">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
@@ -61,8 +61,8 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — Candidate video card */}
-          <div>
-            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+          <div className="lg:pl-4">
+            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md mx-auto">
 
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[4/3] bg-gray-100">
