@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* LEFT — Text content */}
           <div className="flex flex-col items-start">
@@ -65,7 +65,7 @@ export default function Hero() {
             <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md">
 
               {/* Video thumbnail */}
-              <div className="relative w-full aspect-[4/3] bg-gray-100">
+              <div className="relative w-full aspect-[5/3] bg-gray-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/Images/candidate-hero.png"
@@ -94,14 +94,14 @@ export default function Hero() {
               </div>
 
               {/* Candidate info */}
-              <div className="p-5">
-                <h3 className="text-xl font-extrabold text-black">
+              <div className="p-4">
+                <h3 className="text-lg font-extrabold text-black">
                   Maria Santos
                 </h3>
-                <p className="text-sm font-medium text-black mb-4">Account Manager</p>
+                <p className="text-sm font-medium text-black mb-3">Account Manager</p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-2 mb-4">
                   <span className="inline-flex items-center gap-1.5 text-xs text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -119,7 +119,7 @@ export default function Hero() {
                 </div>
 
                 {/* View Interview button */}
-                <button className="w-full bg-[#ef60a3] text-white font-bold text-sm py-4 rounded-2xl hover:bg-[#d94f8e] transition-colors">
+                <button className="w-full bg-[#ef60a3] text-white font-bold text-sm py-3 rounded-xl hover:bg-[#d94f8e] transition-colors">
                   View Interview
                 </button>
               </div>
