@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center max-w-5xl mx-auto">
 
           {/* LEFT — Text content */}
-          <div className="flex flex-col items-start lg:pr-4">
+          <div className="flex flex-col items-start">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
