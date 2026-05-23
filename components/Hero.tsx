@@ -11,29 +11,31 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* LEFT — Text content */}
-          <div className="flex flex-col items-start">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
-              Boutique Global Staffing — Flat Fee, No Markup
-            </div>
+          <div className="flex flex-col items-start justify-between h-full">
+            <div>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-[#fff0f8] border border-[#ef60a3]/20 text-[#ef60a3] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ef60a3]" />
+                Boutique Global Staffing — Flat Fee, No Markup
+              </div>
 
-            {/* Headline */}
-            <h1 className="text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
-              <span className="text-black">Stop Hiring.</span>
-              <br />
-              <span className="text-[#ef60a3]">Let Us Do It.</span>
-            </h1>
+              {/* Headline */}
+              <h1 className="text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
+                <span className="text-black">Stop Hiring.</span>
+                <br />
+                <span className="text-[#ef60a3]">Let Us Do It.</span>
+              </h1>
 
-            {/* Subheadline */}
-            <div className="mb-8">
-              <p className="text-lg md:text-xl font-bold text-black leading-snug whitespace-nowrap">
-                We find, screen, and interview your next great hire.
-              </p>
-              <p className="text-base md:text-lg font-normal text-gray-500 leading-snug mt-2">
-                Globally sourced, college educated — so you get world-class
-                talent at a fraction of what local hiring costs.
-              </p>
+              {/* Subheadline */}
+              <div className="mb-8">
+                <p className="text-lg md:text-xl font-bold text-black leading-snug whitespace-nowrap">
+                  We find, screen, and interview your next great hire.
+                </p>
+                <p className="text-base md:text-lg font-normal text-gray-500 leading-snug mt-2">
+                  Globally sourced, college educated — so you get world-class
+                  talent at a fraction of what local hiring costs.
+                </p>
+              </div>
             </div>
 
             {/* CTA */}
@@ -61,8 +63,8 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — Candidate video card */}
-          <div>
-            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md">
+          <div className="h-full flex items-stretch">
+            <div className="bg-white rounded-2xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden w-full max-w-md flex flex-col">
 
               {/* Video thumbnail */}
               <div className="relative w-full aspect-[5/3] bg-gray-100">
