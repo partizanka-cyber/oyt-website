@@ -1,5 +1,5 @@
-"use client";
-import { useState } from "react";
+
+
 
 const features = [
   {
@@ -60,8 +60,6 @@ const candidates = [
 ];
 
 export default function WhyUs() {
-  const [open, setOpen] = useState(0);
-
   return (
     <section>
       {/* Top — dark problem/solution block */}
@@ -87,7 +85,7 @@ export default function WhyUs() {
         </div>
       </div>
 
-      {/* Bottom — accordion + world visual */}
+      {/* Bottom — feature list + world visual */}
       <div className="bg-white py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
 
@@ -106,34 +104,22 @@ export default function WhyUs() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-            {/* Left — accordion */}
+            {/* Left — always-open list */}
             <div className="flex flex-col">
               {features.map((feature, i) => (
-                <button
-                  key={i}
-                  onClick={() => setOpen(i)}
-                  className="text-left w-full py-5 border-b border-gray-100 focus:outline-none group"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className={`flex-shrink-0 transition-colors duration-200 ${open === i ? "text-[#ef60a3]" : "text-gray-300"}`}>
+                <div key={i} className="py-5 border-b border-gray-100">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="flex-shrink-0 text-[#ef60a3] mt-0.5">
                       {feature.icon}
                     </span>
-                    <span className={`font-bold text-sm leading-snug transition-colors duration-200 flex-1 ${open === i ? "text-black" : "text-gray-400"}`}>
+                    <span className="font-bold text-sm leading-snug text-black">
                       {feature.title}
                     </span>
-                    <svg
-                      className={`w-4 h-4 flex-shrink-0 transition-all duration-200 ${open === i ? "text-[#ef60a3] rotate-180" : "text-gray-300"}`}
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
                   </div>
-                  {open === i && (
-                    <p className="text-sm text-gray-500 leading-relaxed mt-3 ml-8 pr-4">
-                      {feature.description}
-                    </p>
-                  )}
-                </button>
+                  <p className="text-sm text-gray-500 leading-relaxed ml-8 pr-4">
+                    {feature.description}
+                  </p>
+                </div>
               ))}
             </div>
 
