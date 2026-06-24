@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import WhyUs from "@/components/WhyUs";
 import FindYourTeam from "@/components/FindYourTeam";
 import TrustBar from "@/components/TrustBar";
 import Stats from "@/components/Stats";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <WhyUs />
         <FindYourTeam />
         <TrustBar />
         <Stats />
