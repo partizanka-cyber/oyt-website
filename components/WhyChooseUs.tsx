@@ -201,7 +201,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          <div className={layout.rightCardTopMargin}>
+          <div className={`${layout.rightCardTopMargin} mt-[120px] mb-[120px]`}>
             <div
               className={`rounded-[18px] border border-[#e5e7ee] bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] ${layout.rightCardPadding}`}
             >
