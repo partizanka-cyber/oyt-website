@@ -159,7 +159,7 @@ export default function WhyChooseUs() {
               simpler, clearer, and more effective.
             </p>
 
-            <div className="mt-[120px] mb-[120px] overflow-hidden rounded-[18px] border border-[#e5e7ee] bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
+            <div className="mt-[20px] mb-[20px] overflow-hidden rounded-[18px] border border-[#e5e7ee] bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
               {features.map((feature, index) => (
                 <div
                   key={feature.title}
@@ -201,7 +201,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          <div className="mt-[120px] mb-[120px]">
+          <div className="mt-[180px] mb-[180px]">
             <div
               className={`rounded-[18px] border border-[#e5e7ee] bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] ${layout.rightCardPadding}`}
             >
