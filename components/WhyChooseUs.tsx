@@ -8,14 +8,14 @@ const layout = {
   grid: "lg:grid-cols-[1.55fr_0.95fr]",
   gridGap: "lg:gap-16",
 
-  headlineSize: "text-[64px]",
+  headlineSize: "text-[48px]",
   headlineLineHeight: "leading-[0.98]",
-  subtextSize: "text-[23px]",
+  subtextSize: "text-[20px]",
 
   leftBoxPadding: "px-8 py-4",
   leftIconSize: "h-16 w-16",
-  leftTitleSize: "text-[25px]",
-  leftTextSize: "text-[21px]",
+  leftTitleSize: "text-[24px]",
+  leftTextSize: "text-[20px]",
   leftRowPadding: "py-5",
 
   ctaTopMargin: "mt-4",
@@ -25,8 +25,8 @@ const layout = {
 
   rightCardTopMargin: "lg:mt-32",
   rightCardPadding: "p-8",
-  rightTitleSize: "text-[30px]",
-  rightSubtitleSize: "text-[17px]",
+  rightTitleSize: "text-[24px]",
+  rightSubtitleSize: "text-[18px]",
   candidateNameSize: "text-[24px]",
   candidateTextSize: "text-[17px]",
   priceTextSize: "text-[17px]",
@@ -201,7 +201,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          <div className="mt-[180px] mb-[180px]">
+          <div className="mb-[180px]">
             <div
               className={`rounded-[18px] border border-[#e5e7ee] bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] ${layout.rightCardPadding}`}
             >
@@ -225,7 +225,7 @@ export default function WhyChooseUs() {
                   <p
                     className={`mt-2 font-medium text-[#15346d] ${layout.rightSubtitleSize}`}
                   >
-                    Top candidates, vetted and ready to interview.
+                    Top candidates vetted and interviewed.
                   </p>
                 </div>
               </div>
