@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OYT — Boutique Global Staffing</title>
+  <meta name="description" content="We source global talent, run the video interviews, and deliver a shortlist. You just choose. Flat placement fee, direct hire, 12-month replacement guarantee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       OYT BRAND TOKENS
+       ============================================ */
+    :root {
+      --oyt-pink: #ef60a3;
+      --oyt-pink-soft: rgba(239, 96, 163, 0.12);
+      --oyt-pink-light: #ffe6f2;
+      --oyt-black: #000000;
+      --oyt-white: #ffffff;
+      --oyt-gray-bg: #f1f1f1;
+      --oyt-gray-fa: #fafafa;
+      --oyt-text-primary: #000000;
+      --oyt-text-secondary: #4a4a4a;
+      --oyt-text-muted: #7a7a7a;
+      --oyt-text-faint: #c0c0c0;
+      --oyt-border: #f1f1f1;
+      --oyt-periwinkle: #9196eb;
+      --oyt-purple: #a965dd;
+      --oyt-pink-light-grad: #ffc8ea;
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--oyt-text-primary);
+      background: var(--oyt-white);
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6, p { margin: 0; }
+    button { font-family: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Screen reader only */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ============================================
+       SECTION CONTAINERS
+       ============================================ */
+    .oyt-section {
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .oyt-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .oyt-section-dark { background: var(--oyt-black); color: var(--oyt-white); }
+    .oyt-section-light { background: var(--oyt-white); color: var(--oyt-text-primary); }
+    .oyt-section-gray { background: var(--oyt-gray-bg); color: var(--oyt-text-primary); }
+
+    /* Dark section atmosphere (dot pattern + gradient glows) */
+    .oyt-atmosphere::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(239, 96, 163, 0.1) 1px, transparent 0);
+      background-size: 24px 24px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .oyt-glow-tr {
+      position: absolute; top: -120px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(239, 96, 163, 0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .oyt-glow-bl {
+      position: absolute; bottom: -150px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(169, 101, 221, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ============================================
+       SHARED TYPOGRAPHY
+       ============================================ */
+    .oyt-eyebrow {
+      font-size: 11px; font-weight: 700;
+      color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .oyt-h2 {
+      font-size: 48px; font-weight: 900;
+      line-height: 1.05; letter-spacing: -0.03em;
+      margin: 0;
+    }
+    .oyt-h2-accent { color: var(--oyt-pink); }
+    .oyt-lead {
+      font-size: 16px; color: var(--oyt-text-secondary);
+      line-height: 1.6; font-weight: 400;
+      max-width: 560px; margin: 1rem auto 0;
+    }
+    .oyt-lead-muted { color: var(--oyt-text-muted); }
+    .oyt-lead-invert { color: rgba(255, 255, 255, 0.7); }
+
+    /* ============================================
+       BUTTONS & LINKS
+       ============================================ */
+    .oyt-btn-primary {
+      background: var(--oyt-pink);
+      color: var(--oyt-white);
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13.5px; font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .oyt-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(239, 96, 163, 0.3); }
+    .oyt-btn-primary:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 3px; }
+    .oyt-btn-outline-dark {
+      background: transparent;
+      color: var(--oyt-white);
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px; font-weight: 600;
+      padding: 13.5px 26px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .oyt-btn-outline-dark:hover { border-color: var(--oyt-white); }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .oyt-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 1.5rem; margin-bottom: 2.75rem;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .oyt-logo {
+      display: flex; align-items: baseline;
+      font-weight: 800; font-size: 22px;
+      letter-spacing: -0.02em;
+      color: var(--oyt-white);
+    }
+    .oyt-logo-y { position: relative; }
+    .oyt-logo-dot {
+      position: absolute; top: 2px; right: -6px;
+      width: 6px; height: 6px;
+      background: var(--oyt-pink);
+      border-radius: 50%;
+    }
+    .oyt-logo-t { margin-left: 6px; }
+    .oyt-nav-links {
+      display: flex; gap: 28px;
+      font-size: 13px; color: rgba(255, 255, 255, 0.75);
+      font-weight: 500;
+    }
+    .oyt-nav-links a:hover { color: var(--oyt-white); }
+
+    /* ============================================
+       SECTION 1: HERO
+       ============================================ */
+    .oyt-hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .oyt-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 700;
+      color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .oyt-hero-eyebrow-line {
+      width: 28px; height: 1px; background: var(--oyt-pink);
+    }
+    .oyt-hero-headline {
+      font-size: 84px; font-weight: 900;
+      line-height: 0.92; letter-spacing: -0.04em;
+      margin: 0 0 2rem;
+      color: var(--oyt-white);
+      text-transform: uppercase;
+    }
+    .oyt-hero-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+      margin: 0 0 2.25rem;
+      max-width: 540px;
+      font-weight: 400;
+    }
+    .oyt-hero-buttons {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .oyt-hero-cards {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .oyt-hero-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      backdrop-filter: blur(8px);
+    }
+    .oyt-hero-card-lead {
+      border-color: rgba(239, 96, 163, 0.25);
+    }
+    .oyt-hero-card-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+    .oyt-hero-card-icon-pink { background: rgba(239, 96, 163, 0.15); }
+    .oyt-hero-card-icon-peri { background: rgba(145, 150, 235, 0.15); }
+    .oyt-hero-card-icon-purple { background: rgba(169, 101, 221, 0.15); }
+    .oyt-hero-card-title {
+      font-size: 14px; font-weight: 700;
+      margin: 0 0 5px;
+      color: var(--oyt-white);
+    }
+    .oyt-hero-card-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .oyt-hero-stats {
+      margin-top: 3rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex; gap: 3.5rem; flex-wrap: wrap;
+    }
+    .oyt-hero-stat-label {
+      font-size: 10.5px; font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+    .oyt-hero-stat-value {
+      font-size: 32px; font-weight: 800;
+      color: var(--oyt-white);
+      margin: 0;
+      letter-spacing: -0.025em;
+    }
+    .oyt-hero-stat-accent { color: var(--oyt-pink); }
+
+    @media (max-width: 900px) {
+      .oyt-hero-grid { grid-template-columns: 1fr; }
+      .oyt-hero-headline { font-size: 56px; }
+    }
+    @media (max-width: 600px) {
+      .oyt-hero-headline { font-size: 44px; }
+    }
+
+    /* ============================================
+       SECTION 2: WHY WE'RE DIFFERENT
+       ============================================ */
+    .oyt-section-header { text-align: center; margin-bottom: 3rem; }
+    .oyt-eyebrow-centered {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 700;
+      color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .oyt-eyebrow-line { width: 24px; height: 1px; background: var(--oyt-pink); }
+    .oyt-anchor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto 2.75rem;
+    }
+    .oyt-anchor-tile {
+      background: var(--oyt-gray-fa);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .oyt-anchor-icon-holder {
+      width: 56px; height: 56px;
+      background: var(--oyt-white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .oyt-anchor-icon-pink { box-shadow: 0 4px 12px rgba(239, 96, 163, 0.18); }
+    .oyt-anchor-icon-peri { box-shadow: 0 4px 12px rgba(145, 150, 235, 0.22); }
+    .oyt-anchor-icon-purple { box-shadow: 0 4px 12px rgba(169, 101, 221, 0.22); }
+    .oyt-anchor-title {
+      font-size: 17px; font-weight: 800;
+      margin: 0 0 8px;
+      color: var(--oyt-text-primary);
+      letter-spacing: -0.01em;
+    }
+    .oyt-anchor-desc {
+      font-size: 13px;
+      color: var(--oyt-text-secondary);
+      margin: 0;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .oyt-section-cta { text-align: center; }
+
+    /* ============================================
+       SECTION 3: INDUSTRIES (dark, hover reveal)
+       ============================================ */
+    .oyt-industries-header { text-align: center; margin-bottom: 3.5rem; }
+    .oyt-industries-eyebrow {
+      font-size: 11px; font-weight: 700;
+      color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .oyt-industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 8px;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+    .oyt-industry-tile {
+      background: transparent;
+      border: 1.5px solid transparent;
+      border-radius: 20px;
+      padding: 1.5rem 1.5rem 3rem;
+      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      position: relative;
+      text-align: left;
+    }
+    .oyt-industry-tile:hover, .oyt-industry-tile:focus-within {
+      background: rgba(255, 255, 255, 0.035);
+      border-color: rgba(239, 96, 163, 0.4);
+      box-shadow: 0 8px 28px rgba(239, 96, 163, 0.18);
+    }
+    .oyt-industry-icon {
+      width: 48px; height: 48px;
+      background: rgba(239, 96, 163, 0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .oyt-industry-name {
+      font-size: 17px; font-weight: 800;
+      margin: 0 0 6px;
+      color: var(--oyt-white);
+      letter-spacing: -0.01em;
+    }
+    .oyt-industry-roles {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+    .oyt-industry-metric {
+      color: var(--oyt-pink);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .oyt-industry-tile:hover .oyt-industry-metric,
+    .oyt-industry-tile:focus-within .oyt-industry-metric {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .oyt-industries-footer { text-align: center; }
+    .oyt-industries-footer-note {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0 0 1rem;
+      font-weight: 400;
+    }
+
+    /* ============================================
+       SECTION 4: HOW IT WORKS (horizontal, interactive)
+       ============================================ */
+    .oyt-hiw-header { text-align: center; margin-bottom: 3.5rem; }
+    .oyt-htimeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+    }
+    .oyt-htimeline::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 16.67%;
+      right: 16.67%;
+      height: 2px;
+      background: rgba(239, 96, 163, 0.25);
+      z-index: 0;
+    }
+    .oyt-hstep {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 0.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .oyt-hstep:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 8px; border-radius: 8px; }
+    .oyt-hcircle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--oyt-gray-bg);
+      color: #a0a0a0;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      letter-spacing: 0.02em;
+      transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .oyt-hstep.active .oyt-hcircle {
+      background: var(--oyt-pink);
+      color: var(--oyt-white);
+      box-shadow: 0 6px 18px rgba(239, 96, 163, 0.35);
+    }
+    .oyt-hcat {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      margin: 0 0 0.85rem;
+      color: var(--oyt-text-faint);
+      line-height: 1.4;
+      transition: color 0.25s ease;
+    }
+    .oyt-hstep.active .oyt-hcat { color: var(--oyt-text-muted); }
+    .oyt-htitle {
+      font-size: 17px; font-weight: 800;
+      line-height: 1.3; letter-spacing: -0.01em;
+      margin: 0;
+      color: var(--oyt-text-faint);
+      transition: color 0.25s ease;
+    }
+    .oyt-hstep.active .oyt-htitle { color: var(--oyt-text-primary); }
+    .oyt-hiw-see-full { text-align: center; margin: 2.5rem 0 3rem; }
+    .oyt-hiw-see-full a {
+      font-size: 13.5px; font-weight: 600;
+      color: var(--oyt-pink);
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px;
+      border-bottom: 1px solid rgba(239, 96, 163, 0.35);
+      padding-bottom: 2px;
+    }
+    .oyt-hiw-footer {
+      text-align: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--oyt-border);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .oyt-hiw-footer-lead {
+      font-size: 15px;
+      color: var(--oyt-text-secondary);
+      line-height: 1.65;
+      margin: 0 0 2rem;
+      font-weight: 400;
+    }
+
+    /* ============================================
+       SECTION 5: FULL PROCESS (vertical timeline)
+       ============================================ */
+    .oyt-fp-header { text-align: center; margin-bottom: 2rem; }
+    .oyt-fp-eyebrow {
+      font-size: 11px; font-weight: 700;
+      color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .oyt-fp-headline {
+      font-size: 42px; font-weight: 900;
+      line-height: 1.05; letter-spacing: -0.03em;
+      margin: 0;
+      color: var(--oyt-text-primary);
+      white-space: nowrap;
+    }
+    .oyt-vlist {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding-left: 4px;
+    }
+    .oyt-vlist::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 24px;
+      bottom: 24px;
+      width: 1.5px;
+      background: rgba(239, 96, 163, 0.3);
+      z-index: 0;
+    }
+    .oyt-vitem {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 1.1rem;
+      padding: 1rem 0;
+      position: relative;
+      z-index: 1;
+      align-items: start;
+    }
+    .oyt-vdot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--oyt-pink);
+      margin-top: 10px;
+      margin-left: 4px;
+      box-shadow: 0 0 0 4px var(--oyt-white), 0 0 0 5px rgba(239, 96, 163, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+    .oyt-vitem-title {
+      font-size: 17px; font-weight: 800;
+      line-height: 1.25; letter-spacing: -0.01em;
+      margin: 0.15rem 0 0.35rem;
+      color: var(--oyt-text-primary);
+    }
+    .oyt-vitem-desc {
+      font-size: 13px;
+      color: var(--oyt-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 400;
+    }
+    .oyt-fp-cta {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--oyt-border);
+    }
+
+    @media (max-width: 700px) {
+      .oyt-fp-headline { font-size: 32px; white-space: normal; }
+    }
+
+    /* ============================================
+       SECTION 6: PRICING (competitive model with toggle)
+       ============================================ */
+    .oyt-pricing-card {
+      background: var(--oyt-gray-bg);
+      border-radius: 16px;
+      padding: 2rem 2rem 1.75rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .oyt-pricing-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 12px; flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .oyt-pricing-eyebrow {
+      font-size: 10.5px; font-weight: 700;
+      color: var(--oyt-pink);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .oyt-pricing-headline {
+      font-size: 28px; font-weight: 700;
+      margin: 0 0 6px;
+      color: var(--oyt-text-primary);
+      letter-spacing: -0.01em;
+    }
+    .oyt-pricing-headline .accent { color: var(--oyt-pink); }
+    .oyt-pricing-sub {
+      font-size: 14px;
+      color: var(--oyt-text-secondary);
+      margin: 0;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .oyt-pricing-toggle {
+      display: inline-flex;
+      border: 1px solid #d4d4d4;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--oyt-white);
+      flex-shrink: 0;
+    }
+    .oyt-pricing-toggle button {
+      border: none;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px; font-weight: 500;
+      padding: 8px 16px;
+      background: transparent;
+      color: var(--oyt-text-secondary);
+      cursor: pointer;
+    }
+    .oyt-pricing-toggle button.active {
+      background: var(--oyt-black);
+      color: var(--oyt-white);
+      font-weight: 500;
+    }
+    .oyt-pricing-tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .oyt-tier {
+      background: var(--oyt-white);
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      border: 1px solid #ececec;
+      position: relative;
+    }
+    .oyt-tier-featured {
+      border: 2px solid var(--oyt-pink);
+    }
+    .oyt-tier-badge {
+      position: absolute;
+      top: -11px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--oyt-pink);
+      color: var(--oyt-white);
+      font-size: 10px; font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .oyt-tier-label {
+      font-size: 10.5px; font-weight: 700;
+      color: var(--oyt-text-secondary);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin: 2px 0 12px;
+    }
+    .oyt-tier-price {
+      font-size: 32px; font-weight: 700;
+      color: var(--oyt-text-primary);
+      margin: 0;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .oyt-tier-unit {
+      font-size: 11.5px;
+      color: var(--oyt-text-muted);
+      margin: 8px 0 0;
+      font-weight: 400;
+    }
+    .oyt-pricing-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 10px 20px;
+      margin-bottom: 1.5rem;
+    }
+    .oyt-pricing-feature {
+      font-size: 13px;
+      color: var(--oyt-text-secondary);
+      margin: 0;
+      font-weight: 400;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .oyt-pricing-feature-strong {
+      color: var(--oyt-text-primary);
+      font-weight: 500;
+    }
+    .oyt-pricing-feature::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--oyt-pink);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .oyt-pricing-cta-wrap { text-align: center; }
+    .oyt-pricing-footer {
+      border-top: 1px solid #d4d4d4;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .oyt-pricing-footer p {
+      font-size: 12.5px;
+      color: var(--oyt-text-secondary);
+      margin: 0;
+      font-weight: 400;
+    }
+    .oyt-pricing-footer a {
+      color: var(--oyt-pink);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .oyt-pricing-headline { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================
+     SECTION 1 · HERO (dark)
+     ============================================ -->
+<section class="oyt-section oyt-section-dark oyt-atmosphere" id="hero">
+  <div class="oyt-glow-tr"></div>
+  <div class="oyt-glow-bl"></div>
+  <div class="oyt-section-inner">
+
+    <nav class="oyt-nav" aria-label="Primary">
+      <a href="#" class="oyt-logo" aria-label="OYT home">
+        <span>O</span>
+        <span class="oyt-logo-y">Y<span class="oyt-logo-dot"></span></span>
+        <span class="oyt-logo-t">T</span>
+      </a>
+      <div class="oyt-nav-links">
+        <a href="#hero">About</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Resources</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <div class="oyt-hero-grid">
+      <div>
+        <div class="oyt-hero-eyebrow">
+          <span class="oyt-hero-eyebrow-line"></span>
+          Boutique Global Staffing
+        </div>
+
+        <h1 class="oyt-hero-headline">
+          Stop Hiring.<br>
+          Let Us Do It.
+        </h1>
+
+        <p class="oyt-hero-sub">
+          We source global talent, run the video interviews, and deliver the shortlist. You just choose.
+        </p>
+
+        <div class="oyt-hero-buttons">
+          <a href="#pricing" class="oyt-btn-primary">
+            Book a Talent Strategy Call <span aria-hidden="true">→</span>
+          </a>
+          <a href="#how-it-works" class="oyt-btn-outline-dark">How It Works</a>
+        </div>
+      </div>
+
+      <div class="oyt-hero-cards">
+        <div class="oyt-hero-card oyt-hero-card-lead">
+          <div class="oyt-hero-card-icon oyt-hero-card-icon-pink">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <p class="oyt-hero-card-title">Globally Sourced</p>
+          <p class="oyt-hero-card-desc">Talent from every region. US-based options for senior and fractional roles.</p>
+        </div>
+
+        <div class="oyt-hero-card">
+          <div class="oyt-hero-card-icon oyt-hero-card-icon-peri">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <p class="oyt-hero-card-title">College Educated</p>
+          <p class="oyt-hero-card-desc">Every candidate holds a degree. Prescreened for skills, English fluency, and role fit.</p>
+        </div>
+
+        <div class="oyt-hero-card">
+          <div class="oyt-hero-card-icon oyt-hero-card-icon-purple">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polygon points="10,9 15,12 10,15" fill="#a965dd"/></svg>
+          </div>
+          <p class="oyt-hero-card-title">Video Interviewed</p>
+          <p class="oyt-hero-card-desc">Recorded interviews and DISC profiles with every shortlist. See who you are hiring.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="oyt-hero-stats">
+      <div>
+        <p class="oyt-hero-stat-label">Clients served</p>
+        <p class="oyt-hero-stat-value">250<span class="oyt-hero-stat-accent">+</span></p>
+      </div>
+      <div>
+        <p class="oyt-hero-stat-label">Client costs saved</p>
+        <p class="oyt-hero-stat-value">$15M<span class="oyt-hero-stat-accent">+</span></p>
+      </div>
+      <div>
+        <p class="oyt-hero-stat-label">Hours reclaimed</p>
+        <p class="oyt-hero-stat-value">520K<span class="oyt-hero-stat-accent">+</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 2 · WHY WE'RE DIFFERENT (light)
+     ============================================ -->
+<section class="oyt-section oyt-section-light" id="why-different">
+  <div class="oyt-section-inner">
+
+    <div class="oyt-section-header">
+      <div class="oyt-eyebrow-centered">
+        <span class="oyt-eyebrow-line"></span>
+        Why We're Different
+        <span class="oyt-eyebrow-line"></span>
+      </div>
+      <h2 class="oyt-h2">
+        Others Screen Résumés.<br>
+        <span class="oyt-h2-accent">We Screen Humans.</span>
+      </h2>
+      <p class="oyt-lead">
+        Six things nobody else in this industry does the way we do them.
+      </p>
+    </div>
+
+    <div class="oyt-anchor-grid">
+
+      <div class="oyt-anchor-tile">
+        <div class="oyt-anchor-icon-holder oyt-anchor-icon-pink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/><circle cx="12" cy="8" r="1.5" fill="#ef60a3"/></svg>
+        </div>
+        <p class="oyt-anchor-title">Human-led screening</p>
+        <p class="oyt-anchor-desc">Every candidate is personally interviewed by our team. No AI filters, no ATS keyword matching, no résumé roulette.</p>
+      </div>
+
+      <div class="oyt-anchor-tile">
+        <div class="oyt-anchor-icon-holder oyt-anchor-icon-peri">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20"/><path d="M4 20V10l8-5 8 5v10"/><path d="M9 20v-6h6v6"/><circle cx="12" cy="11" r="1" fill="#9196eb"/></svg>
+        </div>
+        <p class="oyt-anchor-title">Industry-specialized</p>
+        <p class="oyt-anchor-desc">Law firms, accounting, healthcare, home services, and staffing. We know your industry's bottleneck role because we've placed it before.</p>
+      </div>
+
+      <div class="oyt-anchor-tile">
+        <div class="oyt-anchor-icon-holder oyt-anchor-icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M17 11l3 3-3 3"/><line x1="14" y1="14" x2="20" y2="14"/></svg>
+        </div>
+        <p class="oyt-anchor-title">Direct hire, no middleman</p>
+        <p class="oyt-anchor-desc">Your new hire works only for you from day one. No agency in between and no shared loyalty.</p>
+      </div>
+
+      <div class="oyt-anchor-tile">
+        <div class="oyt-anchor-icon-holder oyt-anchor-icon-pink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <p class="oyt-anchor-title">One flat placement fee</p>
+        <p class="oyt-anchor-desc">No commission, no percentage of salary. Recruiters charge 20% of a first-year salary. On a $100k role, that is $20,000.</p>
+      </div>
+
+      <div class="oyt-anchor-tile">
+        <div class="oyt-anchor-icon-holder oyt-anchor-icon-peri">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <p class="oyt-anchor-title">12-month replacement guarantee</p>
+        <p class="oyt-anchor-desc">Twice the industry standard. If they don't work out inside a year, we source their replacement at no additional cost.</p>
+      </div>
+
+      <div class="oyt-anchor-tile">
+        <div class="oyt-anchor-icon-holder oyt-anchor-icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <p class="oyt-anchor-title">Onboarding and management guide</p>
+        <p class="oyt-anchor-desc">Every hire comes with our playbook so they hit the ground running from day one and stay long-term.</p>
+      </div>
+
+    </div>
+
+    <div class="oyt-section-cta">
+      <a href="#how-it-works" class="oyt-btn-primary">
+        See How It Works <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 3 · INDUSTRIES (dark, hover reveal)
+     ============================================ -->
+<section class="oyt-section oyt-section-dark oyt-atmosphere" id="industries">
+  <div class="oyt-glow-tr"></div>
+  <div class="oyt-glow-bl"></div>
+  <div class="oyt-section-inner">
+
+    <div class="oyt-industries-header">
+      <p class="oyt-industries-eyebrow">Industry Expertise</p>
+      <h2 class="oyt-h2" style="color: var(--oyt-white);">
+        We Know <span class="oyt-h2-accent">Your Industry.</span>
+      </h2>
+    </div>
+
+    <div class="oyt-industries-grid">
+
+      <div class="oyt-industry-tile" tabindex="0">
+        <div class="oyt-industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M6 5l-3 8h6z"/><path d="M18 5l-3 8h6z"/><path d="M3 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M15 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M6 21h12"/></svg>
+        </div>
+        <p class="oyt-industry-name">Law Firms</p>
+        <p class="oyt-industry-roles">Paralegal · Client Intake Coordinator</p>
+        <span class="oyt-industry-metric">Bill more hours <span aria-hidden="true">→</span></span>
+      </div>
+
+      <div class="oyt-industry-tile" tabindex="0">
+        <div class="oyt-industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="13" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="14" y2="18"/></svg>
+        </div>
+        <p class="oyt-industry-name">Accounting Services</p>
+        <p class="oyt-industry-roles">Bookkeeper · AP/AR Specialist</p>
+        <span class="oyt-industry-metric">Advisory time back <span aria-hidden="true">→</span></span>
+      </div>
+
+      <div class="oyt-industry-tile" tabindex="0">
+        <div class="oyt-industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p class="oyt-industry-name">Healthcare Practices</p>
+        <p class="oyt-industry-roles">Medical Billing · Back Office</p>
+        <span class="oyt-industry-metric">Recover more claims <span aria-hidden="true">→</span></span>
+      </div>
+
+      <div class="oyt-industry-tile" tabindex="0">
+        <div class="oyt-industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+        </div>
+        <p class="oyt-industry-name">Home Services</p>
+        <p class="oyt-industry-roles">Dispatcher · Scheduling Coordinator</p>
+        <span class="oyt-industry-metric">Answer every call <span aria-hidden="true">→</span></span>
+      </div>
+
+      <div class="oyt-industry-tile" tabindex="0">
+        <div class="oyt-industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="8" r="2.5"/><path d="M15 21v-1.5a3.5 3.5 0 0 1 3.5-3.5h.5a2.5 2.5 0 0 1 2.5 2.5v2.5"/></svg>
+        </div>
+        <p class="oyt-industry-name">Staffing &amp; Recruiting</p>
+        <p class="oyt-industry-roles">Sourcer · Recruiter</p>
+        <span class="oyt-industry-metric">Fill your pipeline <span aria-hidden="true">→</span></span>
+      </div>
+
+      <div class="oyt-industry-tile" tabindex="0">
+        <div class="oyt-industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <p class="oyt-industry-name">Insurance Agencies</p>
+        <p class="oyt-industry-roles">Customer Service · Back Office</p>
+        <span class="oyt-industry-metric">Own retention <span aria-hidden="true">→</span></span>
+      </div>
+
+    </div>
+
+    <div class="oyt-industries-footer">
+      <p class="oyt-industries-footer-note">Not seeing your industry? We may still be a fit.</p>
+      <a href="#pricing" class="oyt-btn-primary">
+        Book a Talent Strategy Call <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 4 · HOW IT WORKS (horizontal, interactive)
+     ============================================ -->
+<section class="oyt-section oyt-section-light" id="how-it-works">
+  <div class="oyt-section-inner">
+
+    <div class="oyt-hiw-header">
+      <p class="oyt-industries-eyebrow" style="color: var(--oyt-pink);">Our Process</p>
+      <h2 class="oyt-h2">
+        How It <span class="oyt-h2-accent">Works.</span>
+      </h2>
+    </div>
+
+    <div class="oyt-htimeline" id="oytHTimeline" role="tablist" aria-label="Three-phase process overview">
+
+      <button class="oyt-hstep active" data-step="0" role="tab" aria-selected="true" type="button">
+        <div class="oyt-hcircle">01</div>
+        <p class="oyt-hcat">Strategy &amp;<br>Role Mapping</p>
+        <p class="oyt-htitle">You Book a<br>Complimentary<br>Strategy Call</p>
+      </button>
+
+      <button class="oyt-hstep" data-step="1" role="tab" aria-selected="false" type="button">
+        <div class="oyt-hcircle">02</div>
+        <p class="oyt-hcat">Sourcing &amp;<br>Shortlisting</p>
+        <p class="oyt-htitle">We Manage<br>the Full Search</p>
+      </button>
+
+      <button class="oyt-hstep" data-step="2" role="tab" aria-selected="false" type="button">
+        <div class="oyt-hcircle">03</div>
+        <p class="oyt-hcat">Direct Hire &amp;<br>Onboarding</p>
+        <p class="oyt-htitle">You Hire Them<br>Directly</p>
+      </button>
+
+    </div>
+
+    <div class="oyt-hiw-see-full">
+      <a href="#full-process">
+        See full process <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="oyt-hiw-footer">
+      <p class="oyt-hiw-footer-lead">
+        Traditional recruiters take months and bury you in resumes. We deliver a fully vetted, video-interviewed shortlist in weeks, so you can hire faster.
+      </p>
+      <a href="#pricing" class="oyt-btn-primary">
+        Book a Talent Strategy Call <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 5 · FULL PROCESS (vertical, six steps)
+     ============================================ -->
+<section class="oyt-section oyt-section-light" id="full-process">
+  <div class="oyt-section-inner">
+
+    <div class="oyt-fp-header">
+      <p class="oyt-fp-eyebrow">The Full Process</p>
+      <h2 class="oyt-fp-headline">
+        First Call to <span class="oyt-h2-accent">First Day.</span>
+      </h2>
+    </div>
+
+    <div class="oyt-vlist">
+
+      <div class="oyt-vitem">
+        <div class="oyt-vdot" aria-hidden="true"></div>
+        <div>
+          <h3 class="oyt-vitem-title">You Book a Complimentary Strategy Call</h3>
+          <p class="oyt-vitem-desc">A complimentary strategy session focused on role mapping. We map your team structure, uncover the bottlenecks, and define the exact role that will move the needle most. You walk away with clarity before we ever start searching.</p>
+        </div>
+      </div>
+
+      <div class="oyt-vitem">
+        <div class="oyt-vdot" aria-hidden="true"></div>
+        <div>
+          <h3 class="oyt-vitem-title">We Manage the Full Search</h3>
+          <p class="oyt-vitem-desc">We write the job description, pay for the ads, and search the full global market from scratch. Most agencies pull from a database they already have. We go out fresh every time. We prequalify and personally interview the top candidates. You do none of this.</p>
+        </div>
+      </div>
+
+      <div class="oyt-vitem">
+        <div class="oyt-vdot" aria-hidden="true"></div>
+        <div>
+          <h3 class="oyt-vitem-title">You Review the Shortlist</h3>
+          <p class="oyt-vitem-desc">We send you a shortlist of candidates with their resumes, DISC profiles, and recorded video interviews. You review on your own time and choose your favorites.</p>
+        </div>
+      </div>
+
+      <div class="oyt-vitem">
+        <div class="oyt-vdot" aria-hidden="true"></div>
+        <div>
+          <h3 class="oyt-vitem-title">We Schedule the Interviews</h3>
+          <p class="oyt-vitem-desc">We coordinate the interviews between you and your top picks so you can meet them, ask your questions, and make a confident final decision.</p>
+        </div>
+      </div>
+
+      <div class="oyt-vitem">
+        <div class="oyt-vdot" aria-hidden="true"></div>
+        <div>
+          <h3 class="oyt-vitem-title">You Hire Them Directly</h3>
+          <p class="oyt-vitem-desc">Onboard them directly or through a third-party payroll provider. Either way, they work exclusively for you and become a dedicated part of your team.</p>
+        </div>
+      </div>
+
+      <div class="oyt-vitem">
+        <div class="oyt-vdot" aria-hidden="true"></div>
+        <div>
+          <h3 class="oyt-vitem-title">We Hand You the Onboarding Guide</h3>
+          <p class="oyt-vitem-desc">We provide a full onboarding and management guide so you know exactly how to set them up, integrate them into your team, and keep them long term.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="oyt-fp-cta">
+      <a href="#pricing" class="oyt-btn-primary">
+        Book a Talent Strategy Call <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 6 · PRICING (with hire-type toggle)
+     ============================================ -->
+<section class="oyt-section oyt-section-light" id="pricing">
+  <div class="oyt-section-inner">
+
+    <div class="oyt-pricing-card">
+
+      <div class="oyt-pricing-header">
+        <div>
+          <p class="oyt-pricing-eyebrow">Main Product</p>
+          <h2 class="oyt-pricing-headline">One flat placement fee<span class="accent">.</span></h2>
+          <p class="oyt-pricing-sub">Pay once. They work for you. Add recurring services only if you want them.</p>
+        </div>
+        <div class="oyt-pricing-toggle" role="tablist" aria-label="Hire type">
+          <button id="pricingFirst" class="active" data-hire="first" role="tab" aria-selected="true" type="button">1st hire</button>
+          <button id="pricingReturn" data-hire="return" role="tab" aria-selected="false" type="button">Returning client</button>
+        </div>
+      </div>
+
+      <div class="oyt-pricing-tiers">
+        <div class="oyt-tier">
+          <p class="oyt-tier-label">Junior</p>
+          <p class="oyt-tier-price" id="tierJunior">$6,000</p>
+          <p class="oyt-tier-unit">one-time fee</p>
+        </div>
+        <div class="oyt-tier oyt-tier-featured">
+          <span class="oyt-tier-badge">Most clients land here</span>
+          <p class="oyt-tier-label">Mid-Level</p>
+          <p class="oyt-tier-price" id="tierMid">$8,000</p>
+          <p class="oyt-tier-unit">one-time fee</p>
+        </div>
+        <div class="oyt-tier">
+          <p class="oyt-tier-label">Senior</p>
+          <p class="oyt-tier-price" id="tierSenior">$10,000</p>
+          <p class="oyt-tier-unit">one-time fee</p>
+        </div>
+      </div>
+
+      <div class="oyt-pricing-features">
+        <p class="oyt-pricing-feature">Recorded video interview per candidate</p>
+        <p class="oyt-pricing-feature">DISC profile with every shortlist</p>
+        <p class="oyt-pricing-feature">Industry-specific vetting, not generalist</p>
+        <p class="oyt-pricing-feature">Direct hire, they work only for you</p>
+        <p class="oyt-pricing-feature oyt-pricing-feature-strong">12-month replacement guarantee</p>
+        <p class="oyt-pricing-feature">Onboarding and management guide</p>
+      </div>
+
+      <div class="oyt-pricing-cta-wrap">
+        <a href="#" class="oyt-btn-primary">
+          Book a Talent Strategy Call <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="oyt-pricing-footer">
+        <p>Placed a hire with us before? Every next search comes at the returning-client rate. <a href="#">See how it works</a></p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     INTERACTIVE BEHAVIOR
+     ============================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ------- How It Works: click-to-activate horizontal timeline -------
+  var htSteps = document.querySelectorAll('#oytHTimeline .oyt-hstep');
+  htSteps.forEach(function(step) {
+    step.addEventListener('click', function() {
+      htSteps.forEach(function(s) {
+        s.classList.remove('active');
+        s.setAttribute('aria-selected', 'false');
+      });
+      step.classList.add('active');
+      step.setAttribute('aria-selected', 'true');
+    });
+  });
+
+  // ------- Pricing: 1st hire vs Returning client toggle -------
+  var pricingTable = {
+    first:  { junior: '$6,000', mid: '$8,000',  senior: '$10,000' },
+    return: { junior: '$4,500', mid: '$6,500', senior: '$8,500'  }
+  };
+  var btnFirst  = document.getElementById('pricingFirst');
+  var btnReturn = document.getElementById('pricingReturn');
+  var elJunior  = document.getElementById('tierJunior');
+  var elMid     = document.getElementById('tierMid');
+  var elSenior  = document.getElementById('tierSenior');
+
+  function setHireType(type) {
+    var prices = pricingTable[type];
+    if (!prices) return;
+    elJunior.textContent = prices.junior;
+    elMid.textContent    = prices.mid;
+    elSenior.textContent = prices.senior;
+    if (type === 'first') {
+      btnFirst.classList.add('active');
+      btnFirst.setAttribute('aria-selected', 'true');
+      btnReturn.classList.remove('active');
+      btnReturn.setAttribute('aria-selected', 'false');
+    } else {
+      btnReturn.classList.add('active');
+      btnReturn.setAttribute('aria-selected', 'true');
+      btnFirst.classList.remove('active');
+      btnFirst.setAttribute('aria-selected', 'false');
+    }
+  }
+
+  btnFirst.addEventListener('click',  function() { setHireType('first');  });
+  btnReturn.addEventListener('click', function() { setHireType('return'); });
+})();
+</script>
+
+</body>
+</html>
