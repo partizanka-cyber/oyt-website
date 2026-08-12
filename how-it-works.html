@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works â Outsource Your Tasks</title>
+  <meta name="description" content="We source global talent, run the video interviews, and deliver a shortlist. You just choose. Flat placement fee, direct hire, 12-month replacement guarantee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       OYT BRAND TOKENS
+       ============================================ */
+    :root {
+      --oyt-pink: #ef60a3;
+      --oyt-pink-soft: rgba(239, 96, 163, 0.12);
+      --oyt-pink-light: #ffe6f2;
+      --oyt-black: #000000;
+      --oyt-white: #ffffff;
+      --oyt-gray-bg: #f1f1f1;
+      --oyt-gray-fa: #fafafa;
+      --oyt-text-primary: #000000;
+      --oyt-text-secondary: #4a4a4a;
+      --oyt-text-muted: #7a7a7a;
+      --oyt-text-faint: #c0c0c0;
+      --oyt-border: #f1f1f1;
+      --oyt-periwinkle: #9196eb;
+      --oyt-purple: #a965dd;
+      --oyt-pink-light-grad: #ffc8ea;
+
+      --fs-xs: 12px;
+      --fs-sm: 14px;
+      --fs-md: 16px;
+      --fs-lg: 18px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--oyt-text-primary);
+      background: var(--oyt-white);
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6, p { margin: 0; }
+    button { font-family: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    .oyt-section {
+      padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 2rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .oyt-section-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .oyt-section-light { background: var(--oyt-white); color: var(--oyt-text-primary); }
+
+    .oyt-btn-primary {
+      background: var(--oyt-pink);
+      color: var(--oyt-white);
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: var(--fs-sm); font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .oyt-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(239, 96, 163, 0.3); }
+    .oyt-btn-primary:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 3px; }
+
+    .oyt-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--oyt-black);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .oyt-header-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2rem);
+    }
+    .oyt-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 0;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .oyt-logo {
+      display: flex; align-items: baseline;
+      font-weight: 800; font-size: 26px;
+      letter-spacing: -0.02em;
+      color: var(--oyt-white);
+    }
+    .oyt-logo-y { position: relative; }
+    .oyt-logo-dot {
+      position: absolute; top: 2px; right: -6px;
+      width: 6px; height: 6px;
+      background: var(--oyt-pink);
+      border-radius: 50%;
+    }
+    .oyt-logo-t { margin-left: 6px; }
+    .oyt-nav-links {
+      display: flex; gap: 28px;
+      font-size: var(--fs-md); color: rgba(255, 255, 255, 0.75);
+      font-weight: 500;
+    }
+    .oyt-nav-links a:hover { color: var(--oyt-white); }
+    .oyt-nav-links a:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 4px; }
+    .oyt-nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 9px 10px;
+      cursor: pointer;
+      flex-direction: column; gap: 4px;
+    }
+    .oyt-nav-toggle span {
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--oyt-white);
+      border-radius: 2px;
+    }
+    @media (max-width: 900px) {
+      .oyt-nav-toggle { display: flex; }
+      .oyt-nav-links {
+        display: none;
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 0.5rem;
+      }
+      .oyt-nav-links.open { display: flex; }
+      .oyt-nav-links a {
+        padding: 13px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .oyt-nav-links a:last-child { border-bottom: none; }
+    }
+
+    /* How It Works page styles */
+    .hiw-hero { text-align: center; margin-bottom: 46px; }
+    .hiw-eyebrow { color: var(--oyt-pink); font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; margin: 0 0 16px; }
+    .hiw-h1 { font-size: clamp(2.2rem, 5vw, 52px); font-weight: 900; letter-spacing: -0.035em; line-height: 1.03; margin: 0; color: var(--oyt-black); }
+    .hiw-h1 span { color: var(--oyt-pink); }
+    .hiw-timeline { max-width: 720px; margin: 0 auto; }
+    .hiw-step { display: grid; grid-template-columns: 16px 1fr; gap: 28px; padding-bottom: 42px; position: relative; }
+    .hiw-step:last-child { padding-bottom: 0; }
+    .hiw-step:not(:last-child)::before { content: ""; position: absolute; left: 7.25px; top: 24px; bottom: 4px; width: 1.5px; background: #f3d0e2; }
+    .hiw-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--oyt-pink); margin-top: 6px; position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--oyt-white), 0 0 0 5.5px #f7d3e6; }
+    .hiw-t { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 8px; color: var(--oyt-black); }
+    .hiw-d { font-size: 15px; color: #6f6f6f; line-height: 1.65; margin: 0; }
+    .hiw-cta { text-align: center; margin-top: 58px; }
+    @media (max-width: 560px) { .hiw-step { gap: 20px; } }
+
+    /* Footer */
+    .oyt-footer {
+      background: var(--oyt-black);
+      color: var(--oyt-white);
+      padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) 1.75rem;
+    }
+    .oyt-ft-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 4vw, 3rem);
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .oyt-ft-logo {
+      display: flex; align-items: baseline;
+      font-weight: 800; font-size: 28px; letter-spacing: -0.02em;
+      color: var(--oyt-white); text-decoration: none;
+    }
+    .oyt-ft-logo-y { position: relative; }
+    .oyt-ft-logo-dot {
+      position: absolute; top: 2px; right: -6px;
+      width: 7px; height: 7px; background: var(--oyt-pink); border-radius: 50%;
+    }
+    .oyt-ft-logo-t { margin-left: 7px; }
+    .oyt-ft-socials { display: flex; gap: 10px; margin-top: 22px; }
+    .oyt-ft-soc {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .oyt-ft-soc:hover { background: rgba(239,96,163,0.15); color: var(--oyt-pink); }
+    .oyt-ft-tag {
+      color: rgba(255,255,255,0.55);
+      font-size: var(--fs-sm); line-height: 1.6;
+      margin: 22px 0 26px; max-width: 340px;
+    }
+    .oyt-ft-col-h {
+      font-size: var(--fs-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--oyt-pink); margin: 6px 0 18px;
+    }
+    .oyt-ft-links { display: flex; flex-direction: column; gap: 13px; }
+    .oyt-ft-links a {
+      color: rgba(255,255,255,0.62);
+      font-size: var(--fs-sm); font-weight: 500;
+      text-decoration: none; transition: color 0.2s ease;
+    }
+    .oyt-ft-links a:hover { color: var(--oyt-white); }
+    .oyt-ft-legal {
+      max-width: 1160px; margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.38); font-size: var(--fs-xs);
+    }
+    @media (max-width: 720px) { .oyt-ft-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .oyt-ft-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="oyt-header" id="siteHeader">
+  <div class="oyt-header-inner">
+    <nav class="oyt-nav" aria-label="Primary">
+      <a href="index.html" class="oyt-logo" aria-label="OYT home">
+        <span>O</span>
+        <span class="oyt-logo-y">Y<span class="oyt-logo-dot"></span></span>
+        <span class="oyt-logo-t">T</span>
+      </a>
+      <button class="oyt-nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="oyt-nav-links" id="navLinks">
+        <a href="index.html#hero">About</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="#">Resources</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="oyt-section oyt-section-light" id="process">
+  <div class="oyt-section-inner">
+    <div class="hiw-hero">
+      <p class="hiw-eyebrow">The Full Process</p>
+      <h1 class="hiw-h1">First Call to <span>First Day.</span></h1>
+    </div>
+    <div class="hiw-timeline">
+      <div class="hiw-step">
+        <div class="hiw-dot"></div>
+        <div class="hiw-content">
+          <h2 class="hiw-t">You Book a Complimentary Strategy Call</h2>
+          <p class="hiw-d">A complimentary strategy session focused on role mapping. We map your team structure, uncover the bottlenecks, and define the exact role that will move the needle most. You walk away with clarity before we ever start searching.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-dot"></div>
+        <div class="hiw-content">
+          <h2 class="hiw-t">We Manage the Full Search</h2>
+          <p class="hiw-d">We write the job description, pay for the ads, and search the full global market from scratch. Most agencies pull from a database they already have. We go out fresh every time. We prequalify and personally interview the top candidates. You do none of this.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-dot"></div>
+        <div class="hiw-content">
+          <h2 class="hiw-t">You Review the Shortlist</h2>
+          <p class="hiw-d">We send you a shortlist of candidates with their resumes, DISC profiles, and recorded video interviews. You review on your own time and choose your favorites.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-dot"></div>
+        <div class="hiw-content">
+          <h2 class="hiw-t">We Schedule the Interviews</h2>
+          <p class="hiw-d">We coordinate the interviews between you and your top picks so you can meet them, ask your questions, and make a confident final decision.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-dot"></div>
+        <div class="hiw-content">
+          <h2 class="hiw-t">You Hire Them Directly</h2>
+          <p class="hiw-d">Onboard them directly or through a third-party payroll provider. Either way, they work exclusively for you and become a dedicated part of your team.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-dot"></div>
+        <div class="hiw-content">
+          <h2 class="hiw-t">We Hand You the Onboarding Guide</h2>
+          <p class="hiw-d">We provide a full onboarding and management guide so you know exactly how to set them up, integrate them into your team, and keep them long term.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hiw-cta">
+      <a class="oyt-btn-primary" href="index.html#pricing">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="oyt-footer">
+  <div class="oyt-ft-grid">
+    <div>
+      <a href="index.html" class="oyt-ft-logo" aria-label="OYT home">
+        <span>O</span>
+        <span class="oyt-ft-logo-y">Y<span class="oyt-ft-logo-dot"></span></span>
+        <span class="oyt-ft-logo-t">T</span>
+      </a>
+      <div class="oyt-ft-socials">
+        <a class="oyt-ft-soc" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.9 0-3 1.5-3 3.4V11H8v3h3v6h3v-6h2.5l.5-3H14V9.6c0-.4.3-.6.6-.6z"/></svg></a>
+        <a class="oyt-ft-soc" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="oyt-ft-soc" href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.4H4.2V20h2.7zM5.5 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2M20 20v-6.4c0-3.1-1.7-4.6-3.9-4.6-1.8 0-2.6 1-3 1.7V8.4H10.4V20h2.7v-6.1c0-1.4.8-2.1 1.8-2.1s1.7.6 1.7 2.1V20z"/></svg></a>
+      </div>
+      <p class="oyt-ft-tag">Boutique global staffing for service businesses ready to scale.</p>
+      <a class="oyt-btn-primary" href="index.html#pricing">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div>
+      <p class="oyt-ft-col-h">Explore</p>
+      <nav class="oyt-ft-links" aria-label="Explore">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="index.html#industries">Who We Help</a>
+        <a href="index.html#full-process">Screening Process</a>
+        <a href="index.html#pricing">Pricing</a>
+      </nav>
+    </div>
+    <div>
+      <p class="oyt-ft-col-h">Resources</p>
+      <nav class="oyt-ft-links" aria-label="Resources">
+        <a href="index.html#benefits">Savings Calculator</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="#">FAQ</a>
+      </nav>
+    </div>
+    <div>
+      <p class="oyt-ft-col-h">Company</p>
+      <nav class="oyt-ft-links" aria-label="Company">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+  </div>
+  <div class="oyt-ft-legal">&copy; 2026 Outsource Your Tasks. All rights reserved.</div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

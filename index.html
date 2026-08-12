@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OYT — Boutique Global Staffing</title>
+  <title>OYT â Boutique Global Staffing</title>
   <meta name="description" content="We source global talent, run the video interviews, and deliver a shortlist. You just choose. Flat placement fee, direct hire, 12-month replacement guarantee.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    /* ============================================
-       OYT BRAND TOKENS
-       ============================================ */
     :root {
       --oyt-pink: #ef60a3;
       --oyt-pink-soft: rgba(239, 96, 163, 0.12);
@@ -28,13 +25,14 @@
       --oyt-periwinkle: #9196eb;
       --oyt-purple: #a965dd;
       --oyt-pink-light-grad: #ffc8ea;
+      --fs-xs: 12px;
+      --fs-sm: 14px;
+      --fs-md: 16px;
+      --fs-lg: 18px;
     }
 
-    /* ============================================
-       RESET & BASE
-       ============================================ */
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
     body {
       margin: 0;
       font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -46,13 +44,11 @@
     button { font-family: inherit; }
     a { color: inherit; text-decoration: none; }
 
-    /* Screen reader only */
     .sr-only {
       position: absolute; width: 1px; height: 1px; overflow: hidden;
       clip: rect(0 0 0 0); white-space: nowrap;
     }
 
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -60,24 +56,29 @@
       }
     }
 
-    /* ============================================
-       SECTION CONTAINERS
-       ============================================ */
     .oyt-section {
-      padding: 4rem 2rem;
+      padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 2rem);
       position: relative;
       overflow: hidden;
     }
     .oyt-section-inner {
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
     }
     .oyt-section-dark { background: var(--oyt-black); color: var(--oyt-white); }
+    .oyt-hero-section {
+      min-height: calc(100svh - 64px);
+      display: flex;
+      align-items: center;
+      padding-top: clamp(2rem, 4vw, 3.5rem);
+      padding-bottom: clamp(2rem, 4vw, 3.5rem);
+    }
+    .oyt-hero-section > .oyt-section-inner { width: 100%; }
     .oyt-section-light { background: var(--oyt-white); color: var(--oyt-text-primary); }
     .oyt-section-gray { background: var(--oyt-gray-bg); color: var(--oyt-text-primary); }
 
-    /* Dark section atmosphere (dot pattern + gradient glows) */
     .oyt-atmosphere::before {
       content: '';
       position: absolute; inset: 0;
@@ -99,38 +100,32 @@
       pointer-events: none;
     }
 
-    /* ============================================
-       SHARED TYPOGRAPHY
-       ============================================ */
     .oyt-eyebrow {
-      font-size: 11px; font-weight: 700;
+      font-size: var(--fs-xs); font-weight: 700;
       color: var(--oyt-pink);
       letter-spacing: 0.2em; text-transform: uppercase;
       margin: 0 0 1rem;
     }
     .oyt-h2 {
-      font-size: 48px; font-weight: 900;
+      font-size: clamp(2rem, 4.2vw, 48px); font-weight: 900;
       line-height: 1.05; letter-spacing: -0.03em;
       margin: 0;
     }
     .oyt-h2-accent { color: var(--oyt-pink); }
     .oyt-lead {
-      font-size: 16px; color: var(--oyt-text-secondary);
+      font-size: var(--fs-md); color: var(--oyt-text-secondary);
       line-height: 1.6; font-weight: 400;
       max-width: 560px; margin: 1rem auto 0;
     }
     .oyt-lead-muted { color: var(--oyt-text-muted); }
     .oyt-lead-invert { color: rgba(255, 255, 255, 0.7); }
 
-    /* ============================================
-       BUTTONS & LINKS
-       ============================================ */
     .oyt-btn-primary {
       background: var(--oyt-pink);
       color: var(--oyt-white);
       border: none;
       font-family: 'Montserrat', sans-serif;
-      font-size: 13.5px; font-weight: 600;
+      font-size: var(--fs-sm); font-weight: 600;
       padding: 14px 28px;
       border-radius: 999px;
       cursor: pointer;
@@ -144,643 +139,427 @@
       color: var(--oyt-white);
       border: 1.5px solid rgba(255, 255, 255, 0.4);
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px; font-weight: 600;
+      font-size: var(--fs-sm); font-weight: 600;
       padding: 13.5px 26px;
       border-radius: 999px;
       cursor: pointer;
     }
     .oyt-btn-outline-dark:hover { border-color: var(--oyt-white); }
 
-    /* ============================================
-       NAVIGATION
-       ============================================ */
+    .oyt-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--oyt-black);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .oyt-header-inner {
+      width: 100%; max-width: 1200px; margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2rem);
+    }
     .oyt-nav {
       display: flex; align-items: center; justify-content: space-between;
-      padding-bottom: 1.5rem; margin-bottom: 2.75rem;
-      flex-wrap: wrap; gap: 12px;
+      padding: 1rem 0; flex-wrap: wrap; gap: 12px;
     }
     .oyt-logo {
       display: flex; align-items: baseline;
-      font-weight: 800; font-size: 22px;
-      letter-spacing: -0.02em;
+      font-weight: 800; font-size: 26px; letter-spacing: -0.02em;
       color: var(--oyt-white);
     }
     .oyt-logo-y { position: relative; }
     .oyt-logo-dot {
       position: absolute; top: 2px; right: -6px;
-      width: 6px; height: 6px;
-      background: var(--oyt-pink);
-      border-radius: 50%;
+      width: 6px; height: 6px; background: var(--oyt-pink); border-radius: 50%;
     }
     .oyt-logo-t { margin-left: 6px; }
     .oyt-nav-links {
       display: flex; gap: 28px;
-      font-size: 13px; color: rgba(255, 255, 255, 0.75);
-      font-weight: 500;
+      font-size: var(--fs-md); color: rgba(255, 255, 255, 0.75); font-weight: 500;
     }
     .oyt-nav-links a:hover { color: var(--oyt-white); }
+    .oyt-nav-links a:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 4px; }
+    .oyt-nav-toggle {
+      display: none; background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.3); border-radius: 8px;
+      padding: 9px 10px; cursor: pointer; flex-direction: column; gap: 4px;
+    }
+    .oyt-nav-toggle:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 3px; }
+    .oyt-nav-toggle span { display: block; width: 20px; height: 2px; background: var(--oyt-white); border-radius: 2px; }
+    @media (max-width: 900px) {
+      .oyt-nav-toggle { display: flex; }
+      .oyt-nav-links { display: none; order: 3; width: 100%; flex-direction: column; gap: 0; padding-top: 0.5rem; }
+      .oyt-nav-links.open { display: flex; }
+      .oyt-nav-links a { padding: 13px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .oyt-nav-links a:last-child { border-bottom: none; }
+    }
 
-    /* ============================================
-       SECTION 1: HERO
-       ============================================ */
+    /* HERO */
     .oyt-hero-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
+      display: grid; grid-template-columns: 1.5fr 0.9fr;
+      gap: clamp(2rem, 4vw, 3rem); align-items: end;
     }
     .oyt-hero-eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
-      font-size: 11px; font-weight: 700;
-      color: var(--oyt-pink);
-      letter-spacing: 0.2em; text-transform: uppercase;
-      margin-bottom: 2rem;
+      font-size: var(--fs-xs); font-weight: 700; color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 2rem;
     }
-    .oyt-hero-eyebrow-line {
-      width: 28px; height: 1px; background: var(--oyt-pink);
-    }
+    .oyt-hero-eyebrow-line { width: 28px; height: 1px; background: var(--oyt-pink); }
     .oyt-hero-headline {
-      font-size: 84px; font-weight: 900;
-      line-height: 0.92; letter-spacing: -0.04em;
-      margin: 0 0 2rem;
-      color: var(--oyt-white);
-      text-transform: uppercase;
+      font-size: clamp(2.75rem, 6.6vw, 84px); font-weight: 900;
+      line-height: 0.92; letter-spacing: -0.04em; margin: 0 0 2rem;
+      color: var(--oyt-white); text-transform: uppercase;
     }
     .oyt-hero-sub {
-      font-size: 17px;
-      color: rgba(255, 255, 255, 0.78);
-      line-height: 1.6;
-      margin: 0 0 2.25rem;
-      max-width: 540px;
-      font-weight: 400;
+      font-size: var(--fs-lg); color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6; margin: 0 0 2.25rem; max-width: 540px; font-weight: 400;
     }
-    .oyt-hero-buttons {
-      display: flex; gap: 12px; flex-wrap: wrap;
-    }
-    .oyt-hero-cards {
-      display: flex; flex-direction: column; gap: 12px;
-    }
+    .oyt-hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .oyt-hero-cards { display: flex; flex-direction: column; gap: 12px; justify-content: flex-end; }
     .oyt-hero-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 1.15rem 1.3rem;
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px; padding: 1.15rem 1.3rem; backdrop-filter: blur(8px);
     }
-    .oyt-hero-card-lead {
-      border-color: rgba(239, 96, 163, 0.25);
-    }
+    .oyt-hero-card-lead { border-color: rgba(239, 96, 163, 0.25); }
     .oyt-hero-card-icon {
       display: flex; align-items: center; justify-content: center;
-      width: 38px; height: 38px;
-      border-radius: 10px;
-      margin-bottom: 14px;
+      width: 38px; height: 38px; border-radius: 10px; margin-bottom: 14px;
     }
     .oyt-hero-card-icon-pink { background: rgba(239, 96, 163, 0.15); }
     .oyt-hero-card-icon-peri { background: rgba(145, 150, 235, 0.15); }
     .oyt-hero-card-icon-purple { background: rgba(169, 101, 221, 0.15); }
-    .oyt-hero-card-title {
-      font-size: 14px; font-weight: 700;
-      margin: 0 0 5px;
-      color: var(--oyt-white);
-    }
-    .oyt-hero-card-desc {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
-      margin: 0;
-      line-height: 1.55;
-    }
+    .oyt-hero-card-title { font-size: var(--fs-md); font-weight: 700; margin: 0 0 5px; color: var(--oyt-white); }
+    .oyt-hero-card-desc { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.55; }
     .oyt-hero-stats {
-      margin-top: 3rem;
-      padding-top: 1.75rem;
+      margin-top: 3rem; padding-top: 1.75rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex; gap: 3.5rem; flex-wrap: wrap;
+      display: flex; gap: clamp(1.5rem, 4vw, 3.5rem); flex-wrap: wrap;
     }
     .oyt-hero-stat-label {
-      font-size: 10.5px; font-weight: 600;
-      color: rgba(255, 255, 255, 0.5);
-      letter-spacing: 0.2em; text-transform: uppercase;
-      margin: 0 0 6px;
+      font-size: var(--fs-xs); font-weight: 600; color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 6px;
     }
     .oyt-hero-stat-value {
-      font-size: 32px; font-weight: 800;
-      color: var(--oyt-white);
-      margin: 0;
-      letter-spacing: -0.025em;
+      font-size: clamp(26px, 3vw, 32px); font-weight: 800;
+      color: var(--oyt-white); margin: 0; letter-spacing: -0.025em;
     }
     .oyt-hero-stat-accent { color: var(--oyt-pink); }
-
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .oyt-hero-grid { grid-template-columns: 1fr; }
-      .oyt-hero-headline { font-size: 56px; }
-    }
-    @media (max-width: 600px) {
-      .oyt-hero-headline { font-size: 44px; }
+      .oyt-hero-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     }
 
-    /* ============================================
-       SECTION 2: WHY WE'RE DIFFERENT
-       ============================================ */
+    /* SECTION 2 */
     .oyt-section-header { text-align: center; margin-bottom: 3rem; }
     .oyt-eyebrow-centered {
       display: inline-flex; align-items: center; gap: 10px;
-      font-size: 11px; font-weight: 700;
-      color: var(--oyt-pink);
-      letter-spacing: 0.2em; text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      font-size: var(--fs-xs); font-weight: 700; color: var(--oyt-pink);
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem;
     }
     .oyt-eyebrow-line { width: 24px; height: 1px; background: var(--oyt-pink); }
-    .oyt-anchor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      max-width: 1100px;
-      margin: 0 auto 2.75rem;
+    .oyt-v2-wrap { max-width: 1100px; margin: 0 auto; }
+    .oyt-v2-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+    .oyt-v2-image {
+      position: relative; aspect-ratio: 4 / 5; background: var(--oyt-gray-fa);
+      border: 1px dashed #ccc; border-radius: 20px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; overflow: hidden;
     }
-    .oyt-anchor-tile {
-      background: var(--oyt-gray-fa);
-      border-radius: 20px;
-      padding: 2rem 1.5rem;
-      text-align: center;
+    .oyt-v2-image img { width: 100%; height: 100%; object-fit: cover; }
+    .oyt-v2-ph-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--oyt-pink-soft); display: flex; align-items: center; justify-content: center; }
+    .oyt-v2-ph-text { font-size: var(--fs-xs); font-weight: 600; color: #999; margin: 0; }
+    .oyt-v2-row { border-top: 1px solid var(--oyt-border); }
+    .oyt-v2-row:last-child { border-bottom: 1px solid var(--oyt-border); }
+    .oyt-v2-head {
+      width: 100%; display: flex; align-items: center; gap: 20px;
+      background: none; border: none; padding: 1.1rem 0; cursor: pointer; text-align: left;
+      font-family: 'Montserrat', sans-serif;
     }
-    .oyt-anchor-icon-holder {
-      width: 56px; height: 56px;
-      background: var(--oyt-white);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.25rem;
+    .oyt-v2-num { font-size: 52px; font-weight: 900; color: var(--oyt-pink); width: 70px; flex-shrink: 0; letter-spacing: -0.05em; line-height: 1; }
+    .oyt-v2-title { flex: 1; font-size: var(--fs-lg); font-weight: 900; color: var(--oyt-text-muted); letter-spacing: -0.02em; transition: color 0.2s ease; }
+    .oyt-v2-row.open .oyt-v2-title { color: var(--oyt-text-primary); }
+    .oyt-v2-chev { font-size: 16px; color: #bbb; transition: transform 0.25s ease; }
+    .oyt-v2-row.open .oyt-v2-chev { transform: rotate(180deg); }
+    .oyt-v2-panel { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.25s ease; }
+    .oyt-v2-row.open .oyt-v2-panel { max-height: 220px; opacity: 1; }
+    .oyt-v2-desc { margin: 0 0 1.1rem; padding-left: 90px; font-size: var(--fs-sm); font-weight: 400; line-height: 1.6; color: var(--oyt-text-secondary); }
+    @media (max-width: 820px) {
+      .oyt-v2-grid { grid-template-columns: 1fr; }
+      .oyt-v2-image { aspect-ratio: 16 / 10; max-height: 320px; }
+      .oyt-v2-num { font-size: 40px; width: 54px; }
+      .oyt-v2-desc { padding-left: 74px; }
     }
-    .oyt-anchor-icon-pink { box-shadow: 0 4px 12px rgba(239, 96, 163, 0.18); }
-    .oyt-anchor-icon-peri { box-shadow: 0 4px 12px rgba(145, 150, 235, 0.22); }
-    .oyt-anchor-icon-purple { box-shadow: 0 4px 12px rgba(169, 101, 221, 0.22); }
-    .oyt-anchor-title {
-      font-size: 17px; font-weight: 800;
-      margin: 0 0 8px;
-      color: var(--oyt-text-primary);
-      letter-spacing: -0.01em;
-    }
-    .oyt-anchor-desc {
-      font-size: 13px;
-      color: var(--oyt-text-secondary);
-      margin: 0;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-    .oyt-section-cta { text-align: center; }
 
-    /* ============================================
-       SECTION 3: INDUSTRIES (dark, hover reveal)
-       ============================================ */
+    /* SECTION 3 INDUSTRIES */
     .oyt-industries-header { text-align: center; margin-bottom: 3.5rem; }
-    .oyt-industries-eyebrow {
-      font-size: 11px; font-weight: 700;
-      color: var(--oyt-pink);
-      letter-spacing: 0.2em; text-transform: uppercase;
-      margin: 0 0 1rem;
-    }
-    .oyt-industries-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 8px;
-      max-width: 1100px;
-      margin: 0 auto 2.5rem;
-    }
+    .oyt-industries-eyebrow { font-size: var(--fs-xs); font-weight: 700; color: var(--oyt-pink); letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 1rem; }
+    .oyt-industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 1100px; margin: 0 auto 2.5rem; }
     .oyt-industry-tile {
-      background: transparent;
-      border: 1.5px solid transparent;
-      border-radius: 20px;
-      padding: 1.5rem 1.5rem 3rem;
-      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-      position: relative;
-      text-align: left;
+      background: var(--oyt-white); border: 1px solid #ececec; border-radius: 16px;
+      padding: 1.75rem 1.5rem; transition: border-color 0.25s ease, box-shadow 0.25s ease; text-align: left;
     }
-    .oyt-industry-tile:hover, .oyt-industry-tile:focus-within {
-      background: rgba(255, 255, 255, 0.035);
-      border-color: rgba(239, 96, 163, 0.4);
-      box-shadow: 0 8px 28px rgba(239, 96, 163, 0.18);
-    }
-    .oyt-industry-icon {
-      width: 48px; height: 48px;
-      background: rgba(239, 96, 163, 0.12);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-    .oyt-industry-name {
-      font-size: 17px; font-weight: 800;
-      margin: 0 0 6px;
-      color: var(--oyt-white);
-      letter-spacing: -0.01em;
-    }
-    .oyt-industry-roles {
-      font-size: 12.5px;
-      color: rgba(255, 255, 255, 0.6);
-      margin: 0;
-      line-height: 1.6;
-      font-weight: 500;
-    }
-    .oyt-industry-metric {
-      color: var(--oyt-pink);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.02em;
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      position: absolute;
-      bottom: 1.25rem;
-      right: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      white-space: nowrap;
-    }
-    .oyt-industry-tile:hover .oyt-industry-metric,
-    .oyt-industry-tile:focus-within .oyt-industry-metric {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .oyt-industry-tile:hover, .oyt-industry-tile:focus-within { border-color: rgba(239, 96, 163, 0.35); box-shadow: 0 8px 28px rgba(239, 96, 163, 0.12); }
+    .oyt-industry-icon { width: 48px; height: 48px; background: rgba(239, 96, 163, 0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .oyt-industry-name { font-size: var(--fs-lg); font-weight: 900; margin: 0 0 0.6rem; color: var(--oyt-text-primary); letter-spacing: -0.01em; line-height: 1.25; height: 2.5em; }
+    .oyt-industry-roles { font-size: var(--fs-sm); color: var(--oyt-text-muted); margin: 0; line-height: 1.7; font-weight: 400; }
+    @media (max-width: 860px) { .oyt-industries-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .oyt-industries-grid { grid-template-columns: 1fr; } .oyt-industry-name { height: auto; } }
     .oyt-industries-footer { text-align: center; }
-    .oyt-industries-footer-note {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.6);
-      margin: 0 0 1rem;
-      font-weight: 400;
-    }
+    .oyt-industries-footer-note { font-size: var(--fs-sm); color: var(--oyt-text-muted); margin: 0; font-weight: 400; }
 
-    /* ============================================
-       SECTION 4: HOW IT WORKS (horizontal, interactive)
-       ============================================ */
+    /* SECTION 4 HOW IT WORKS */
     .oyt-hiw-header { text-align: center; margin-bottom: 3.5rem; }
-    .oyt-htimeline {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto 2rem;
+    .oyt-hcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 1rem; }
+    .oyt-hcard { background: var(--oyt-pink); border-radius: 24px; padding: 20px 20px 28px; }
+    .oyt-hcard-media {
+      background: var(--oyt-gray-fa); border-radius: 16px; aspect-ratio: 4 / 3;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      border: 1px dashed rgba(0, 0, 0, 0.12); margin-bottom: 20px; overflow: hidden;
     }
-    .oyt-htimeline::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 16.67%;
-      right: 16.67%;
-      height: 2px;
-      background: rgba(239, 96, 163, 0.25);
-      z-index: 0;
-    }
-    .oyt-hstep {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      padding: 0 0.5rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .oyt-hstep:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 8px; border-radius: 8px; }
-    .oyt-hcircle {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--oyt-gray-bg);
-      color: #a0a0a0;
-      font-weight: 700;
-      font-size: 15px;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      letter-spacing: 0.02em;
-      transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .oyt-hstep.active .oyt-hcircle {
-      background: var(--oyt-pink);
-      color: var(--oyt-white);
-      box-shadow: 0 6px 18px rgba(239, 96, 163, 0.35);
-    }
-    .oyt-hcat {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      margin: 0 0 0.85rem;
-      color: var(--oyt-text-faint);
-      line-height: 1.4;
-      transition: color 0.25s ease;
-    }
-    .oyt-hstep.active .oyt-hcat { color: var(--oyt-text-muted); }
-    .oyt-htitle {
-      font-size: 17px; font-weight: 800;
-      line-height: 1.3; letter-spacing: -0.01em;
-      margin: 0;
-      color: var(--oyt-text-faint);
-      transition: color 0.25s ease;
-    }
-    .oyt-hstep.active .oyt-htitle { color: var(--oyt-text-primary); }
+    .oyt-hcard-media img { width: 100%; height: 100%; object-fit: cover; }
+    .oyt-hcard-ph-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--oyt-pink-soft); display: flex; align-items: center; justify-content: center; }
+    .oyt-hcard-ph-text { font-size: var(--fs-xs); font-weight: 600; color: #999; margin: 0; }
+    .oyt-hcard-cat { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.75); margin: 0 0 8px; }
+    .oyt-hcard-title { font-size: 19px; font-weight: 900; color: var(--oyt-white); letter-spacing: -0.02em; line-height: 1.2; margin: 0; }
+    @media (max-width: 860px) { .oyt-hcards { grid-template-columns: 1fr; max-width: 420px; } }
     .oyt-hiw-see-full { text-align: center; margin: 2.5rem 0 3rem; }
-    .oyt-hiw-see-full a {
-      font-size: 13.5px; font-weight: 600;
-      color: var(--oyt-pink);
-      cursor: pointer;
-      display: inline-flex; align-items: center; gap: 6px;
-      border-bottom: 1px solid rgba(239, 96, 163, 0.35);
-      padding-bottom: 2px;
-    }
-    .oyt-hiw-footer {
-      text-align: center;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--oyt-border);
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .oyt-hiw-footer-lead {
-      font-size: 15px;
-      color: var(--oyt-text-secondary);
-      line-height: 1.65;
-      margin: 0 0 2rem;
-      font-weight: 400;
-    }
+    .oyt-hiw-see-full a { font-size: var(--fs-sm); font-weight: 600; color: var(--oyt-pink); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(239, 96, 163, 0.35); padding-bottom: 2px; }
+    .oyt-hiw-footer { text-align: center; padding-top: 2.5rem; border-top: 1px solid var(--oyt-border); max-width: 640px; margin: 0 auto; }
 
-    /* ============================================
-       SECTION 5: FULL PROCESS (vertical timeline)
-       ============================================ */
-    .oyt-fp-header { text-align: center; margin-bottom: 2rem; }
-    .oyt-fp-eyebrow {
-      font-size: 11px; font-weight: 700;
-      color: var(--oyt-pink);
-      letter-spacing: 0.2em; text-transform: uppercase;
-      margin: 0 0 1rem;
-    }
-    .oyt-fp-headline {
-      font-size: 42px; font-weight: 900;
-      line-height: 1.05; letter-spacing: -0.03em;
-      margin: 0;
-      color: var(--oyt-text-primary);
-      white-space: nowrap;
-    }
-    .oyt-vlist {
-      position: relative;
-      max-width: 720px;
-      margin: 0 auto;
-      padding-left: 4px;
-    }
-    .oyt-vlist::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 24px;
-      bottom: 24px;
-      width: 1.5px;
-      background: rgba(239, 96, 163, 0.3);
-      z-index: 0;
-    }
-    .oyt-vitem {
-      display: grid;
-      grid-template-columns: 32px 1fr;
-      gap: 1.1rem;
-      padding: 1rem 0;
-      position: relative;
-      z-index: 1;
-      align-items: start;
-    }
-    .oyt-vdot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--oyt-pink);
-      margin-top: 10px;
-      margin-left: 4px;
-      box-shadow: 0 0 0 4px var(--oyt-white), 0 0 0 5px rgba(239, 96, 163, 0.2);
-      position: relative;
-      z-index: 2;
-    }
-    .oyt-vitem-title {
-      font-size: 17px; font-weight: 800;
-      line-height: 1.25; letter-spacing: -0.01em;
-      margin: 0.15rem 0 0.35rem;
-      color: var(--oyt-text-primary);
-    }
-    .oyt-vitem-desc {
-      font-size: 13px;
-      color: var(--oyt-text-secondary);
-      line-height: 1.6;
-      margin: 0;
-      font-weight: 400;
-    }
-    .oyt-fp-cta {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--oyt-border);
-    }
+    /* SPEED */
+    .oyt-speed { background: var(--oyt-gray-fa); border-radius: 24px; padding: clamp(2rem, 4vw, 3rem); max-width: 780px; margin: 3rem auto 0; }
+    .oyt-speed-header { text-align: center; margin-bottom: 2.5rem; }
+    .oyt-speed-eyebrow { font-size: var(--fs-xs); font-weight: 700; color: var(--oyt-pink); letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 1rem; }
+    .oyt-speed-headline { font-size: clamp(28px, 3.4vw, 40px); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; color: var(--oyt-text-primary); margin: 0 0 0.75rem; }
+    .oyt-speed-sub { font-size: var(--fs-md); line-height: 1.6; color: var(--oyt-text-secondary); max-width: 520px; margin: 0 auto; }
+    .oyt-speed-row { margin-bottom: 1.75rem; }
+    .oyt-speed-row:last-of-type { margin-bottom: 2rem; }
+    .oyt-speed-labels { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .oyt-speed-name { font-size: var(--fs-sm); font-weight: 800; color: var(--oyt-text-primary); }
+    .oyt-speed-name.pink { color: var(--oyt-pink); }
+    .oyt-speed-weeks { font-size: var(--fs-sm); font-weight: 400; color: var(--oyt-text-muted); }
+    .oyt-speed-weeks b { font-weight: 800; color: var(--oyt-text-primary); }
+    .oyt-speed-weeks.pink b { color: var(--oyt-pink); }
+    .oyt-speed-track { height: 22px; border-radius: 999px; overflow: hidden; background: #e2e2e2; }
+    .oyt-speed-track.pink { background: #f5d6e7; }
+    .oyt-speed-fill { height: 100%; border-radius: 999px; width: 0; transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
+    .oyt-speed-fill.trad { background: #c9c9c9; }
+    .oyt-speed-fill.oyt { background: linear-gradient(90deg, var(--oyt-pink), #f58fc0); }
+    .oyt-speed.in-view .oyt-speed-fill.trad { width: 100%; }
+    .oyt-speed.in-view .oyt-speed-fill.oyt { width: 28%; }
+    .oyt-speed-punch { text-align: center; margin: 0; font-size: var(--fs-sm); color: var(--oyt-text-secondary); }
+    .oyt-speed-punch b { color: var(--oyt-pink); font-weight: 700; }
+    @media (prefers-reduced-motion: reduce) { .oyt-speed-fill { transition: none; } .oyt-speed-fill.trad { width: 100%; } .oyt-speed-fill.oyt { width: 28%; } }
 
-    @media (max-width: 700px) {
-      .oyt-fp-headline { font-size: 32px; white-space: normal; }
-    }
+    /* SECTION 5 SCREENING */
+    .oyt-scr-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; max-width: 1100px; margin: 0 auto; }
+    .oyt-scr-list { list-style: none; margin: 0; padding: 0; }
+    .oyt-scr-item { display: grid; grid-template-columns: 34px 1fr; gap: 16px; align-items: start; padding: 1.05rem 0; border-top: 1px solid var(--oyt-border); }
+    .oyt-scr-item:first-child { border-top: none; }
+    .oyt-scr-check { width: 28px; height: 28px; border-radius: 50%; background: var(--oyt-pink); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .oyt-scr-text { font-size: var(--fs-md); font-weight: 500; line-height: 1.5; color: var(--oyt-text-primary); }
+    .oyt-scr-image { position: relative; aspect-ratio: 4 / 5; background: var(--oyt-gray-fa); border: 1px dashed #ccc; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; overflow: hidden; }
+    .oyt-scr-image img { width: 100%; height: 100%; object-fit: cover; }
+    .oyt-scr-ph-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--oyt-pink-soft); display: flex; align-items: center; justify-content: center; }
+    .oyt-scr-ph-text { font-size: var(--fs-xs); font-weight: 600; color: #999; margin: 0; }
+    @media (max-width: 820px) { .oyt-scr-grid { grid-template-columns: 1fr; } .oyt-scr-image { aspect-ratio: 16 / 10; max-height: 320px; order: -1; } }
 
-    /* ============================================
-       SECTION 6: PRICING (competitive model with toggle)
-       ============================================ */
-    .oyt-pricing-card {
-      background: var(--oyt-gray-bg);
-      border-radius: 16px;
-      padding: 2rem 2rem 1.75rem;
-      max-width: 900px;
-      margin: 0 auto;
+    /* SECTION 6 BENEFITS */
+    .oyt-ben-viz {
+      max-width: 1000px; margin: 0 auto 3.25rem; background: var(--oyt-gray-fa);
+      border: 1px solid var(--oyt-border); border-radius: 24px; padding: clamp(1.75rem, 3.5vw, 2.75rem);
+      display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center;
     }
-    .oyt-pricing-header {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 12px; flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-    .oyt-pricing-eyebrow {
-      font-size: 10.5px; font-weight: 700;
-      color: var(--oyt-pink);
-      letter-spacing: 0.1em; text-transform: uppercase;
-      margin: 0 0 8px;
-    }
-    .oyt-pricing-headline {
-      font-size: 28px; font-weight: 700;
-      margin: 0 0 6px;
-      color: var(--oyt-text-primary);
-      letter-spacing: -0.01em;
-    }
-    .oyt-pricing-headline .accent { color: var(--oyt-pink); }
-    .oyt-pricing-sub {
-      font-size: 14px;
-      color: var(--oyt-text-secondary);
-      margin: 0;
-      font-weight: 400;
-      line-height: 1.5;
-    }
-    .oyt-pricing-toggle {
-      display: inline-flex;
-      border: 1px solid #d4d4d4;
-      border-radius: 999px;
-      overflow: hidden;
-      background: var(--oyt-white);
-      flex-shrink: 0;
-    }
-    .oyt-pricing-toggle button {
-      border: none;
-      border-radius: 999px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px; font-weight: 500;
-      padding: 8px 16px;
-      background: transparent;
-      color: var(--oyt-text-secondary);
-      cursor: pointer;
-    }
-    .oyt-pricing-toggle button.active {
-      background: var(--oyt-black);
-      color: var(--oyt-white);
-      font-weight: 500;
-    }
-    .oyt-pricing-tiers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .oyt-tier {
-      background: var(--oyt-white);
-      border-radius: 12px;
-      padding: 1.25rem 1rem;
-      text-align: center;
-      border: 1px solid #ececec;
-      position: relative;
-    }
-    .oyt-tier-featured {
-      border: 2px solid var(--oyt-pink);
-    }
-    .oyt-tier-badge {
-      position: absolute;
-      top: -11px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--oyt-pink);
-      color: var(--oyt-white);
-      font-size: 10px; font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .oyt-tier-label {
-      font-size: 10.5px; font-weight: 700;
-      color: var(--oyt-text-secondary);
-      letter-spacing: 0.12em; text-transform: uppercase;
-      margin: 2px 0 12px;
-    }
-    .oyt-tier-price {
-      font-size: 32px; font-weight: 700;
-      color: var(--oyt-text-primary);
-      margin: 0;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .oyt-tier-unit {
-      font-size: 11.5px;
-      color: var(--oyt-text-muted);
-      margin: 8px 0 0;
-      font-weight: 400;
-    }
-    .oyt-pricing-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 10px 20px;
-      margin-bottom: 1.5rem;
-    }
-    .oyt-pricing-feature {
-      font-size: 13px;
-      color: var(--oyt-text-secondary);
-      margin: 0;
-      font-weight: 400;
-      display: flex; align-items: center; gap: 9px;
-    }
-    .oyt-pricing-feature-strong {
-      color: var(--oyt-text-primary);
-      font-weight: 500;
-    }
-    .oyt-pricing-feature::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--oyt-pink);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .oyt-pricing-cta-wrap { text-align: center; }
-    .oyt-pricing-footer {
-      border-top: 1px solid #d4d4d4;
-      margin-top: 1.5rem;
-      padding-top: 1rem;
-      text-align: center;
-    }
-    .oyt-pricing-footer p {
-      font-size: 12.5px;
-      color: var(--oyt-text-secondary);
-      margin: 0;
-      font-weight: 400;
-    }
-    .oyt-pricing-footer a {
-      color: var(--oyt-pink);
-      font-weight: 500;
-      cursor: pointer;
-    }
+    .oyt-ben-viz-label { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--oyt-text-muted); margin: 0 0 1.5rem; }
+    .oyt-ben-bar-row { margin-bottom: 1.25rem; }
+    .oyt-ben-bar-row:last-child { margin-bottom: 0; }
+    .oyt-ben-bar-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+    .oyt-ben-bar-name { font-size: var(--fs-sm); font-weight: 600; color: var(--oyt-text-primary); }
+    .oyt-ben-bar-note { font-size: var(--fs-xs); font-weight: 500; color: var(--oyt-text-muted); }
+    .oyt-ben-track { height: 14px; border-radius: 999px; background: #e6e6e6; overflow: hidden; }
+    .oyt-ben-fill { height: 100%; border-radius: 999px; width: 0; transition: width 1s cubic-bezier(0.2,0.7,0.2,1); }
+    .oyt-ben-fill-us { background: #cfcfcf; }
+    .oyt-ben-fill-oyt { background: var(--oyt-pink); }
+    .oyt-ben-viz.in-view .oyt-ben-fill-us { width: 100%; }
+    .oyt-ben-viz.in-view .oyt-ben-fill-oyt { width: 32%; }
+    .oyt-ben-viz-callout { border-left: 1px solid var(--oyt-border); padding-left: clamp(2rem, 4vw, 3.5rem); text-align: center; }
+    .oyt-ben-viz-big { font-size: clamp(2.2rem, 4.5vw, 44px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: var(--oyt-pink); margin: 0; }
+    .oyt-ben-viz-cap { font-size: var(--fs-sm); color: var(--oyt-text-secondary); margin: 10px 0 0; }
+    @media (max-width: 760px) { .oyt-ben-viz { grid-template-columns: 1fr; gap: 1.75rem; } .oyt-ben-viz-callout { border-left: none; border-top: 1px solid var(--oyt-border); padding-left: 0; padding-top: 1.75rem; } }
 
-    @media (max-width: 700px) {
-      .oyt-pricing-headline { font-size: 22px; }
-    }
+    /* CALCULATOR */
+    .oyt-calc-card { max-width: 1000px; margin: 0 auto; background: var(--oyt-black); border: 1px solid rgba(255,255,255,0.14); border-radius: 24px; overflow: hidden; display: grid; grid-template-columns: 0.9fr 1.1fr; color: var(--oyt-white); }
+    .oyt-calc-inputs { padding: clamp(1.5rem, 3vw, 2.5rem); border-right: 1px solid rgba(255,255,255,0.12); }
+    .oyt-calc-results { padding: clamp(1.5rem, 3vw, 2.5rem); }
+    .oyt-calc-field { margin-bottom: 1.75rem; }
+    .oyt-calc-field:last-child { margin-bottom: 0; }
+    .oyt-calc-label { display: block; font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.55); margin-bottom: 0.6rem; }
+    .oyt-calc-select { width: 100%; font-family: 'Montserrat', sans-serif; font-size: var(--fs-md); font-weight: 500; color: var(--oyt-white); padding: 12px 40px 12px 14px; border: 1px solid rgba(255,255,255,0.20); border-radius: 12px; background-color: rgba(255,255,255,0.05); cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23bbbbbb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+    .oyt-calc-select option, .oyt-calc-select optgroup { background: #141414; color: var(--oyt-white); }
+    .oyt-calc-select:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    .oyt-calc-seg { display: flex; border: 1px solid rgba(255,255,255,0.20); border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.05); }
+    .oyt-calc-seg button { flex: 1; border: none; border-radius: 999px; font-family: 'Montserrat', sans-serif; font-size: var(--fs-sm); font-weight: 500; padding: 10px 8px; background: transparent; color: rgba(255,255,255,0.6); cursor: pointer; }
+    .oyt-calc-seg button.active { background: var(--oyt-white); color: var(--oyt-black); }
+    .oyt-calc-seg button:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    .oyt-calc-stepper { display: inline-flex; align-items: center; border: 1px solid rgba(255,255,255,0.20); border-radius: 999px; background: rgba(255,255,255,0.05); }
+    .oyt-calc-step { width: 44px; height: 44px; border: none; background: transparent; font-size: 22px; font-weight: 500; color: var(--oyt-white); cursor: pointer; border-radius: 999px; display: flex; align-items: center; justify-content: center; }
+    .oyt-calc-step:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    .oyt-calc-step:disabled { color: rgba(255,255,255,0.25); cursor: default; }
+    .oyt-calc-count { min-width: 48px; text-align: center; font-size: var(--fs-lg); font-weight: 700; color: var(--oyt-white); }
+    .oyt-calc-saveline { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.6); margin: 0 0 0.5rem; }
+    .oyt-calc-savebig { font-size: clamp(2.4rem, 6vw, 56px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: var(--oyt-pink); margin: 0; }
+    .oyt-calc-savesub { font-size: var(--fs-sm); color: rgba(255,255,255,0.65); margin: 0.6rem 0 1.75rem; }
+    .oyt-calc-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; overflow: hidden; margin-bottom: 1.5rem; }
+    .oyt-calc-cell { background: rgba(255,255,255,0.04); padding: 1rem 1.15rem; }
+    .oyt-calc-cell-label { font-size: var(--fs-xs); color: rgba(255,255,255,0.55); margin: 0 0 6px; }
+    .oyt-calc-cell-val { font-size: var(--fs-lg); font-weight: 800; margin: 0; }
+    .oyt-calc-cell-us .oyt-calc-cell-val { color: rgba(255,255,255,0.85); }
+    .oyt-calc-cell-oyt .oyt-calc-cell-val { color: var(--oyt-pink); }
+    .oyt-calc-cell-sub { font-size: var(--fs-xs); color: rgba(255,255,255,0.45); margin: 4px 0 0; }
+    .oyt-calc-cta-wrap { margin-top: 1.75rem; }
+    .oyt-calc-note { max-width: 1000px; margin: 1.1rem auto 0; text-align: center; font-size: var(--fs-xs); color: var(--oyt-text-muted); }
+    @media (max-width: 860px) { .oyt-calc-card { grid-template-columns: 1fr; } .oyt-calc-inputs { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); } }
+
+    /* SECTION 7 TESTIMONIALS */
+    .oyt-tst-header { text-align: center; margin-bottom: 2.75rem; }
+    .oyt-tst-carousel { position: relative; }
+    .oyt-tst-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 8px; -ms-overflow-style: none; scrollbar-width: none; }
+    .oyt-tst-track::-webkit-scrollbar { display: none; }
+    .oyt-tst-card { flex: 0 0 calc((100% - 40px) / 3); scroll-snap-align: start; background: var(--oyt-white); border-radius: 18px; padding: 1.85rem 1.65rem; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .oyt-tst-head { padding-bottom: 1.25rem; border-bottom: 1px solid var(--oyt-border); margin-bottom: 1.25rem; }
+    .oyt-tst-name { font-size: var(--fs-lg); font-weight: 800; color: var(--oyt-text-primary); letter-spacing: -0.01em; margin: 0 0 8px; }
+    .oyt-tst-role, .oyt-tst-firm { font-size: var(--fs-sm); font-weight: 500; color: var(--oyt-text-muted); line-height: 1.5; margin: 0; }
+    .oyt-tst-quote { margin: 0 0 1.5rem; }
+    .oyt-tst-quote p { font-size: var(--fs-sm); font-weight: 400; line-height: 1.65; color: var(--oyt-text-secondary); margin: 0 0 0.9rem; }
+    .oyt-tst-quote p:last-child { margin-bottom: 0; }
+    .oyt-tst-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-top: 1.5rem; border-top: 1px solid var(--oyt-border); }
+    .oyt-tst-stat { padding-left: 14px; border-left: 1px solid var(--oyt-border); }
+    .oyt-tst-stat:first-child { padding-left: 0; border-left: none; }
+    .oyt-tst-stat-num { display: block; font-size: clamp(1.5rem, 1.9vw, 28px); font-weight: 900; color: var(--oyt-pink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 7px; }
+    .oyt-tst-stat-lbl { display: block; font-size: var(--fs-xs); font-weight: 500; color: var(--oyt-text-muted); line-height: 1.3; min-height: 2.6em; }
+    .oyt-tst-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: var(--oyt-white); border: 1px solid var(--oyt-border); box-shadow: 0 6px 18px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; color: var(--oyt-pink); cursor: pointer; z-index: 2; transition: opacity 0.2s ease, transform 0.15s ease; }
+    .oyt-tst-arrow:hover { transform: translateY(-50%) scale(1.06); }
+    .oyt-tst-prev { left: -14px; }
+    .oyt-tst-next { right: -14px; }
+    .oyt-tst-arrow:disabled { opacity: 0.35; pointer-events: none; }
+    .oyt-tst-arrow:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    .oyt-tst-dots { display: flex; justify-content: center; gap: 9px; margin-top: 2rem; }
+    .oyt-tst-dot { width: 9px; height: 9px; border-radius: 50%; background: #d0d0d0; border: none; padding: 0; cursor: pointer; transition: background 0.2s ease, width 0.2s ease; }
+    .oyt-tst-dot.active { background: var(--oyt-pink); width: 22px; border-radius: 999px; }
+    .oyt-tst-dot:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    @media (max-width: 1024px) { .oyt-tst-card { flex-basis: calc((100% - 20px) / 2); } .oyt-tst-prev { left: -6px; } .oyt-tst-next { right: -6px; } }
+    @media (max-width: 640px) { .oyt-tst-card { flex-basis: 86%; } }
+    @media (prefers-reduced-motion: reduce) { .oyt-tst-track { scroll-behavior: auto; } }
+
+    /* SECTION 8 PRICING */
+    .oyt-pr3-card { max-width: 1100px; margin: 0 auto; background: var(--oyt-white); border: 1px solid var(--oyt-border); border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.06); padding: clamp(1.75rem, 4vw, 3rem); }
+    .oyt-pr3-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .oyt-pr3-headline { font-size: clamp(1.6rem, 3vw, 32px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; margin: 0; color: var(--oyt-text-primary); }
+    .oyt-pr3-headline .accent { color: var(--oyt-pink); }
+    .oyt-pr3-sub { font-size: var(--fs-sm); color: var(--oyt-text-secondary); margin: 10px 0 0; }
+    .oyt-pr3-toggle { display: inline-flex; border: 1px solid #d4d4d4; border-radius: 999px; overflow: hidden; background: var(--oyt-white); flex-shrink: 0; }
+    .oyt-pr3-toggle button { border: none; border-radius: 999px; font-family: 'Montserrat', sans-serif; font-size: var(--fs-sm); font-weight: 500; padding: 9px 16px; background: transparent; color: var(--oyt-text-secondary); cursor: pointer; white-space: nowrap; }
+    .oyt-pr3-toggle button.active { background: var(--oyt-black); color: var(--oyt-white); }
+    .oyt-pr3-toggle button:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    .oyt-pr3-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 1.5rem; }
+    .oyt-pr3-tier { position: relative; border: 1px solid var(--oyt-border); border-radius: 18px; padding: 1.7rem 1rem 1.5rem; text-align: center; }
+    .oyt-pr3-tier-featured { border-color: var(--oyt-pink); box-shadow: 0 0 0 1px var(--oyt-pink); }
+    .oyt-pr3-tier-tag { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--oyt-pink); color: var(--oyt-white); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
+    .oyt-pr3-tier-lbl { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--oyt-text-muted); margin: 0 0 0.7rem; }
+    .oyt-pr3-tier-price { font-size: clamp(2rem, 4vw, 42px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: var(--oyt-text-primary); margin: 0 0 0.5rem; }
+    .oyt-pr3-tier-unit { font-size: var(--fs-sm); color: var(--oyt-text-muted); margin: 0; }
+    .oyt-pr3-pay { display: flex; align-items: center; gap: 12px; background: var(--oyt-pink-soft); border: 1px solid #f3d9e8; border-radius: 14px; padding: 14px 18px; margin-bottom: 1.75rem; }
+    .oyt-pr3-pay svg { color: var(--oyt-pink); flex-shrink: 0; }
+    .oyt-pr3-pay p { margin: 0; font-size: var(--fs-sm); line-height: 1.5; color: var(--oyt-text-secondary); }
+    .oyt-pr3-pay b { color: var(--oyt-text-primary); font-weight: 700; }
+    .oyt-pr3-feats { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 30px; padding-top: 1.5rem; border-top: 1px solid var(--oyt-border); margin-bottom: 1.75rem; }
+    .oyt-pr3-feat { display: inline-flex; align-items: center; gap: 9px; font-size: var(--fs-sm); font-weight: 500; color: var(--oyt-text-secondary); white-space: nowrap; }
+    .oyt-pr3-feat svg { color: var(--oyt-pink); flex-shrink: 0; }
+    .oyt-pr3-cta-wrap { text-align: center; }
+    .oyt-pr3-note { text-align: center; font-size: var(--fs-xs); color: var(--oyt-text-muted); margin: 16px 0 0; line-height: 1.5; }
+    @media (max-width: 640px) { .oyt-pr3-tiers { grid-template-columns: 1fr; } .oyt-pr3-feats { flex-direction: column; align-items: center; } }
+
+    /* FOOTER */
+    .oyt-footer { background: var(--oyt-black); color: var(--oyt-white); padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) 1.75rem; }
+    .oyt-ft-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: clamp(2rem, 4vw, 3rem); max-width: 1160px; margin: 0 auto; }
+    .oyt-ft-logo { display: flex; align-items: baseline; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: var(--oyt-white); text-decoration: none; }
+    .oyt-ft-logo-y { position: relative; }
+    .oyt-ft-logo-dot { position: absolute; top: 2px; right: -6px; width: 7px; height: 7px; background: var(--oyt-pink); border-radius: 50%; }
+    .oyt-ft-logo-t { margin-left: 7px; }
+    .oyt-ft-socials { display: flex; gap: 10px; margin-top: 22px; }
+    .oyt-ft-soc { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); transition: background 0.2s ease, color 0.2s ease; }
+    .oyt-ft-soc:hover { background: rgba(239,96,163,0.15); color: var(--oyt-pink); }
+    .oyt-ft-soc:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 2px; }
+    .oyt-ft-tag { color: rgba(255,255,255,0.55); font-size: var(--fs-sm); line-height: 1.6; margin: 22px 0 26px; max-width: 340px; }
+    .oyt-ft-col-h { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--oyt-pink); margin: 6px 0 18px; }
+    .oyt-ft-links { display: flex; flex-direction: column; gap: 13px; }
+    .oyt-ft-links a { color: rgba(255,255,255,0.62); font-size: var(--fs-sm); font-weight: 500; text-decoration: none; transition: color 0.2s ease; }
+    .oyt-ft-links a:hover { color: var(--oyt-white); }
+    .oyt-ft-links a:focus-visible { outline: 2px solid var(--oyt-pink); outline-offset: 3px; }
+    .oyt-ft-legal { max-width: 1160px; margin: clamp(2.5rem, 5vw, 3.5rem) auto 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.38); font-size: var(--fs-xs); }
+    @media (max-width: 720px) { .oyt-ft-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .oyt-ft-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-<!-- ============================================
-     SECTION 1 · HERO (dark)
-     ============================================ -->
-<section class="oyt-section oyt-section-dark oyt-atmosphere" id="hero">
-  <div class="oyt-glow-tr"></div>
-  <div class="oyt-glow-bl"></div>
-  <div class="oyt-section-inner">
-
+<header class="oyt-header" id="siteHeader">
+  <div class="oyt-header-inner">
     <nav class="oyt-nav" aria-label="Primary">
-      <a href="#" class="oyt-logo" aria-label="OYT home">
+      <a href="index.html" class="oyt-logo" aria-label="OYT home">
         <span>O</span>
         <span class="oyt-logo-y">Y<span class="oyt-logo-dot"></span></span>
         <span class="oyt-logo-t">T</span>
       </a>
-      <div class="oyt-nav-links">
+      <button class="oyt-nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="oyt-nav-links" id="navLinks">
         <a href="#hero">About</a>
-        <a href="#how-it-works">How it works</a>
+        <a href="how-it-works.html">How it works</a>
         <a href="#pricing">Pricing</a>
         <a href="#">Resources</a>
         <a href="#">FAQ</a>
         <a href="#">Contact</a>
       </div>
     </nav>
+  </div>
+</header>
 
+<section class="oyt-section oyt-section-dark oyt-atmosphere oyt-hero-section" id="hero">
+  <div class="oyt-glow-tr"></div>
+  <div class="oyt-glow-bl"></div>
+  <div class="oyt-section-inner">
     <div class="oyt-hero-grid">
       <div>
         <div class="oyt-hero-eyebrow">
           <span class="oyt-hero-eyebrow-line"></span>
           Boutique Global Staffing
         </div>
-
         <h1 class="oyt-hero-headline">
           Stop Hiring.<br>
           Let Us Do It.
         </h1>
-
         <p class="oyt-hero-sub">
           We source global talent, run the video interviews, and deliver the shortlist. You just choose.
         </p>
-
         <div class="oyt-hero-buttons">
-          <a href="#pricing" class="oyt-btn-primary">
-            Book a Talent Strategy Call <span aria-hidden="true">→</span>
-          </a>
+          <a href="#pricing" class="oyt-btn-primary">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a>
           <a href="#how-it-works" class="oyt-btn-outline-dark">How It Works</a>
         </div>
+        <div class="oyt-hero-stats">
+          <div>
+            <p class="oyt-hero-stat-label">Clients served</p>
+            <p class="oyt-hero-stat-value">250<span class="oyt-hero-stat-accent">+</span></p>
+          </div>
+          <div>
+            <p class="oyt-hero-stat-label">Client costs saved</p>
+            <p class="oyt-hero-stat-value">$15M<span class="oyt-hero-stat-accent">+</span></p>
+          </div>
+          <div>
+            <p class="oyt-hero-stat-label">Hours reclaimed</p>
+            <p class="oyt-hero-stat-value">520K<span class="oyt-hero-stat-accent">+</span></p>
+          </div>
+        </div>
       </div>
-
       <div class="oyt-hero-cards">
         <div class="oyt-hero-card oyt-hero-card-lead">
           <div class="oyt-hero-card-icon oyt-hero-card-icon-pink">
@@ -789,7 +568,6 @@
           <p class="oyt-hero-card-title">Globally Sourced</p>
           <p class="oyt-hero-card-desc">Talent from every region. US-based options for senior and fractional roles.</p>
         </div>
-
         <div class="oyt-hero-card">
           <div class="oyt-hero-card-icon oyt-hero-card-icon-peri">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -797,7 +575,6 @@
           <p class="oyt-hero-card-title">College Educated</p>
           <p class="oyt-hero-card-desc">Every candidate holds a degree. Prescreened for skills, English fluency, and role fit.</p>
         </div>
-
         <div class="oyt-hero-card">
           <div class="oyt-hero-card-icon oyt-hero-card-icon-purple">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polygon points="10,9 15,12 10,15" fill="#a965dd"/></svg>
@@ -807,433 +584,722 @@
         </div>
       </div>
     </div>
-
-    <div class="oyt-hero-stats">
-      <div>
-        <p class="oyt-hero-stat-label">Clients served</p>
-        <p class="oyt-hero-stat-value">250<span class="oyt-hero-stat-accent">+</span></p>
-      </div>
-      <div>
-        <p class="oyt-hero-stat-label">Client costs saved</p>
-        <p class="oyt-hero-stat-value">$15M<span class="oyt-hero-stat-accent">+</span></p>
-      </div>
-      <div>
-        <p class="oyt-hero-stat-label">Hours reclaimed</p>
-        <p class="oyt-hero-stat-value">520K<span class="oyt-hero-stat-accent">+</span></p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ============================================
-     SECTION 2 · WHY WE'RE DIFFERENT (light)
-     ============================================ -->
 <section class="oyt-section oyt-section-light" id="why-different">
   <div class="oyt-section-inner">
-
     <div class="oyt-section-header">
       <div class="oyt-eyebrow-centered">
         <span class="oyt-eyebrow-line"></span>
-        Why We're Different
+        We Do It Differently
         <span class="oyt-eyebrow-line"></span>
       </div>
       <h2 class="oyt-h2">
-        Others Screen Résumés.<br>
+        Others Screen Resumes.<br>
         <span class="oyt-h2-accent">We Screen Humans.</span>
       </h2>
-      <p class="oyt-lead">
-        Six things nobody else in this industry does the way we do them.
-      </p>
     </div>
-
-    <div class="oyt-anchor-grid">
-
-      <div class="oyt-anchor-tile">
-        <div class="oyt-anchor-icon-holder oyt-anchor-icon-pink">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/><circle cx="12" cy="8" r="1.5" fill="#ef60a3"/></svg>
+    <div class="oyt-v2-wrap">
+      <div class="oyt-v2-grid">
+        <div class="oyt-v2-image">
+          <div class="oyt-v2-ph-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <p class="oyt-v2-ph-text">Image goes here</p>
         </div>
-        <p class="oyt-anchor-title">Human-led screening</p>
-        <p class="oyt-anchor-desc">Every candidate is personally interviewed by our team. No AI filters, no ATS keyword matching, no résumé roulette.</p>
-      </div>
-
-      <div class="oyt-anchor-tile">
-        <div class="oyt-anchor-icon-holder oyt-anchor-icon-peri">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20"/><path d="M4 20V10l8-5 8 5v10"/><path d="M9 20v-6h6v6"/><circle cx="12" cy="11" r="1" fill="#9196eb"/></svg>
+        <div class="oyt-v2-acc" id="oytV2Acc">
+          <div class="oyt-v2-row open">
+            <button class="oyt-v2-head" aria-expanded="true">
+              <span class="oyt-v2-num" aria-hidden="true">01</span>
+              <span class="oyt-v2-title">Human-led screening &amp; interviews</span>
+              <span class="oyt-v2-chev" aria-hidden="true">&#8964;</span>
+            </button>
+            <div class="oyt-v2-panel">
+              <p class="oyt-v2-desc">No AI filters, no ATS keyword matching, no resume roulette. A real person reviews and interviews every candidate before you ever see them.</p>
+            </div>
+          </div>
+          <div class="oyt-v2-row">
+            <button class="oyt-v2-head" aria-expanded="false">
+              <span class="oyt-v2-num" aria-hidden="true">02</span>
+              <span class="oyt-v2-title">College-educated professionals worldwide</span>
+              <span class="oyt-v2-chev" aria-hidden="true">&#8964;</span>
+            </button>
+            <div class="oyt-v2-panel">
+              <p class="oyt-v2-desc">Sourced across the Americas, Europe, Asia, and Africa, including US-based talent for senior and fractional roles.</p>
+            </div>
+          </div>
+          <div class="oyt-v2-row">
+            <button class="oyt-v2-head" aria-expanded="false">
+              <span class="oyt-v2-num" aria-hidden="true">03</span>
+              <span class="oyt-v2-title">Direct hire placement</span>
+              <span class="oyt-v2-chev" aria-hidden="true">&#8964;</span>
+            </button>
+            <div class="oyt-v2-panel">
+              <p class="oyt-v2-desc">Your new hire works directly for you from day one. No middleman, no agency sitting between you and your team, and no ongoing fees.</p>
+            </div>
+          </div>
+          <div class="oyt-v2-row">
+            <button class="oyt-v2-head" aria-expanded="false">
+              <span class="oyt-v2-num" aria-hidden="true">04</span>
+              <span class="oyt-v2-title">One flat fee. No commission.</span>
+              <span class="oyt-v2-chev" aria-hidden="true">&#8964;</span>
+            </button>
+            <div class="oyt-v2-panel">
+              <p class="oyt-v2-desc">No percentage. Traditional recruiters charge 20% of first-year salary. On a $100,000 role, that's $20,000. We charge a fixed placement fee.</p>
+            </div>
+          </div>
+          <div class="oyt-v2-row">
+            <button class="oyt-v2-head" aria-expanded="false">
+              <span class="oyt-v2-num" aria-hidden="true">05</span>
+              <span class="oyt-v2-title">12-month replacement guarantee</span>
+              <span class="oyt-v2-chev" aria-hidden="true">&#8964;</span>
+            </button>
+            <div class="oyt-v2-panel">
+              <p class="oyt-v2-desc">Twice the industry standard. If they don't work out inside a year, we source their replacement at no additional cost.</p>
+            </div>
+          </div>
+          <div class="oyt-v2-row">
+            <button class="oyt-v2-head" aria-expanded="false">
+              <span class="oyt-v2-num" aria-hidden="true">06</span>
+              <span class="oyt-v2-title">Onboarding &amp; management guide with every hire</span>
+              <span class="oyt-v2-chev" aria-hidden="true">&#8964;</span>
+            </button>
+            <div class="oyt-v2-panel">
+              <p class="oyt-v2-desc">You get tools and video guides on setting your new hire up for success from day one, so they hit the ground running and stay.</p>
+            </div>
+          </div>
         </div>
-        <p class="oyt-anchor-title">Industry-specialized</p>
-        <p class="oyt-anchor-desc">Law firms, accounting, healthcare, home services, and staffing. We know your industry's bottleneck role because we've placed it before.</p>
       </div>
-
-      <div class="oyt-anchor-tile">
-        <div class="oyt-anchor-icon-holder oyt-anchor-icon-purple">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M17 11l3 3-3 3"/><line x1="14" y1="14" x2="20" y2="14"/></svg>
-        </div>
-        <p class="oyt-anchor-title">Direct hire, no middleman</p>
-        <p class="oyt-anchor-desc">Your new hire works only for you from day one. No agency in between and no shared loyalty.</p>
-      </div>
-
-      <div class="oyt-anchor-tile">
-        <div class="oyt-anchor-icon-holder oyt-anchor-icon-pink">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <p class="oyt-anchor-title">One flat placement fee</p>
-        <p class="oyt-anchor-desc">No commission, no percentage of salary. Recruiters charge 20% of a first-year salary. On a $100k role, that is $20,000.</p>
-      </div>
-
-      <div class="oyt-anchor-tile">
-        <div class="oyt-anchor-icon-holder oyt-anchor-icon-peri">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        </div>
-        <p class="oyt-anchor-title">12-month replacement guarantee</p>
-        <p class="oyt-anchor-desc">Twice the industry standard. If they don't work out inside a year, we source their replacement at no additional cost.</p>
-      </div>
-
-      <div class="oyt-anchor-tile">
-        <div class="oyt-anchor-icon-holder oyt-anchor-icon-purple">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="14" y2="11"/></svg>
-        </div>
-        <p class="oyt-anchor-title">Onboarding and management guide</p>
-        <p class="oyt-anchor-desc">Every hire comes with our playbook so they hit the ground running from day one and stay long-term.</p>
-      </div>
-
     </div>
-
-    <div class="oyt-section-cta">
-      <a href="#how-it-works" class="oyt-btn-primary">
-        See How It Works <span aria-hidden="true">→</span>
-      </a>
-    </div>
-
   </div>
 </section>
 
-<!-- ============================================
-     SECTION 3 · INDUSTRIES (dark, hover reveal)
-     ============================================ -->
-<section class="oyt-section oyt-section-dark oyt-atmosphere" id="industries">
-  <div class="oyt-glow-tr"></div>
-  <div class="oyt-glow-bl"></div>
+<section class="oyt-section" id="industries" style="background: #f4f4f4;">
   <div class="oyt-section-inner">
-
     <div class="oyt-industries-header">
-      <p class="oyt-industries-eyebrow">Industry Expertise</p>
-      <h2 class="oyt-h2" style="color: var(--oyt-white);">
-        We Know <span class="oyt-h2-accent">Your Industry.</span>
-      </h2>
+      <p class="oyt-industries-eyebrow">Who We Help</p>
+      <h2 class="oyt-h2">Built for Your <span class="oyt-h2-accent">Industry.</span></h2>
     </div>
-
     <div class="oyt-industries-grid">
-
-      <div class="oyt-industry-tile" tabindex="0">
-        <div class="oyt-industry-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M6 5l-3 8h6z"/><path d="M18 5l-3 8h6z"/><path d="M3 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M15 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M6 21h12"/></svg>
+      <div class="oyt-industry-tile">
+        <div class="oyt-industry-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 5l-3 8h6z"/><path d="M18 5l-3 8h6z"/><path d="M3 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M15 13c0 2 1.5 3 3 3s3-1 3-3"/><path d="M6 21h12"/></svg>
         </div>
         <p class="oyt-industry-name">Law Firms</p>
-        <p class="oyt-industry-roles">Paralegal · Client Intake Coordinator</p>
-        <span class="oyt-industry-metric">Bill more hours <span aria-hidden="true">→</span></span>
+        <p class="oyt-industry-roles">Paralegal<br>Client Intake</p>
       </div>
-
-      <div class="oyt-industry-tile" tabindex="0">
-        <div class="oyt-industry-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="13" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="14" y2="18"/></svg>
+      <div class="oyt-industry-tile">
+        <div class="oyt-industry-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="10" y2="11"/><line x1="13" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="10" y2="15"/><line x1="13" y1="15" x2="16" y2="15"/></svg>
         </div>
         <p class="oyt-industry-name">Accounting Services</p>
-        <p class="oyt-industry-roles">Bookkeeper · AP/AR Specialist</p>
-        <span class="oyt-industry-metric">Advisory time back <span aria-hidden="true">→</span></span>
+        <p class="oyt-industry-roles">Bookkeeper<br>AP/AR Specialist</p>
       </div>
-
-      <div class="oyt-industry-tile" tabindex="0">
-        <div class="oyt-industry-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <div class="oyt-industry-tile">
+        <div class="oyt-industry-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
         <p class="oyt-industry-name">Healthcare Practices</p>
-        <p class="oyt-industry-roles">Medical Billing · Back Office</p>
-        <span class="oyt-industry-metric">Recover more claims <span aria-hidden="true">→</span></span>
+        <p class="oyt-industry-roles">Medical Billing<br>Back Office</p>
       </div>
-
-      <div class="oyt-industry-tile" tabindex="0">
-        <div class="oyt-industry-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
-        </div>
-        <p class="oyt-industry-name">Home Services</p>
-        <p class="oyt-industry-roles">Dispatcher · Scheduling Coordinator</p>
-        <span class="oyt-industry-metric">Answer every call <span aria-hidden="true">→</span></span>
-      </div>
-
-      <div class="oyt-industry-tile" tabindex="0">
-        <div class="oyt-industry-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="8" r="2.5"/><path d="M15 21v-1.5a3.5 3.5 0 0 1 3.5-3.5h.5a2.5 2.5 0 0 1 2.5 2.5v2.5"/></svg>
+      <div class="oyt-industry-tile">
+        <div class="oyt-industry-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a965dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="8" r="2.5"/><path d="M15 21v-1.5a3.5 3.5 0 0 1 3.5-3.5h.5a2.5 2.5 0 0 1 2.5 2.5v2.5"/></svg>
         </div>
         <p class="oyt-industry-name">Staffing &amp; Recruiting</p>
-        <p class="oyt-industry-roles">Sourcer · Recruiter</p>
-        <span class="oyt-industry-metric">Fill your pipeline <span aria-hidden="true">→</span></span>
+        <p class="oyt-industry-roles">Sourcer<br>Recruiter</p>
       </div>
-
-      <div class="oyt-industry-tile" tabindex="0">
-        <div class="oyt-industry-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      <div class="oyt-industry-tile">
+        <div class="oyt-industry-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9196eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
         <p class="oyt-industry-name">Insurance Agencies</p>
-        <p class="oyt-industry-roles">Customer Service · Back Office</p>
-        <span class="oyt-industry-metric">Own retention <span aria-hidden="true">→</span></span>
+        <p class="oyt-industry-roles">Customer Service<br>Back Office</p>
       </div>
-
+      <div class="oyt-industry-tile">
+        <div class="oyt-industry-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+        </div>
+        <p class="oyt-industry-name">Home Services</p>
+        <p class="oyt-industry-roles">Dispatcher<br>Sales</p>
+      </div>
     </div>
-
     <div class="oyt-industries-footer">
       <p class="oyt-industries-footer-note">Not seeing your industry? We may still be a fit.</p>
-      <a href="#pricing" class="oyt-btn-primary">
-        Book a Talent Strategy Call <span aria-hidden="true">→</span>
-      </a>
     </div>
-
   </div>
 </section>
 
-<!-- ============================================
-     SECTION 4 · HOW IT WORKS (horizontal, interactive)
-     ============================================ -->
 <section class="oyt-section oyt-section-light" id="how-it-works">
   <div class="oyt-section-inner">
-
     <div class="oyt-hiw-header">
       <p class="oyt-industries-eyebrow" style="color: var(--oyt-pink);">Our Process</p>
-      <h2 class="oyt-h2">
-        How It <span class="oyt-h2-accent">Works.</span>
-      </h2>
+      <h2 class="oyt-h2">How It <span class="oyt-h2-accent">Works.</span></h2>
     </div>
-
-    <div class="oyt-htimeline" id="oytHTimeline" role="tablist" aria-label="Three-phase process overview">
-
-      <button class="oyt-hstep active" data-step="0" role="tab" aria-selected="true" type="button">
-        <div class="oyt-hcircle">01</div>
-        <p class="oyt-hcat">Strategy &amp;<br>Role Mapping</p>
-        <p class="oyt-htitle">You Book a<br>Complimentary<br>Strategy Call</p>
-      </button>
-
-      <button class="oyt-hstep" data-step="1" role="tab" aria-selected="false" type="button">
-        <div class="oyt-hcircle">02</div>
-        <p class="oyt-hcat">Sourcing &amp;<br>Shortlisting</p>
-        <p class="oyt-htitle">We Manage<br>the Full Search</p>
-      </button>
-
-      <button class="oyt-hstep" data-step="2" role="tab" aria-selected="false" type="button">
-        <div class="oyt-hcircle">03</div>
-        <p class="oyt-hcat">Direct Hire &amp;<br>Onboarding</p>
-        <p class="oyt-htitle">You Hire Them<br>Directly</p>
-      </button>
-
+    <div class="oyt-hcards">
+      <div class="oyt-hcard">
+        <div class="oyt-hcard-media">
+          <div class="oyt-hcard-ph-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+          <p class="oyt-hcard-ph-text">Image 01</p>
+        </div>
+        <p class="oyt-hcard-cat">Strategy &amp; Role Mapping</p>
+        <p class="oyt-hcard-title">You Book a Complimentary Strategy Call</p>
+      </div>
+      <div class="oyt-hcard">
+        <div class="oyt-hcard-media">
+          <div class="oyt-hcard-ph-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+          <p class="oyt-hcard-ph-text">Image 02</p>
+        </div>
+        <p class="oyt-hcard-cat">Sourcing &amp; Shortlisting</p>
+        <p class="oyt-hcard-title">We Manage the Full Search</p>
+      </div>
+      <div class="oyt-hcard">
+        <div class="oyt-hcard-media">
+          <div class="oyt-hcard-ph-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+          <p class="oyt-hcard-ph-text">Image 03</p>
+        </div>
+        <p class="oyt-hcard-cat">Direct Hire &amp; Onboarding</p>
+        <p class="oyt-hcard-title">You Hire Them Directly</p>
+      </div>
     </div>
-
     <div class="oyt-hiw-see-full">
-      <a href="#full-process">
-        See full process <span aria-hidden="true">→</span>
-      </a>
+      <a href="how-it-works.html">See full process <span aria-hidden="true">&rarr;</span></a>
     </div>
-
-    <div class="oyt-hiw-footer">
-      <p class="oyt-hiw-footer-lead">
-        Traditional recruiters take months and bury you in resumes. We deliver a fully vetted, video-interviewed shortlist in weeks, so you can hire faster.
-      </p>
-      <a href="#pricing" class="oyt-btn-primary">
-        Book a Talent Strategy Call <span aria-hidden="true">→</span>
-      </a>
+    <div class="oyt-speed" id="oytSpeed">
+      <div class="oyt-speed-header">
+        <p class="oyt-speed-eyebrow">The Speed Advantage</p>
+        <h3 class="oyt-speed-headline">Hire Up To <span class="oyt-h2-accent">4x Faster.</span></h3>
+        <p class="oyt-speed-sub">Traditional recruiters take months and bury you in resumes. We deliver a fully vetted, video-interviewed shortlist in weeks.</p>
+      </div>
+      <div class="oyt-speed-row">
+        <div class="oyt-speed-labels">
+          <span class="oyt-speed-name">Traditional Recruiting</span>
+          <span class="oyt-speed-weeks"><b>8&ndash;12</b> weeks</span>
+        </div>
+        <div class="oyt-speed-track"><div class="oyt-speed-fill trad"></div></div>
+      </div>
+      <div class="oyt-speed-row">
+        <div class="oyt-speed-labels">
+          <span class="oyt-speed-name pink">OYT</span>
+          <span class="oyt-speed-weeks pink"><b>2&ndash;4</b> weeks</span>
+        </div>
+        <div class="oyt-speed-track pink"><div class="oyt-speed-fill oyt"></div></div>
+      </div>
+      <p class="oyt-speed-punch">While they're still screening, <b>your new hire is already working.</b></p>
     </div>
-
+    <div class="oyt-hiw-footer" style="border-top:none;padding-top:2.5rem;">
+      <a href="#pricing" class="oyt-btn-primary">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a>
+    </div>
   </div>
 </section>
 
-<!-- ============================================
-     SECTION 5 · FULL PROCESS (vertical, six steps)
-     ============================================ -->
 <section class="oyt-section oyt-section-light" id="full-process">
   <div class="oyt-section-inner">
-
-    <div class="oyt-fp-header">
-      <p class="oyt-fp-eyebrow">The Full Process</p>
-      <h2 class="oyt-fp-headline">
-        First Call to <span class="oyt-h2-accent">First Day.</span>
-      </h2>
+    <div class="oyt-section-header">
+      <h2 class="oyt-h2">Our Screening <span class="oyt-h2-accent">Process.</span></h2>
     </div>
-
-    <div class="oyt-vlist">
-
-      <div class="oyt-vitem">
-        <div class="oyt-vdot" aria-hidden="true"></div>
-        <div>
-          <h3 class="oyt-vitem-title">You Book a Complimentary Strategy Call</h3>
-          <p class="oyt-vitem-desc">A complimentary strategy session focused on role mapping. We map your team structure, uncover the bottlenecks, and define the exact role that will move the needle most. You walk away with clarity before we ever start searching.</p>
-        </div>
+    <div class="oyt-scr-grid">
+      <ul class="oyt-scr-list">
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">We source &gt; 100 candidates for each role.</span>
+        </li>
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">Interview 20-25 applicants for each role.</span>
+        </li>
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">Evaluate English fluency and relevant job experience.</span>
+        </li>
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">Assess if candidates' skills match a job description.</span>
+        </li>
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">Evaluate computer specs, internet speed, and validate backup.</span>
+        </li>
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">Assess and negotiate competitive market rate based on the role and experience.</span>
+        </li>
+        <li class="oyt-scr-item">
+          <span class="oyt-scr-check" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="oyt-scr-text">Provide top candidates (with resumes, DISC profiles, and video interviews).</span>
+        </li>
+      </ul>
+      <div class="oyt-scr-image">
+        <div class="oyt-scr-ph-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <p class="oyt-scr-ph-text">Image goes here</p>
       </div>
-
-      <div class="oyt-vitem">
-        <div class="oyt-vdot" aria-hidden="true"></div>
-        <div>
-          <h3 class="oyt-vitem-title">We Manage the Full Search</h3>
-          <p class="oyt-vitem-desc">We write the job description, pay for the ads, and search the full global market from scratch. Most agencies pull from a database they already have. We go out fresh every time. We prequalify and personally interview the top candidates. You do none of this.</p>
-        </div>
-      </div>
-
-      <div class="oyt-vitem">
-        <div class="oyt-vdot" aria-hidden="true"></div>
-        <div>
-          <h3 class="oyt-vitem-title">You Review the Shortlist</h3>
-          <p class="oyt-vitem-desc">We send you a shortlist of candidates with their resumes, DISC profiles, and recorded video interviews. You review on your own time and choose your favorites.</p>
-        </div>
-      </div>
-
-      <div class="oyt-vitem">
-        <div class="oyt-vdot" aria-hidden="true"></div>
-        <div>
-          <h3 class="oyt-vitem-title">We Schedule the Interviews</h3>
-          <p class="oyt-vitem-desc">We coordinate the interviews between you and your top picks so you can meet them, ask your questions, and make a confident final decision.</p>
-        </div>
-      </div>
-
-      <div class="oyt-vitem">
-        <div class="oyt-vdot" aria-hidden="true"></div>
-        <div>
-          <h3 class="oyt-vitem-title">You Hire Them Directly</h3>
-          <p class="oyt-vitem-desc">Onboard them directly or through a third-party payroll provider. Either way, they work exclusively for you and become a dedicated part of your team.</p>
-        </div>
-      </div>
-
-      <div class="oyt-vitem">
-        <div class="oyt-vdot" aria-hidden="true"></div>
-        <div>
-          <h3 class="oyt-vitem-title">We Hand You the Onboarding Guide</h3>
-          <p class="oyt-vitem-desc">We provide a full onboarding and management guide so you know exactly how to set them up, integrate them into your team, and keep them long term.</p>
-        </div>
-      </div>
-
     </div>
-
-    <div class="oyt-fp-cta">
-      <a href="#pricing" class="oyt-btn-primary">
-        Book a Talent Strategy Call <span aria-hidden="true">→</span>
-      </a>
-    </div>
-
   </div>
 </section>
 
-<!-- ============================================
-     SECTION 6 · PRICING (with hire-type toggle)
-     ============================================ -->
-<section class="oyt-section oyt-section-light" id="pricing">
+<section class="oyt-section oyt-section-light" id="benefits">
   <div class="oyt-section-inner">
-
-    <div class="oyt-pricing-card">
-
-      <div class="oyt-pricing-header">
-        <div>
-          <p class="oyt-pricing-eyebrow">Main Product</p>
-          <h2 class="oyt-pricing-headline">One flat placement fee<span class="accent">.</span></h2>
-          <p class="oyt-pricing-sub">Pay once. They work for you. Add recurring services only if you want them.</p>
-        </div>
-        <div class="oyt-pricing-toggle" role="tablist" aria-label="Hire type">
-          <button id="pricingFirst" class="active" data-hire="first" role="tab" aria-selected="true" type="button">1st hire</button>
-          <button id="pricingReturn" data-hire="return" role="tab" aria-selected="false" type="button">Returning client</button>
-        </div>
+    <div class="oyt-section-header">
+      <div class="oyt-eyebrow-centered">
+        <span class="oyt-eyebrow-line"></span>
+        The Benefits
+        <span class="oyt-eyebrow-line"></span>
       </div>
-
-      <div class="oyt-pricing-tiers">
-        <div class="oyt-tier">
-          <p class="oyt-tier-label">Junior</p>
-          <p class="oyt-tier-price" id="tierJunior">$6,000</p>
-          <p class="oyt-tier-unit">one-time fee</p>
-        </div>
-        <div class="oyt-tier oyt-tier-featured">
-          <span class="oyt-tier-badge">Most clients land here</span>
-          <p class="oyt-tier-label">Mid-Level</p>
-          <p class="oyt-tier-price" id="tierMid">$8,000</p>
-          <p class="oyt-tier-unit">one-time fee</p>
-        </div>
-        <div class="oyt-tier">
-          <p class="oyt-tier-label">Senior</p>
-          <p class="oyt-tier-price" id="tierSenior">$10,000</p>
-          <p class="oyt-tier-unit">one-time fee</p>
-        </div>
-      </div>
-
-      <div class="oyt-pricing-features">
-        <p class="oyt-pricing-feature">Recorded video interview per candidate</p>
-        <p class="oyt-pricing-feature">DISC profile with every shortlist</p>
-        <p class="oyt-pricing-feature">Industry-specific vetting, not generalist</p>
-        <p class="oyt-pricing-feature">Direct hire, they work only for you</p>
-        <p class="oyt-pricing-feature oyt-pricing-feature-strong">12-month replacement guarantee</p>
-        <p class="oyt-pricing-feature">Onboarding and management guide</p>
-      </div>
-
-      <div class="oyt-pricing-cta-wrap">
-        <a href="#" class="oyt-btn-primary">
-          Book a Talent Strategy Call <span aria-hidden="true">→</span>
-        </a>
-      </div>
-
-      <div class="oyt-pricing-footer">
-        <p>Placed a hire with us before? Every next search comes at the returning-client rate. <a href="#">See how it works</a></p>
-      </div>
-
+      <h2 class="oyt-h2">Unlock the Power of a <span class="oyt-h2-accent">Remote Team.</span></h2>
     </div>
-
+    <div class="oyt-ben-viz" id="oytBenViz">
+      <div class="oyt-ben-viz-bars">
+        <p class="oyt-ben-viz-label">Typical monthly cost, same role</p>
+        <div class="oyt-ben-bar-row">
+          <div class="oyt-ben-bar-top"><span class="oyt-ben-bar-name">In-house US hire</span><span class="oyt-ben-bar-note">salary + overhead</span></div>
+          <div class="oyt-ben-track"><div class="oyt-ben-fill oyt-ben-fill-us"></div></div>
+        </div>
+        <div class="oyt-ben-bar-row">
+          <div class="oyt-ben-bar-top"><span class="oyt-ben-bar-name">OYT-placed nearshore</span><span class="oyt-ben-bar-note">all in</span></div>
+          <div class="oyt-ben-track"><div class="oyt-ben-fill oyt-ben-fill-oyt"></div></div>
+        </div>
+      </div>
+      <div class="oyt-ben-viz-callout">
+        <p class="oyt-ben-viz-big">Up to 70% less</p>
+        <p class="oyt-ben-viz-cap">Same work. A fraction of the cost.</p>
+      </div>
+    </div>
+    <div class="oyt-calc-card">
+      <div class="oyt-calc-inputs">
+        <div class="oyt-calc-field">
+          <label class="oyt-calc-label" for="calcRole">Role</label>
+          <select class="oyt-calc-select" id="calcRole">
+            <optgroup label="Law Firms">
+              <option value="law-paralegal">Paralegal</option>
+              <option value="law-intake">Legal Client Intake</option>
+            </optgroup>
+            <optgroup label="Accounting Services">
+              <option value="acct-bookkeeper">Bookkeeper</option>
+              <option value="acct-apar">AP/AR Specialist</option>
+            </optgroup>
+            <optgroup label="Healthcare Practices">
+              <option value="health-billing">Medical Billing</option>
+              <option value="health-backoffice">Back Office Admin</option>
+            </optgroup>
+            <optgroup label="Staffing &amp; Recruiting">
+              <option value="staff-sourcer">Sourcer</option>
+              <option value="staff-recruiter">Recruiter</option>
+            </optgroup>
+            <optgroup label="Insurance Agencies">
+              <option value="ins-cs">Customer Service</option>
+              <option value="ins-backoffice">Back Office Admin</option>
+            </optgroup>
+            <optgroup label="Home Services">
+              <option value="home-dispatcher">Dispatcher</option>
+              <option value="home-sales">Sales</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="oyt-calc-field">
+          <span class="oyt-calc-label">Seniority</span>
+          <div class="oyt-calc-seg" role="tablist" aria-label="Seniority">
+            <button type="button" data-sen="entry" role="tab" aria-selected="false">Entry</button>
+            <button type="button" data-sen="mid" class="active" role="tab" aria-selected="true">Mid</button>
+            <button type="button" data-sen="senior" role="tab" aria-selected="false">Senior</button>
+          </div>
+        </div>
+        <div class="oyt-calc-field">
+          <span class="oyt-calc-label">Number of hires</span>
+          <div class="oyt-calc-stepper">
+            <button type="button" class="oyt-calc-step" id="calcMinus" aria-label="Decrease hires">&#8722;</button>
+            <span class="oyt-calc-count" id="calcCount" aria-live="polite">1</span>
+            <button type="button" class="oyt-calc-step" id="calcPlus" aria-label="Increase hires">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="oyt-calc-results">
+        <p class="oyt-calc-saveline">Your estimated annual savings</p>
+        <p class="oyt-calc-savebig" id="calcSaveBig">$0</p>
+        <p class="oyt-calc-savesub" id="calcSaveSub">65% less than an in-house US hire</p>
+        <div class="oyt-calc-compare">
+          <div class="oyt-calc-cell oyt-calc-cell-us">
+            <p class="oyt-calc-cell-label">In-house US, monthly</p>
+            <p class="oyt-calc-cell-val" id="calcUsMo">$0</p>
+            <p class="oyt-calc-cell-sub" id="calcUsYr">$0 / year</p>
+          </div>
+          <div class="oyt-calc-cell oyt-calc-cell-oyt">
+            <p class="oyt-calc-cell-label">OYT-placed, monthly</p>
+            <p class="oyt-calc-cell-val" id="calcOytMo">$0</p>
+            <p class="oyt-calc-cell-sub" id="calcOytYr">$0 / year</p>
+          </div>
+        </div>
+        <div class="oyt-calc-cta-wrap">
+          <a href="#pricing" class="oyt-btn-primary">Claim Your Savings <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+    <p class="oyt-calc-note">Based on current market salary data. Your exact numbers are confirmed on the strategy call.</p>
   </div>
 </section>
 
-<!-- ============================================
-     INTERACTIVE BEHAVIOR
-     ============================================ -->
+<section class="oyt-section oyt-section-gray" id="testimonials">
+  <div class="oyt-section-inner">
+    <div class="oyt-tst-header">
+      <div class="oyt-eyebrow-centered">
+        <span class="oyt-eyebrow-line"></span>
+        Testimonials
+        <span class="oyt-eyebrow-line"></span>
+      </div>
+      <h2 class="oyt-h2">Real results with <span class="oyt-h2-accent">real clients.</span></h2>
+    </div>
+    <div class="oyt-tst-carousel">
+      <button class="oyt-tst-arrow oyt-tst-prev" type="button" aria-label="Previous testimonials">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="oyt-tst-track" id="oytTstTrack">
+        <article class="oyt-tst-card">
+          <div class="oyt-tst-head">
+            <p class="oyt-tst-name">Frank P.</p>
+            <p class="oyt-tst-role">Managing Partner</p>
+            <p class="oyt-tst-firm">Personal Injury Firm</p>
+          </div>
+          <div class="oyt-tst-quote">
+            <p>We were losing Spanish-speaking leads and needed the right person fast.</p>
+            <p>OYT helped us hire a bilingual intake specialist in Colombia and grow at a fraction of the cost.</p>
+          </div>
+          <div class="oyt-tst-stats">
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">2x</span><span class="oyt-tst-stat-lbl">Intake capacity</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">30%</span><span class="oyt-tst-stat-lbl">Sales increase</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">$42k</span><span class="oyt-tst-stat-lbl">/year saved</span></div>
+          </div>
+        </article>
+        <article class="oyt-tst-card">
+          <div class="oyt-tst-head">
+            <p class="oyt-tst-name">Dr. Priya N.</p>
+            <p class="oyt-tst-role">Practice Owner</p>
+            <p class="oyt-tst-firm">Family Medicine</p>
+          </div>
+          <div class="oyt-tst-quote">
+            <p>I did not realize nearshore hiring could solve billing delays.</p>
+            <p>Our biller from Mexico helped us speed up billing and improve working capital.</p>
+          </div>
+          <div class="oyt-tst-stats">
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">165%</span><span class="oyt-tst-stat-lbl">Billing speed</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">147%</span><span class="oyt-tst-stat-lbl">Working capital increase</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">$48k</span><span class="oyt-tst-stat-lbl">/year saved</span></div>
+          </div>
+        </article>
+        <article class="oyt-tst-card">
+          <div class="oyt-tst-head">
+            <p class="oyt-tst-name">Ryan T.</p>
+            <p class="oyt-tst-role">Managing Partner</p>
+            <p class="oyt-tst-firm">CPA Firm</p>
+          </div>
+          <div class="oyt-tst-quote">
+            <p>The process was simple and the recorded interviews made candidate review so easy.</p>
+            <p>We hired two bookkeepers and freed up our senior team for higher-margin advisory work.</p>
+          </div>
+          <div class="oyt-tst-stats">
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">2</span><span class="oyt-tst-stat-lbl">Bookkeepers placed</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">125%</span><span class="oyt-tst-stat-lbl">Margin increase</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">$74k</span><span class="oyt-tst-stat-lbl">/year saved</span></div>
+          </div>
+        </article>
+        <article class="oyt-tst-card">
+          <div class="oyt-tst-head">
+            <p class="oyt-tst-name">Dr. Shama R.</p>
+            <p class="oyt-tst-role">Co-Founder</p>
+            <p class="oyt-tst-firm">Tech Startup</p>
+          </div>
+          <div class="oyt-tst-quote">
+            <p>The strategy session helped us uncover the real bottlenecks before hiring.</p>
+            <p>We ended up filling 2 mid-level and 2 senior-level roles that helped us improve operations.</p>
+          </div>
+          <div class="oyt-tst-stats">
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">4</span><span class="oyt-tst-stat-lbl">Staff members placed</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">$100k+</span><span class="oyt-tst-stat-lbl">Saved</span></div>
+            <div class="oyt-tst-stat"><span class="oyt-tst-stat-num">2</span><span class="oyt-tst-stat-lbl">Years partnered</span></div>
+          </div>
+        </article>
+      </div>
+      <button class="oyt-tst-arrow oyt-tst-next" type="button" aria-label="Next testimonials">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="oyt-tst-dots" id="oytTstDots">
+      <button class="oyt-tst-dot active" type="button" aria-label="Go to testimonial 1"></button>
+      <button class="oyt-tst-dot" type="button" aria-label="Go to testimonial 2"></button>
+      <button class="oyt-tst-dot" type="button" aria-label="Go to testimonial 3"></button>
+      <button class="oyt-tst-dot" type="button" aria-label="Go to testimonial 4"></button>
+    </div>
+  </div>
+</section>
+
+<section class="oyt-section oyt-section-gray" id="pricing">
+  <div class="oyt-section-inner">
+    <div class="oyt-pr3-card">
+      <div class="oyt-pr3-head">
+        <div>
+          <h2 class="oyt-pr3-headline">Flat Placement <span class="accent">Pricing.</span></h2>
+          <p class="oyt-pr3-sub">One fee per hire. No percentage of salary, ever.</p>
+        </div>
+        <div class="oyt-pr3-toggle" role="tablist" aria-label="Hire type">
+          <button id="pr3First" class="active" data-h="first" role="tab" aria-selected="true" type="button">1st hire</button>
+          <button id="pr3Return" data-h="return" role="tab" aria-selected="false" type="button">Returning client</button>
+        </div>
+      </div>
+      <div class="oyt-pr3-tiers">
+        <div class="oyt-pr3-tier">
+          <p class="oyt-pr3-tier-lbl">Junior</p>
+          <p class="oyt-pr3-tier-price" data-first="$6,000" data-return="$4,500">$6,000</p>
+          <p class="oyt-pr3-tier-unit">flat placement fee</p>
+        </div>
+        <div class="oyt-pr3-tier oyt-pr3-tier-featured">
+          <span class="oyt-pr3-tier-tag">Most common</span>
+          <p class="oyt-pr3-tier-lbl">Mid-Level</p>
+          <p class="oyt-pr3-tier-price" data-first="$8,000" data-return="$6,500">$8,000</p>
+          <p class="oyt-pr3-tier-unit">flat placement fee</p>
+        </div>
+        <div class="oyt-pr3-tier">
+          <p class="oyt-pr3-tier-lbl">Senior</p>
+          <p class="oyt-pr3-tier-price" data-first="$10,000" data-return="$8,500">$10,000</p>
+          <p class="oyt-pr3-tier-unit">flat placement fee</p>
+        </div>
+      </div>
+      <div class="oyt-pr3-pay">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <p><b>Paid in stages, not one lump sum upfront.</b> A deposit to start, the bulk at placement, and the rest spread across the guarantee year. We walk you through it on your call.</p>
+      </div>
+      <div class="oyt-pr3-feats">
+        <span class="oyt-pr3-feat"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg>Recorded video interview per candidate</span>
+        <span class="oyt-pr3-feat"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg>DISC profile with every shortlist</span>
+        <span class="oyt-pr3-feat"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg>12-month replacement guarantee</span>
+      </div>
+      <div class="oyt-pr3-cta-wrap">
+        <a href="#" class="oyt-btn-primary">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a>
+        <p class="oyt-pr3-note">For comparison, a traditional recruiter charges 20% of first-year salary &mdash; that's $20,000 on a $100k role.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="oyt-footer">
+  <div class="oyt-ft-grid">
+    <div>
+      <a href="index.html" class="oyt-ft-logo" aria-label="OYT home">
+        <span>O</span>
+        <span class="oyt-ft-logo-y">Y<span class="oyt-ft-logo-dot"></span></span>
+        <span class="oyt-ft-logo-t">T</span>
+      </a>
+      <div class="oyt-ft-socials">
+        <a class="oyt-ft-soc" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.9 0-3 1.5-3 3.4V11H8v3h3v6h3v-6h2.5l.5-3H14V9.6c0-.4.3-.6.6-.6z"/></svg></a>
+        <a class="oyt-ft-soc" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="oyt-ft-soc" href="#" aria-label="TikTok"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4c.3 2 1.6 3.4 3.5 3.6v2.6c-1.3 0-2.5-.4-3.5-1.1v5.6a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .8.1v2.7a2.6 2.6 0 1 0 1.8 2.5V4z"/></svg></a>
+        <a class="oyt-ft-soc" href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.4H4.2V20h2.7zM5.5 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2M20 20v-6.4c0-3.1-1.7-4.6-3.9-4.6-1.8 0-2.6 1-3 1.7V8.4H10.4V20h2.7v-6.1c0-1.4.8-2.1 1.8-2.1s1.7.6 1.7 2.1V20z"/></svg></a>
+      </div>
+      <p class="oyt-ft-tag">Boutique global staffing for service businesses ready to scale.</p>
+      <a class="oyt-btn-primary" href="#pricing">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div>
+      <p class="oyt-ft-col-h">Explore</p>
+      <nav class="oyt-ft-links" aria-label="Explore">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="#industries">Who We Help</a>
+        <a href="#full-process">Screening Process</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+    </div>
+    <div>
+      <p class="oyt-ft-col-h">Resources</p>
+      <nav class="oyt-ft-links" aria-label="Resources">
+        <a href="#benefits">Savings Calculator</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#">FAQ</a>
+      </nav>
+    </div>
+    <div>
+      <p class="oyt-ft-col-h">Company</p>
+      <nav class="oyt-ft-links" aria-label="Company">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+  </div>
+  <div class="oyt-ft-legal">&copy; 2026 Outsource Your Tasks. All rights reserved.</div>
+</footer>
+
 <script>
-(function() {
-  'use strict';
-
-  // ------- How It Works: click-to-activate horizontal timeline -------
-  var htSteps = document.querySelectorAll('#oytHTimeline .oyt-hstep');
-  htSteps.forEach(function(step) {
-    step.addEventListener('click', function() {
-      htSteps.forEach(function(s) {
-        s.classList.remove('active');
-        s.setAttribute('aria-selected', 'false');
-      });
-      step.classList.add('active');
-      step.setAttribute('aria-selected', 'true');
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
 
-  // ------- Pricing: 1st hire vs Returning client toggle -------
-  var pricingTable = {
-    first:  { junior: '$6,000', mid: '$8,000',  senior: '$10,000' },
-    return: { junior: '$4,500', mid: '$6,500', senior: '$8,500'  }
-  };
-  var btnFirst  = document.getElementById('pricingFirst');
-  var btnReturn = document.getElementById('pricingReturn');
-  var elJunior  = document.getElementById('tierJunior');
-  var elMid     = document.getElementById('tierMid');
-  var elSenior  = document.getElementById('tierSenior');
+  (function () {
+    var speed = document.getElementById('oytSpeed');
+    if (!speed) return;
+    if (!('IntersectionObserver' in window)) { speed.classList.add('in-view'); return; }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { speed.classList.add('in-view'); obs.disconnect(); } });
+    }, { threshold: 0.4 });
+    obs.observe(speed);
+  })();
 
-  function setHireType(type) {
-    var prices = pricingTable[type];
-    if (!prices) return;
-    elJunior.textContent = prices.junior;
-    elMid.textContent    = prices.mid;
-    elSenior.textContent = prices.senior;
-    if (type === 'first') {
-      btnFirst.classList.add('active');
-      btnFirst.setAttribute('aria-selected', 'true');
-      btnReturn.classList.remove('active');
-      btnReturn.setAttribute('aria-selected', 'false');
-    } else {
-      btnReturn.classList.add('active');
-      btnReturn.setAttribute('aria-selected', 'true');
-      btnFirst.classList.remove('active');
-      btnFirst.setAttribute('aria-selected', 'false');
+  (function () {
+    var acc = document.getElementById('oytV2Acc');
+    if (!acc) return;
+    var rows = acc.querySelectorAll('.oyt-v2-row');
+    rows.forEach(function (row) {
+      var head = row.querySelector('.oyt-v2-head');
+      head.addEventListener('click', function () {
+        var isOpen = row.classList.contains('open');
+        rows.forEach(function (r) { r.classList.remove('open'); r.querySelector('.oyt-v2-head').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { row.classList.add('open'); head.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  })();
+
+  (function () {
+    var viz = document.getElementById('oytBenViz');
+    if (!viz) return;
+    if (!('IntersectionObserver' in window)) { viz.classList.add('in-view'); return; }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { viz.classList.add('in-view'); obs.disconnect(); } });
+    }, { threshold: 0.4 });
+    obs.observe(viz);
+  })();
+
+  (function () {
+    var roleEl = document.getElementById('calcRole');
+    if (!roleEl) return;
+    var DATA = {
+      'law-paralegal':     { entry:{us:45000,latMo:1700,sav:55}, mid:{us:61000,latMo:2050,sav:60}, senior:{us:82000,latMo:2600,sav:62} },
+      'law-intake':        { entry:{us:42000,latMo:1400,sav:60}, mid:{us:55000,latMo:1650,sav:64}, senior:{us:68000,latMo:1800,sav:68} },
+      'acct-bookkeeper':   { entry:{us:38000,latMo:1400,sav:56}, mid:{us:49000,latMo:1650,sav:60}, senior:{us:65000,latMo:2050,sav:62} },
+      'acct-apar':         { entry:{us:40000,latMo:1500,sav:55}, mid:{us:50000,latMo:1650,sav:60}, senior:{us:64000,latMo:1950,sav:63} },
+      'health-billing':    { entry:{us:40000,latMo:1500,sav:55}, mid:{us:50000,latMo:1850,sav:56}, senior:{us:65000,latMo:2300,sav:58} },
+      'health-backoffice': { entry:{us:38000,latMo:1250,sav:61}, mid:{us:47000,latMo:1400,sav:64}, senior:{us:60000,latMo:1650,sav:67} },
+      'staff-sourcer':     { entry:{us:48000,latMo:1600,sav:60}, mid:{us:60000,latMo:1750,sav:65}, senior:{us:75000,latMo:1900,sav:70} },
+      'staff-recruiter':   { entry:{us:55000,latMo:1850,sav:60}, mid:{us:73000,latMo:2150,sav:65}, senior:{us:92000,latMo:2300,sav:70} },
+      'ins-cs':            { entry:{us:40000,latMo:1350,sav:60}, mid:{us:47000,latMo:1400,sav:64}, senior:{us:60000,latMo:1650,sav:67} },
+      'ins-backoffice':    { entry:{us:39000,latMo:1300,sav:60}, mid:{us:48000,latMo:1450,sav:64}, senior:{us:62000,latMo:1700,sav:67} },
+      'home-dispatcher':   { entry:{us:38000,latMo:1250,sav:61}, mid:{us:48000,latMo:1450,sav:64}, senior:{us:62000,latMo:1700,sav:67} },
+      'home-sales':        { entry:{us:45000,latMo:1700,sav:55}, mid:{us:61000,latMo:2050,sav:60}, senior:{us:80000,latMo:2350,sav:65} }
+    };
+    var state = { role: roleEl.value, sen: 'mid', hires: 1 };
+    function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+    var el = {
+      saveBig: document.getElementById('calcSaveBig'), saveSub: document.getElementById('calcSaveSub'),
+      usMo: document.getElementById('calcUsMo'), usYr: document.getElementById('calcUsYr'),
+      oytMo: document.getElementById('calcOytMo'), oytYr: document.getElementById('calcOytYr'),
+      count: document.getElementById('calcCount'), minus: document.getElementById('calcMinus'), plus: document.getElementById('calcPlus')
+    };
+    function render() {
+      var d = DATA[state.role][state.sen]; var n = state.hires;
+      var usAnnual = d.us; var oytMonthly = d.latMo; var oytAnnual = oytMonthly * 12; var usMonthly = usAnnual / 12;
+      el.saveBig.textContent = money((usAnnual - oytAnnual) * n);
+      el.saveSub.textContent = d.sav + '% less than ' + (n > 1 ? n + ' in-house US hires' : 'an in-house US hire');
+      el.usMo.textContent = money(usMonthly * n); el.usYr.textContent = money(usAnnual * n) + ' / year';
+      el.oytMo.textContent = money(oytMonthly * n); el.oytYr.textContent = money(oytAnnual * n) + ' / year';
+      el.count.textContent = n; el.minus.disabled = n <= 1; el.plus.disabled = n >= 20;
     }
-  }
+    roleEl.addEventListener('change', function () { state.role = roleEl.value; render(); });
+    var segBtns = document.querySelectorAll('.oyt-calc-seg button');
+    segBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.sen = b.getAttribute('data-sen');
+        segBtns.forEach(function (x) { var on = x === b; x.classList.toggle('active', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); });
+        render();
+      });
+    });
+    el.plus.addEventListener('click', function () { if (state.hires < 20) { state.hires++; render(); } });
+    el.minus.addEventListener('click', function () { if (state.hires > 1) { state.hires--; render(); } });
+    render();
+  })();
 
-  btnFirst.addEventListener('click',  function() { setHireType('first');  });
-  btnReturn.addEventListener('click', function() { setHireType('return'); });
-})();
+  (function () {
+    'use strict';
+    var btns = document.querySelectorAll('#pricing .oyt-pr3-toggle button');
+    if (!btns.length) return;
+    var prices = document.querySelectorAll('#pricing .oyt-pr3-tier-price');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var h = b.getAttribute('data-h');
+        btns.forEach(function (x) { var on = x === b; x.classList.toggle('active', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); });
+        prices.forEach(function (p) { p.textContent = p.getAttribute('data-' + h); });
+      });
+    });
+  })();
+
+  (function () {
+    'use strict';
+    var track = document.getElementById('oytTstTrack');
+    if (!track) return;
+    var prev = document.querySelector('.oyt-tst-prev');
+    var next = document.querySelector('.oyt-tst-next');
+    var dots = Array.prototype.slice.call(document.querySelectorAll('#oytTstDots .oyt-tst-dot'));
+    var originals = Array.prototype.slice.call(track.querySelectorAll('.oyt-tst-card'));
+    var count = originals.length;
+    if (count < 2) return;
+    var after = document.createDocumentFragment();
+    var before = document.createDocumentFragment();
+    originals.forEach(function (c) {
+      var a = c.cloneNode(true); a.setAttribute('aria-hidden', 'true'); a.classList.add('oyt-tst-clone'); after.appendChild(a);
+      var b = c.cloneNode(true); b.setAttribute('aria-hidden', 'true'); b.classList.add('oyt-tst-clone'); before.appendChild(b);
+    });
+    track.appendChild(after);
+    track.insertBefore(before, track.firstChild);
+    var allCards = Array.prototype.slice.call(track.querySelectorAll('.oyt-tst-card'));
+    var quotes = Array.prototype.slice.call(track.querySelectorAll('.oyt-tst-quote'));
+    function reduced() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+    function stride() { return allCards[1].getBoundingClientRect().left - allCards[0].getBoundingClientRect().left; }
+    function groupStride() { return stride() * count; }
+    function equalizeQuotes() {
+      var i, max = 0;
+      for (i = 0; i < quotes.length; i++) quotes[i].style.minHeight = '';
+      if (window.innerWidth <= 640) return;
+      for (i = 0; i < quotes.length; i++) max = Math.max(max, quotes[i].offsetHeight);
+      for (i = 0; i < quotes.length; i++) quotes[i].style.minHeight = max + 'px';
+    }
+    function activeIndex() { var st = stride(); if (!st) return 0; var i = Math.round(track.scrollLeft / st) % count; return ((i % count) + count) % count; }
+    function updateDots() { var idx = activeIndex(); dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); }); }
+    function normalize() { var g = groupStride(); if (g <= 0) return; var s = track.scrollLeft; if (s < g * 0.5) track.scrollLeft = s + g; else if (s > g * 1.5) track.scrollLeft = s - g; }
+    function recenter() { track.scrollLeft = groupStride(); updateDots(); }
+    var programmatic = false, progTimer;
+    function go(delta) {
+      programmatic = true; clearTimeout(progTimer);
+      track.scrollBy({ left: delta, behavior: reduced() ? 'auto' : 'smooth' });
+      progTimer = setTimeout(function () { programmatic = false; normalize(); updateDots(); }, 560);
+    }
+    if (prev) prev.addEventListener('click', function () { go(-stride()); });
+    if (next) next.addEventListener('click', function () { go(stride()); });
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () {
+        var diff = i - activeIndex();
+        if (diff > count / 2) diff -= count;
+        if (diff < -count / 2) diff += count;
+        go(diff * stride());
+      });
+    });
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { if (!programmatic) normalize(); updateDots(); ticking = false; });
+    });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { equalizeQuotes(); recenter(); }, 120); });
+    equalizeQuotes();
+    recenter();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function () { equalizeQuotes(); recenter(); }); }
+  })();
 </script>
 
 </body>
