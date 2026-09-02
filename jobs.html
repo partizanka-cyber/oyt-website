@@ -3,20 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How It Works &mdash; Outsource Your Tasks</title>
-<meta name="description" content="Six steps from first call to first day. We run the search, the screening, and the interviews. You choose the person.">
+<title>Jobs &mdash; Outsource Your Tasks</title>
+<meta name="description" content="Looking for a remote job? Submit your information and join our network of remote professionals placed directly with growing businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--pink:#ef60a3;--ink:#1c1a1f;--ink2:#221f22;--grey:#5f5a62;--muted:#a49ea6;--line:#ece9ef;--soft:#f7f4f6;}
 *,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-padding-top:90px;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
 body{margin:0;font-family:'Montserrat',-apple-system,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.5;}
 h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;}}
 
-/* ---------- header ---------- */
 .oyt-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.07);}
 .oyt-header-inner{max-width:1680px;margin:0 auto;padding:0 clamp(28px,4.5vw,72px);}
 .oyt-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:12px;}
@@ -37,59 +36,44 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 
 .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink2);color:#fff;border:none;font-family:inherit;font-size:14px;font-weight:600;padding:15px 28px;border-radius:999px;cursor:pointer;transition:background .2s,transform .2s;}
 .btn:hover{background:var(--pink);transform:translateY(-1px);}
-.btn:focus-visible,a:focus-visible{outline:2px solid var(--pink);outline-offset:3px;}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--pink);outline-offset:3px;}
 
-/* ---------- hero (white) ---------- */
 .hero{background:#fff;}
 .hero-in{max-width:1120px;margin:0 auto;padding:clamp(56px,6vw,88px) clamp(28px,4.5vw,72px) 0;text-align:center;}
 .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);margin:0 0 18px;}
 .h1{font-weight:600;font-size:clamp(1.6rem,3.9vw,44px);line-height:1.08;letter-spacing:-.035em;margin:0 0 30px;color:var(--ink2);white-space:nowrap;}
-@media(max-width:700px){.h1{white-space:normal;font-size:clamp(1.9rem,6.6vw,2.3rem);}}
+@media(max-width:760px){.h1{white-space:normal;font-size:clamp(1.85rem,6.4vw,2.3rem);}}
 .hero-row{display:flex;justify-content:center;}
 
-/* step ribbon */
+/* shared ribbon */
 .ribbon{max-width:1120px;margin:clamp(48px,5vw,72px) auto 0;padding:0 clamp(28px,4.5vw,72px);}
-.ribbon-in{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 40px rgba(50,50,90,.06);padding:24px 12px;display:grid;grid-template-columns:repeat(6,1fr);}
+.ribbon-in{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 40px rgba(50,50,90,.06);padding:24px 12px;display:grid;}
 .rb{position:relative;text-align:center;padding:0 10px;}
 .rb+.rb::before{content:'';position:absolute;left:0;top:11px;width:1px;height:34px;background:#f0ecf1;}
 .rb-n{font-size:11px;font-weight:700;color:var(--pink);letter-spacing:.1em;margin:0 0 7px;}
 .rb-l{font-size:12.5px;font-weight:600;color:#6f6a70;line-height:1.35;margin:0;}
-@media(max-width:860px){
-  .ribbon-in{grid-template-columns:repeat(3,1fr);gap:20px 0;}
-  .rb:nth-child(4)::before,.rb:nth-child(1)::before{display:none;}
-}
-@media(max-width:520px){.ribbon-in{grid-template-columns:repeat(2,1fr);}.rb::before{display:none;}}
 
-/* ---------- sticky index + panels ---------- */
-.proc{max-width:1120px;margin:0 auto;padding:clamp(72px,8vw,110px) clamp(28px,4.5vw,72px) 56px;display:grid;grid-template-columns:250px 1fr;gap:64px;align-items:start;}
-.idx{position:sticky;top:110px;}
-.idx-h{font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;}
-.idx a{display:flex;gap:12px;align-items:baseline;padding:11px 0;font-size:14px;font-weight:500;color:#a9a3ab;border-left:2px solid var(--line);padding-left:16px;margin-left:-2px;transition:color .22s,border-color .22s;}
-.idx a span{font-size:11px;font-weight:700;color:#cfc9d1;transition:color .22s;}
-.idx a.on{color:var(--ink);font-weight:600;border-left-color:var(--pink);}
-.idx a.on span{color:var(--pink);}
-.idx a:hover{color:var(--ink);}
+/* shared section head */
+.sec{max-width:1120px;margin:0 auto;padding:clamp(64px,7vw,96px) clamp(28px,4.5vw,72px) 0;}
+.sec-last{padding-bottom:clamp(72px,8vw,104px);}
+.sec-h{font-weight:600;font-size:clamp(1.6rem,2.9vw,36px);line-height:1.12;letter-spacing:-.03em;margin:0 0 14px;color:var(--ink);}
+.sec-lead{font-size:15.5px;color:var(--grey);line-height:1.7;margin:0;max-width:520px;}
+.sec-head-c{text-align:center;margin-bottom:44px;}
+.sec-head-c .sec-lead{margin:0 auto;}
 
-.panel{padding:0 0 52px;}
-.panel:last-child{padding-bottom:0;}
-.p-num{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--pink);margin-bottom:14px;}
-.p-t{font-size:clamp(1.4rem,2.4vw,29px);font-weight:600;letter-spacing:-.028em;line-height:1.15;margin:0 0 14px;color:var(--ink);}
-.p-d{font-size:15.5px;color:var(--grey);line-height:1.75;margin:0 0 22px;max-width:62ch;}
-.p-list{list-style:none;margin:0;padding:22px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 26px;}
-.p-list li{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:#4a454b;}
-.p-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--pink);flex-shrink:0;}
-@media(max-width:900px){
-  .proc{grid-template-columns:1fr;gap:0;}
-  .idx{display:none;}
-}
+/* form embed */
+.form-wrap{max-width:760px;margin:0 auto;}
+.form-ph{border:1px dashed #e2dce4;border-radius:20px;background:#fdfbfd;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:40px;}
+.form-ph strong{font-size:15px;font-weight:600;color:var(--ink);}
+.form-ph span{font-size:13.5px;color:var(--muted);max-width:330px;line-height:1.6;}
 
+/* closing */
+.close{background:var(--soft);}
+.close-in{max-width:1120px;margin:0 auto;padding:clamp(56px,6vw,86px) clamp(28px,4.5vw,72px);text-align:center;}
+.close h2{font-weight:600;font-size:clamp(1.7rem,3vw,38px);letter-spacing:-.03em;line-height:1.12;margin:0 0 14px;color:var(--ink);}
+.close p{font-size:15px;color:var(--grey);margin:0 auto 30px;max-width:460px;line-height:1.7;}
 
-.oyt-logo{display:flex;align-items:center;}
-.oyt-logo img{height:30px;width:auto;display:block;}
-.oyt-ft-logo{display:inline-flex;align-items:center;}
-.oyt-ft-logo img{height:34px;width:auto;display:block;}
-@media(max-width:520px){.oyt-logo img{height:26px;}}
-/* ---------- footer ---------- */
+/* footer */
 .oyt-footer{background:#000;color:#fff;padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,5vw,4rem) 1.75rem;}
 .oyt-ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:clamp(2rem,4vw,3rem);max-width:1160px;margin:0 auto;}
 .oyt-ft-socials{display:flex;gap:10px;margin-top:22px;}
@@ -105,8 +89,65 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 .oyt-ft-legal{max-width:1160px;margin:clamp(2.5rem,5vw,3.5rem) auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.38);font-size:12px;}
 @media(max-width:720px){.oyt-ft-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:460px){.oyt-ft-grid{grid-template-columns:1fr;}}
-/* ---------- closing CTA on white ---------- */
-.cta-end{max-width:1120px;margin:0 auto;padding:0 clamp(28px,4.5vw,72px) clamp(92px,10vw,136px);text-align:center;}
+
+
+.oyt-logo{display:flex;align-items:center;}
+.oyt-logo img{height:30px;width:auto;display:block;}
+.oyt-ft-logo{display:inline-flex;align-items:center;}
+.oyt-ft-logo img{height:34px;width:auto;display:block;}
+@media(max-width:520px){.oyt-logo img{height:26px;}}
+
+/* ---------- hero ---------- */
+.sh{max-width:1400px;margin:0 auto;padding:clamp(52px,6vw,86px) clamp(28px,4vw,64px) 0;display:grid;grid-template-columns:1.06fr 0.94fr;gap:clamp(48px,5.5vw,88px);align-items:center;}
+.sh-copy{text-align:center;}
+.sh-h1{font-weight:600;font-size:clamp(1.3rem,2.85vw,42px);line-height:1.16;letter-spacing:-.032em;margin:0;color:var(--ink2);}
+.sh-h1 span{display:block;white-space:nowrap;}
+.ul-wrap{display:flex;justify-content:center;margin:6px 0 0;}
+.ul-wrap svg{width:min(72%,360px);height:auto;display:block;}
+.sh-sub{font-size:15.5px;color:#6f6a70;margin:24px 0 28px;}
+
+/* open image slots */
+.slot{position:relative;width:100%;border-radius:24px;overflow:hidden;background:#faf8fa;border:1px dashed #e2dce4;}
+.slot img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;}
+.slot-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:24px;}
+.slot-ph b{font-size:12.5px;font-weight:600;color:#b9b2bb;letter-spacing:.01em;}
+.slot-ph i{font-style:normal;font-size:11px;color:#cec7d0;}
+.slot-hero{aspect-ratio:1/1;max-width:620px;margin-left:auto;background:none;border:none;border-radius:0;margin-top:clamp(28px,4.5vw,72px);}
+.slot-hero img{object-fit:contain;}
+.slot-ben{aspect-ratio:1/1;max-width:580px;margin-right:auto;background:none;border:none;border-radius:0;}
+.slot-ben img{object-fit:contain;}
+@media(max-width:900px){
+  .sh{grid-template-columns:1fr;gap:38px;}
+  .sh-h1{font-size:clamp(1.3rem,5.4vw,2.6rem);}
+  .slot-hero{max-width:460px;margin:8px auto 0;}
+}
+
+/* ---------- benefits ---------- */
+.bn{max-width:1400px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(28px,4vw,64px) 0;display:grid;grid-template-columns:0.94fr 1.06fr;gap:clamp(48px,5.5vw,88px);align-items:center;}
+.bn-h{font-weight:600;font-size:clamp(1.6rem,2.9vw,36px);letter-spacing:-.03em;line-height:1.12;margin:0;color:var(--ink);}
+.bn-row{padding:26px 0;border-bottom:1px solid var(--line);}
+.bn-row:first-of-type{border-top:1px solid var(--line);margin-top:22px;}
+.bn-t{font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0 0 7px;color:var(--ink);}
+.bn-d{font-size:14.5px;color:var(--grey);line-height:1.6;margin:0;}
+@media(max-width:900px){
+  .bn{grid-template-columns:1fr;gap:34px;}
+  .slot-ben{max-width:460px;margin:0 auto;}
+}
+
+/* ---------- apply ---------- */
+.ap{max-width:1400px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(28px,4vw,64px) 0;}
+.ap-h{text-align:center;font-weight:600;font-size:clamp(1.6rem,2.9vw,36px);letter-spacing:-.03em;margin:0 0 36px;color:var(--ink);}
+
+/* ---------- featured (narrow strip, pink rail) ---------- */
+.feat-sec{max-width:900px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(28px,4vw,64px) clamp(72px,8vw,100px);}
+.feat{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(28px,3.4vw,38px) clamp(28px,3.4vw,40px);display:flex;align-items:center;gap:26px;flex-wrap:wrap;overflow:hidden;box-shadow:0 12px 34px rgba(50,50,90,.05);}
+.feat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--pink);}
+.feat-ic{flex-shrink:0;width:46px;height:46px;border-radius:12px;background:#fdeef6;display:flex;align-items:center;justify-content:center;}
+.feat-txt{flex:1;min-width:220px;}
+.feat h2{font-weight:600;font-size:19px;letter-spacing:-.02em;margin:0 0 6px;color:var(--ink);}
+.feat p{font-size:14px;color:var(--grey);line-height:1.6;margin:0;}
+.feat .btn{padding:13px 24px;}
+
 </style>
 </head>
 <body>
@@ -118,10 +159,10 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
       <button class="oyt-nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span></span><span></span><span></span></button>
       <div class="oyt-nav-links" id="navLinks">
         <a href="pricing.html">Pricing</a>
-        <a href="how-it-works.html" aria-current="page">How It Works</a>
+        <a href="how-it-works.html">How It Works</a>
         <a href="resources.html">Resources</a>
         <a href="referral.html">Referral</a>
-        <a href="jobs.html">Jobs</a>
+        <a href="jobs.html" aria-current="page">Jobs</a>
         <a href="faq.html">FAQ</a>
         <a href="pricing.html" class="oyt-nav-cta">Book a Discovery Call</a>
       </div>
@@ -129,88 +170,60 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-in">
-    <p class="eyebrow">The full process</p>
-    <h1 class="h1">From first call to first day.</h1>
-    <div class="hero-row">
-      <a href="pricing.html" class="btn">Book a Talent Strategy Call</a>
-    </div>
+
+<section class="sh">
+  <div class="sh-copy">
+    <h1 class="sh-h1"><span>Looking for a remote job?</span><span>We are always looking</span><span>for a great talent!</span></h1>
+    <div class="ul-wrap" aria-hidden="true"><svg viewBox="0 0 320 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 11.4C58 5.2 128 2.6 196 3.4c40 .5 80 2.6 118 5.8" stroke="#ef60a3" stroke-width="3.2" stroke-linecap="round"/></svg></div>
+    <p class="sh-sub">Submit your information today!</p>
+    <a href="#apply" class="btn">Apply now</a>
   </div>
-  <div class="ribbon">
-    <div class="ribbon-in">
-      <div class="rb"><p class="rb-n">01</p><p class="rb-l">Strategy call</p></div>
-      <div class="rb"><p class="rb-n">02</p><p class="rb-l">Global search</p></div>
-      <div class="rb"><p class="rb-n">03</p><p class="rb-l">Shortlist</p></div>
-      <div class="rb"><p class="rb-n">04</p><p class="rb-l">Interviews</p></div>
-      <div class="rb"><p class="rb-n">05</p><p class="rb-l">Direct hire</p></div>
-      <div class="rb"><p class="rb-n">06</p><p class="rb-l">Onboarding</p></div>
-    </div>
+
+  <!-- HERO IMAGE: production path is images/jobs-hero.jpg (square, 1100x1100) -->
+  <div class="slot slot-hero">
+    <img src="images/jobs-hero.jpg" alt="OYT places remote professionals with growing businesses" width="1100" height="1100">
   </div>
 </section>
 
-<div class="proc">
-  <aside class="idx">
-    <p class="idx-h">The six steps</p>
-    <nav id="idxNav" aria-label="Process steps">
-      <a href="#s1"><span>01</span> Strategy call</a>
-      <a href="#s2"><span>02</span> Global search</a>
-      <a href="#s3"><span>03</span> Shortlist review</a>
-      <a href="#s4"><span>04</span> Interviews</a>
-      <a href="#s5"><span>05</span> Direct hire</a>
-      <a href="#s6"><span>06</span> Onboarding guide</a>
-    </nav>
-  </aside>
-
+<section class="bn" id="benefits">
+  <!-- BENEFITS IMAGE: production path is images/jobs-benefits.jpg (square, 1100x1100) -->
+  <div class="slot slot-ben">
+    <img src="images/jobs-benefits.jpg" alt="A professional placed with an OYT client" width="1100" height="1100">
+  </div>
   <div>
-    <section class="panel" id="s1">
-      <span class="p-num">01</span>
-      <h2 class="p-t">You book a complimentary strategy call</h2>
-      <p class="p-d">A working session focused on role mapping. We map your team structure, uncover the bottlenecks, and define the exact role that will move the needle most. You walk away with clarity before we ever start searching.</p>
-      <ul class="p-list"><li>Team structure review</li><li>Role definition</li><li>Salary benchmarks</li></ul>
-    </section>
-
-    <section class="panel" id="s2">
-      <span class="p-num">02</span>
-      <h2 class="p-t">We manage the full search</h2>
-      <p class="p-d">We write the job description, pay for the ads, and search the full global market from scratch. Most agencies pull from a database they already have. We go out fresh every time, prequalify, and personally interview the top candidates. You do none of this.</p>
-      <ul class="p-list"><li>Job description</li><li>Ad spend covered</li><li>OYT Vetting</li><li>Recorded interviews</li></ul>
-    </section>
-
-    <section class="panel" id="s3">
-      <span class="p-num">03</span>
-      <h2 class="p-t">You review the shortlist</h2>
-      <p class="p-d">We send you a shortlist of candidates with their resumes, DISC profiles, and recorded video interviews. You review on your own time and choose your favorites.</p>
-      <ul class="p-list"><li>Resumes</li><li>DISC profiles</li><li>Video interviews</li></ul>
-    </section>
-
-    <section class="panel" id="s4">
-      <span class="p-num">04</span>
-      <h2 class="p-t">We schedule the interviews</h2>
-      <p class="p-d">We coordinate the interviews between you and your top picks so you can meet them, ask your questions, and make a confident final decision.</p>
-      <ul class="p-list"><li>Calendar coordination</li><li>Time zone alignment</li><li>Interview prep notes</li></ul>
-    </section>
-
-    <section class="panel" id="s5">
-      <span class="p-num">05</span>
-      <h2 class="p-t">You hire them directly</h2>
-      <p class="p-d">Onboard them directly or through a third-party payroll provider. Either way, they work exclusively for you and become a dedicated part of your team.</p>
-      <ul class="p-list"><li>No middleman</li><li>No ongoing fees</li><li>Exclusive to you</li></ul>
-    </section>
-
-    <section class="panel" id="s6">
-      <span class="p-num">06</span>
-      <h2 class="p-t">We hand you the onboarding guide</h2>
-      <p class="p-d">A full onboarding and management guide so you know exactly how to set them up, integrate them into your team, and keep them long term.</p>
-      <ul class="p-list"><li>Onboarding &amp; management videos</li><li>Sample contract</li><li>Payment methods</li></ul>
-    </section>
+    <h2 class="bn-h">Benefits of working with OYT</h2>
+      <div class="bn-row"><h3 class="bn-t">Fair compensation</h3><p class="bn-d">Paid your market rate, never an agency markup.</p></div>
+      <div class="bn-row"><h3 class="bn-t">Direct client relationships</h3><p class="bn-d">Employed and paid directly by the client you join.</p></div>
+      <div class="bn-row"><h3 class="bn-t">Work from home</h3><p class="bn-d">No commute. Work from your own space, wherever it is.</p></div>
   </div>
-</div>
-
-
-<section class="cta-end">
-  <a href="pricing.html" class="btn">Book a Talent Strategy Call</a>
 </section>
+
+<section class="ap" id="apply">
+  <h2 class="ap-h">Apply to join the network</h2>
+  <div class="form-wrap">
+    <!-- ============================================================
+         GHL APPLICATION FORM GOES HERE
+         Replace the .form-ph block below with your GoHighLevel iframe.
+         ============================================================ -->
+    <div class="form-ph">
+      <strong>Application form loads here</strong>
+      <span>Your GoHighLevel form will be embedded in this spot.</span>
+    </div>
+    <!-- END GHL APPLICATION FORM -->
+  </div>
+</section>
+
+<section class="feat-sec" id="featured">
+  <div class="feat">
+    <div class="feat-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="M15.5 10.5 21.5 7.5v9l-6-3z"/></svg></div>
+    <div class="feat-txt">
+      <h2>Want to get featured?</h2>
+      <p>Upload a short video for the chance to be featured across our social channels.</p>
+    </div>
+    <a href="#submit-video" class="btn">Submit your video</a>
+  </div>
+</section>
+
 
 <footer class="oyt-footer">
   <div class="oyt-ft-grid">
@@ -254,24 +267,11 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   </div>
   <div class="oyt-ft-legal">&copy; 2026 Outsource Your Tasks. All rights reserved.</div>
 </footer>
+
 <script>
 (function(){
   var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
   t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});
-})();
-(function(){
-  var links=Array.prototype.slice.call(document.querySelectorAll('#idxNav a'));
-  var panels=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
-  if(!('IntersectionObserver' in window)){links[0].classList.add('on');return;}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting)return;
-      var i=panels.indexOf(e.target);
-      links.forEach(function(a,j){a.classList.toggle('on',j===i);});
-    });
-  },{rootMargin:'-25% 0px -60% 0px',threshold:0});
-  panels.forEach(function(p){io.observe(p);});
-  links[0].classList.add('on');
 })();
 </script>
 </body>
