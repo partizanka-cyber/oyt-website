@@ -1330,6 +1330,44 @@
     .oyt-nav-cta{background:#1c1a1f !important;color:#fff !important;padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:600;transition:background .2s;}
     .oyt-nav-cta:hover{background:#ef60a3 !important;color:#fff !important;}
     @media(max-width:980px){.oyt-nav-cta{display:block;text-align:center;margin-top:14px;border-bottom:none !important;}}
+
+@media(max-width:860px){
+  .pri-sec{padding-top:52px !important;padding-bottom:52px !important;}
+  .oyt-ft-grid{gap:30px !important;}
+}
+
+/* ===== MOBILE PRICING (<=860px only) ===== */
+@media(max-width:860px){
+  .pri-head{margin-bottom:22px !important;}
+  .pri-card{padding:18px 16px 22px !important;border-radius:18px !important;}
+  /* intro line and feature bullets are desktop-only */
+  .pri-ctitle,.pri-csub,.pri-sec .pri-feats{display:none !important;}
+
+  /* tiers become slim rows: level left, price right */
+  .pri-sec .pri-tiers{display:block !important;margin-bottom:0 !important;}
+  .pri-pr-tier{display:flex !important;align-items:center;justify-content:space-between;gap:10px;
+    text-align:left !important;padding:13px 15px !important;border-radius:12px !important;margin-bottom:9px;}
+  .pri-pr-tier.pri-pr-feat{background:#fdf5fa;}
+  .pri-pr-tlbl{order:1;margin:0 !important;font-size:11px !important;}
+  .pri-pr-feat .pri-pr-tlbl{color:var(--pink) !important;}
+  .pri-pr-tag{order:2;position:static !important;transform:none !important;margin:0 auto 0 7px !important;
+    font-size:9.5px !important;padding:3px 8px !important;}
+  .pri-pr-tprice{order:3;font-size:21px !important;}
+
+  /* guarantee rows */
+  .pri-guar{margin-top:18px !important;margin-bottom:16px !important;}
+  .pri-pr-ghead{margin-bottom:10px !important;}
+  .pri-sec .pri-pr-grow{gap:22px !important;padding:11px 14px !important;border-radius:11px !important;}
+  .pri-pr-grow:first-of-type .pri-pr-gsub{display:none !important;}
+  .pri-pr-gname{font-size:13.5px !important;line-height:1.3;}
+  .pri-pr-gsub{font-size:11.5px !important;margin-top:3px !important;}
+  .pri-pr-gval{font-size:12.5px !important;flex-shrink:0;padding-left:6px;}
+  .pri-gword{display:none;}
+
+  /* full-width button */
+  .pri-pr-cta{display:flex !important;width:100%;justify-content:center;padding:14px !important;}
+  .pri-pr-note{margin-top:12px !important;font-size:12px !important;}
+}
 </style>
 </head>
 <body>
@@ -1372,7 +1410,7 @@
     <p class="pri-csub">Transparent pricing. No percentage of salary.</p>
     <div class="pri-tiers"><div class="pri-pr-tier"><p class="pri-pr-tlbl">Entry-Level</p><p class="pri-pr-tprice">$2,999</p></div><div class="pri-pr-tier pri-pr-feat"><span class="pri-pr-tag">Most common</span><p class="pri-pr-tlbl">Mid-Level</p><p class="pri-pr-tprice">$4,999</p></div><div class="pri-pr-tier"><p class="pri-pr-tlbl">Senior-Level</p><p class="pri-pr-tprice">$6,999</p></div></div>
     <div class="pri-feats"><span class="pri-pr-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="20 6 9 17 4 12"/></svg>DISC profile with every candidate</span><span class="pri-pr-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="20 6 9 17 4 12"/></svg>Video interviewed for you</span><span class="pri-pr-feat"><svg viewBox="0 0 24 24" fill="none" stroke="#ef60a3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="20 6 9 17 4 12"/></svg>Replacement guarantee for every hire</span></div>
-    <div class="pri-guar"><p class="pri-pr-ghead">Replacement guarantee</p><div class="pri-pr-grow"><div class="pri-pr-gplan"><p class="pri-pr-gname">Included with every placement</p><p class="pri-pr-gsub">No membership required</p></div><p class="pri-pr-gval">90-day guarantee</p></div><div class="pri-pr-grow"><div class="pri-pr-gplan"><p class="pri-pr-gname">6-Month Plan</p><p class="pri-pr-gsub">$149 / month</p></div><p class="pri-pr-gval">6-month guarantee</p></div><div class="pri-pr-grow pri-pr-best"><div class="pri-pr-gplan"><p class="pri-pr-gname">12-Month Plan</p><p class="pri-pr-gsub">$249 / month</p></div><p class="pri-pr-gval">12-month guarantee</p></div></div>
+    <div class="pri-guar"><p class="pri-pr-ghead">Replacement guarantee</p><div class="pri-pr-grow"><div class="pri-pr-gplan"><p class="pri-pr-gname">Included with every placement</p><p class="pri-pr-gsub">No membership required</p></div><p class="pri-pr-gval">90-day <span class="pri-gword">guarantee</span></p></div><div class="pri-pr-grow"><div class="pri-pr-gplan"><p class="pri-pr-gname">6-Month Plan</p><p class="pri-pr-gsub">$149 / month</p></div><p class="pri-pr-gval">6-month <span class="pri-gword">guarantee</span></p></div><div class="pri-pr-grow pri-pr-best"><div class="pri-pr-gplan"><p class="pri-pr-gname">12-Month Plan</p><p class="pri-pr-gsub">$249 / month</p></div><p class="pri-pr-gval">12-month <span class="pri-gword">guarantee</span></p></div></div>
     <div class="pri-pr-cta-wrap"><a href="#" class="pri-pr-cta">Book a Talent Strategy Call <span aria-hidden="true">&rarr;</span></a></div>
     <p class="pri-pr-note">Building a team? A reduced placement fee applies to every additional hire.</p>
   </div>

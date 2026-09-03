@@ -1330,6 +1330,52 @@
     .oyt-nav-cta{background:#1c1a1f !important;color:#fff !important;padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:600;transition:background .2s;}
     .oyt-nav-cta:hover{background:#ef60a3 !important;color:#fff !important;}
     @media(max-width:980px){.oyt-nav-cta{display:block;text-align:center;margin-top:14px;border-bottom:none !important;}}
+
+@media(max-width:860px){
+  .oyt-section{padding-top:52px !important;padding-bottom:52px !important;}
+  .oyt-section-header{margin-bottom:28px !important;}
+  .oyt-ft-grid{gap:30px !important;}
+}
+
+/* ===== MOBILE: calculator, second pass ===== */
+@media(max-width:860px){
+  #benefits .oyt-section-header{margin-bottom:14px !important;}
+  #benefits .oyt-section-sub{margin-top:8px !important;font-size:14px !important;}
+  .oyt-calc-inputs,.oyt-calc-results{padding:18px 16px !important;}
+  .oyt-calc-field{margin-bottom:.8rem !important;}
+  .oyt-calc-field:last-child{margin-bottom:0 !important;}
+  .oyt-calc-label{margin-bottom:6px !important;}
+  .oyt-calc-select{padding-top:9px !important;padding-bottom:9px !important;}
+  .oyt-calc-savelbl,.oyt-calc-saveline{margin-bottom:2px !important;}
+  .oyt-calc-savebig{font-size:31px !important;}
+  .oyt-calc-savesub{margin:.3rem 0 .7rem !important;}
+  .oyt-calc-cell{padding:.65rem .8rem !important;}
+  .oyt-calc-cell-val{font-size:18px !important;margin-top:2px !important;}
+  .oyt-calc-cell-sub{margin-top:2px !important;}
+  .oyt-calc-cta-wrap{margin-top:.85rem !important;}
+  .oyt-btn-primary{padding-top:12px !important;padding-bottom:12px !important;}
+  .oyt-calc-note{margin-top:.65rem !important;}
+
+  /* both labels occupy two lines so the figures below line up */
+  .oyt-calc-cell-label{
+    display:block;
+    line-height:1.35 !important;
+    min-height:2.7em !important;
+    margin-bottom:2px !important;
+  }
+
+  /* stepper and seniority pinned to the same height */
+  .oyt-calc-seg{height:42px !important;align-items:stretch;}
+  .oyt-calc-seg button{padding:0 8px !important;height:100% !important;line-height:1 !important;}
+  .oyt-calc-stepper{height:42px !important;}
+  .oyt-calc-step{width:38px !important;height:100% !important;font-size:19px !important;}
+  .oyt-calc-count{min-width:34px !important;font-size:16px !important;}
+  /* close the gap between the inputs and the results */
+  .oyt-calc-inputs{padding-bottom:13px !important;}
+  .oyt-calc-results{padding-top:14px !important;}
+  /* both column labels break before "monthly" */
+  .calc-lbl2{display:block;}
+}
 </style>
 </head>
 <body>
@@ -1426,12 +1472,12 @@
 
         <div class="oyt-calc-compare">
           <div class="oyt-calc-cell oyt-calc-cell-us">
-            <p class="oyt-calc-cell-label">In-house US, monthly</p>
+            <p class="oyt-calc-cell-label">In-house US, <span class="calc-lbl2">monthly</span></p>
             <p class="oyt-calc-cell-val" id="calcUsMo">$0</p>
             <p class="oyt-calc-cell-sub" id="calcUsYr">$0 / year</p>
           </div>
           <div class="oyt-calc-cell oyt-calc-cell-oyt">
-            <p class="oyt-calc-cell-label">OYT-placed, monthly</p>
+            <p class="oyt-calc-cell-label">OYT-placed, <span class="calc-lbl2">monthly</span></p>
             <p class="oyt-calc-cell-val" id="calcOytMo">$0</p>
             <p class="oyt-calc-cell-sub" id="calcOytYr">$0 / year</p>
           </div>
