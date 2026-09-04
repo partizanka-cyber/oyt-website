@@ -160,6 +160,13 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   .slot-ben{display:none !important;}
   .bn{gap:0 !important;}
 }
+
+/* ---------- form CTA block ---------- */
+.fcta{max-width:900px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(28px,4vw,64px) 0;}
+.fcta-in{background:var(--soft);border-radius:22px;padding:clamp(34px,4.2vw,52px) clamp(26px,3.4vw,44px);text-align:center;}
+.fcta h2{font-weight:600;font-size:clamp(1.4rem,2.4vw,29px);letter-spacing:-.028em;line-height:1.15;margin:0 0 10px;color:var(--ink);}
+.fcta p{font-size:14.5px;color:var(--grey);line-height:1.65;margin:0 auto 24px;max-width:440px;}
+@media(max-width:860px){.fcta{padding-top:34px;}.fcta-in{padding:28px 20px 30px;border-radius:18px;}}
 </style>
 </head>
 <body>
@@ -188,7 +195,7 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
     <h1 class="sh-h1"><span>Looking for a remote job?</span><span>We are always looking</span><span>for a great talent!</span></h1>
     <div class="ul-wrap" aria-hidden="true"><svg viewBox="0 0 320 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 11.4C58 5.2 128 2.6 196 3.4c40 .5 80 2.6 118 5.8" stroke="#ef60a3" stroke-width="3.2" stroke-linecap="round"/></svg></div>
     <p class="sh-sub">Submit your information today!</p>
-    <a href="#apply" class="btn">Apply now</a>
+    <a href="apply.html" class="btn">Apply now</a>
   </div>
 
   <!-- HERO IMAGE: production path is images/jobs-hero.jpg (square, 1100x1100) -->
@@ -210,29 +217,11 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
-<section class="ap" id="apply">
-  <h2 class="ap-h">Apply to join the network</h2>
-  <div class="form-wrap">
-    <!-- GHL application form -->
-    <iframe
-      src="https://link.outsourceyourtasks.com/widget/form/ELRw23GjyHaefjvl3sLZ"
-      style="width:100%;height:1977px;border:none;border-radius:3px"
-      id="inline-ELRw23GjyHaefjvl3sLZ"
-      data-layout="{'id':'INLINE'}"
-      data-trigger-type="alwaysShow"
-      data-trigger-value=""
-      data-activation-type="alwaysActivated"
-      data-activation-value=""
-      data-deactivation-type="neverDeactivate"
-      data-deactivation-value=""
-      data-form-name="Remote Employee Application Form"
-      data-height="1977"
-      data-layout-iframe-id="inline-ELRw23GjyHaefjvl3sLZ"
-      data-form-id="ELRw23GjyHaefjvl3sLZ"
-      data-cookie-consent="true"
-      data-cookie-consent-provider="auto"
-      title="Remote Employee Application Form"></iframe>
-    <!-- END GHL application form -->
+<section class="fcta" id="form-cta">
+  <div class="fcta-in">
+    <h2>Ready to apply?</h2>
+    <p>It takes a few minutes. Tell us about your experience and the kind of role you are looking for.</p>
+    <a href="apply.html" class="btn">Apply now</a>
   </div>
 </section>
 
@@ -297,6 +286,5 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});
 })();
 </script>
-<script src="https://link.outsourceyourtasks.com/js/form_embed.js"></script>
 </body>
 </html>

@@ -158,6 +158,13 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 .rfaq-b{overflow:hidden;max-height:0;transition:max-height .3s ease;}
 .rfaq-b p{font-size:14px;color:var(--grey);line-height:1.65;margin:0 0 18px;}
 @media(max-width:860px){.rfaq{padding-top:34px;padding-bottom:56px;}.rfaq-h3{font-size:14.5px;padding:15px 0;}}
+
+/* ---------- form CTA block ---------- */
+.fcta{max-width:900px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(28px,4vw,64px) 0;}
+.fcta-in{background:var(--soft);border-radius:22px;padding:clamp(34px,4.2vw,52px) clamp(26px,3.4vw,44px);text-align:center;}
+.fcta h2{font-weight:600;font-size:clamp(1.4rem,2.4vw,29px);letter-spacing:-.028em;line-height:1.15;margin:0 0 10px;color:var(--ink);}
+.fcta p{font-size:14.5px;color:var(--grey);line-height:1.65;margin:0 auto 24px;max-width:440px;}
+@media(max-width:860px){.fcta{padding-top:34px;}.fcta-in{padding:28px 20px 30px;border-radius:18px;}}
 </style>
 </head>
 <body>
@@ -242,31 +249,11 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
-<section class="fm" id="referral-form">
-  <h2 class="fm-h">Refer a business</h2>
-  <div class="form-wrap">
-    <div class="form-wrap-in">
-      <!-- GHL referral form -->
-      <iframe
-        src="https://link.outsourceyourtasks.com/widget/form/QrK966wBRiPrVkJVD9jl"
-        style="width:100%;height:820px;border:none;border-radius:3px"
-        id="inline-QrK966wBRiPrVkJVD9jl"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Referral Form"
-        data-height="820"
-        data-layout-iframe-id="inline-QrK966wBRiPrVkJVD9jl"
-        data-form-id="QrK966wBRiPrVkJVD9jl"
-        data-cookie-consent="true"
-        data-cookie-consent-provider="auto"
-        title="Referral Form"></iframe>
-      <!-- END GHL referral form -->
-    </div>
+<section class="fcta" id="form-cta">
+  <div class="fcta-in">
+    <h2>Ready to refer a business?</h2>
+    <p>Submit your referral details, or have them mention your name when they apply.</p>
+    <a href="refer.html" class="btn">Refer a business</a>
   </div>
 </section>
 
@@ -358,6 +345,5 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   });
 })();
 </script>
-<script src="https://link.outsourceyourtasks.com/js/form_embed.js"></script>
 </body>
 </html>
