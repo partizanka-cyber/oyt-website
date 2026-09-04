@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Referral Program &mdash; Outsource Your Tasks</title>
-<meta name="description" content="Refer a business to OYT and earn $250 per signed referral, or a complimentary placement after your third.">
+<title>Book a Discovery Call &mdash; Outsource Your Tasks</title>
+<meta name="description" content="Book a 30-minute discovery call with OYT. We map the role and tell you honestly whether we are a fit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -62,7 +62,10 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 .sec-head-c .sec-lead{margin:0 auto;}
 
 /* form embed */
-.form-wrap{max-width:860px;margin:0 auto;}
+.form-wrap{max-width:760px;margin:0 auto;}
+.form-ph{border:1px dashed #e2dce4;border-radius:20px;background:#fdfbfd;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:40px;}
+.form-ph strong{font-size:15px;font-weight:600;color:var(--ink);}
+.form-ph span{font-size:13.5px;color:var(--muted);max-width:330px;line-height:1.6;}
 
 /* closing */
 
@@ -89,9 +92,7 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 .oyt-ft-logo{display:inline-flex;align-items:center;}
 .oyt-ft-logo img{height:34px;width:auto;display:block;}
 @media(max-width:520px){.oyt-logo img{height:26px;}}
-.form-wrap-in{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 14px 40px rgba(50,50,90,.05);padding:14px;overflow:hidden;}
-.form-wrap-in iframe{width:100%;border:none;display:block;border-radius:14px;}
-@media(max-width:860px){.form-wrap-in{padding:8px;border-radius:18px;}}
+.form-wrap{max-width:860px;margin:0 auto;}
 
 /* ---------- hero ---------- */
 .hero-in{max-width:1400px;padding:clamp(56px,6vw,88px) clamp(28px,4vw,64px) 0;}
@@ -130,7 +131,9 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 /* ---------- form ---------- */
 .fm{max-width:1400px;margin:0 auto;padding:clamp(64px,7vw,100px) clamp(28px,4vw,64px) 0;}
 .fm-h{text-align:center;font-weight:600;font-size:clamp(1.6rem,2.9vw,36px);letter-spacing:-.03em;margin:0 0 12px;color:var(--ink);}
+.fm-note{text-align:center;font-size:13px;color:var(--muted);margin:0 auto 36px;max-width:640px;line-height:1.6;}
 
+.cta-end{max-width:1400px;margin:0 auto;padding:clamp(56px,6vw,84px) clamp(28px,4vw,64px) clamp(92px,10vw,132px);text-align:center;}
 
 .uline{display:inline-block;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'%3E%3Cpath d='M4 8.6C62 2.8 198 2 296 6.2' stroke='%23ef60a3' stroke-width='3.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:0 100%;background-size:100% 9px;padding-bottom:15px;}
 
@@ -140,24 +143,32 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   .stp-sec{padding-top:48px !important;}
   .stp{gap:28px !important;}
   .fm{padding-top:48px !important;}
-    .oyt-ft-grid{gap:30px !important;}
+  .cta-end{padding-top:40px !important;padding-bottom:56px !important;}
+  .oyt-ft-grid{gap:30px !important;}
 }
 
-/* ---------- referral FAQs ---------- */
-.rfaq{max-width:860px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(28px,4vw,64px) clamp(72px,8vw,104px);}
-.rfaq-h{font-weight:600;font-size:clamp(1.4rem,2.3vw,28px);letter-spacing:-.028em;line-height:1.15;margin:0 0 22px;color:var(--ink);text-align:center;}
-.rfaq-acc{border-top:1px solid var(--line);}
-.rfaq-row{border-bottom:1px solid var(--line);}
-.rfaq-h3{width:100%;background:none;border:none;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;text-align:left;font-size:15.5px;font-weight:600;letter-spacing:-.012em;color:var(--ink);}
-.rfaq-h3:hover{color:var(--pink);}
-.rfaq-tog{position:relative;width:13px;height:13px;flex-shrink:0;}
-.rfaq-tog::before,.rfaq-tog::after{content:'';position:absolute;background:var(--muted);transition:.25s;}
-.rfaq-tog::before{top:6px;left:0;width:13px;height:1.5px;}
-.rfaq-tog::after{left:6px;top:0;width:1.5px;height:13px;}
-.rfaq-row.open .rfaq-tog::after{transform:scaleY(0);}
-.rfaq-b{overflow:hidden;max-height:0;transition:max-height .3s ease;}
-.rfaq-b p{font-size:14px;color:var(--grey);line-height:1.65;margin:0 0 18px;}
-@media(max-width:860px){.rfaq{padding-top:34px;padding-bottom:56px;}.rfaq-h3{font-size:14.5px;padding:15px 0;}}
+/* ---------- book a call ---------- */
+.bk-hero{max-width:1120px;margin:0 auto;padding:clamp(52px,6vw,84px) clamp(28px,4vw,64px) 0;}
+.bk-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);margin:0 0 18px;}
+.bk-eyebrow i{width:26px;height:1px;background:#e6dfe8;display:block;}
+.bk-h1{font-weight:600;font-size:clamp(1.8rem,3.1vw,38px);line-height:1.08;letter-spacing:-.035em;margin:0 0 22px;color:var(--ink2);}
+.bk-cards{max-width:1120px;margin:clamp(24px,3vw,34px) auto 0;padding:0 clamp(28px,4vw,64px);}
+.bk-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px clamp(24px,2.8vw,32px) 28px;box-shadow:0 10px 30px rgba(50,50,90,.05);}
+.bk-card h2{font-size:16px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px;color:var(--ink);}
+.bk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;}
+.bk-list li{position:relative;padding-left:20px;font-size:14px;font-weight:400;color:var(--grey);line-height:1.62;}
+.bk-list b{font-weight:700;}
+.bk-list li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--pink);}
+.bk-cal{max-width:1120px;margin:0 auto;padding:clamp(32px,3.6vw,48px) clamp(28px,4vw,64px) clamp(72px,8vw,104px);}
+.bk-cal-in{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 16px 44px rgba(50,50,90,.07);padding:14px;overflow:hidden;}
+.bk-cal-in iframe{width:100%;border:none;display:block;border-radius:14px;}
+@media(max-width:860px){
+  .bk-hero{padding-top:40px;}
+  .bk-cards{margin-top:28px;gap:14px;}
+  .bk-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px clamp(24px,2.8vw,32px) 28px;box-shadow:0 10px 30px rgba(50,50,90,.05);}
+  .bk-cal{padding-top:32px;padding-bottom:56px;}
+  .bk-cal-in{padding:8px;}
+  }
 </style>
 </head>
 <body>
@@ -171,7 +182,7 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
         <a href="pricing.html">Pricing</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="resources.html">Resources</a>
-        <a href="referral.html" aria-current="page">Referral</a>
+        <a href="referral.html">Referral</a>
         <a href="jobs.html">Jobs</a>
         <a href="faq.html">FAQ</a>
         <a href="book-a-call.html" class="oyt-nav-cta">Book a Discovery Call</a>
@@ -181,123 +192,36 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
 </header>
 
 
-<section class="hero">
-  <div class="hero-in">
-    <p class="eyebrow">Referral program</p>
-    <h1 class="h1">Refer a business. <span class="uline">Get rewarded.</span></h1>
-  </div>
+
+<section class="bk-hero">
+  <p class="bk-eyebrow"><i></i> Get started</p>
+  <h1 class="bk-h1">Book a discovery call.</h1>
 </section>
 
-<section class="rw-sec" id="rewards">
-  <div class="rw">
-    <div class="rw-col">
-      <p class="rw-opt">Option 1</p>
-      <div class="rw-card">
-      <p class="rw-big">$250</p>
-      <p class="rw-lab">Per signed referral</p>
-      <p class="rw-d">Paid on every business you send that signs. No cap.</p>
-      </div>
-    </div>
-    <div class="rw-col">
-      <p class="rw-opt">Option 2</p>
-      <div class="rw-card">
-      <p class="rw-big">Refer 3, <span>get 1 free</span></p>
-      <p class="rw-lab">Complimentary sourcing</p>
-      <p class="rw-d">Your own next placement fee, completely waived.</p>
-      </div>
-    </div>
+<div class="bk-cards">
+  <div class="bk-card">
+    <h2>What to expect on the call</h2>
+    <ul class="bk-list">
+      <li><b>Identify your highest-impact hire.</b> We uncover your biggest bottlenecks and determine which role could deliver the strongest return by freeing up time, increasing capacity, or growing sales.</li>
+      <li><b>Define the role and hiring market.</b> We clarify what the person should own, the experience level needed, and the best countries to source from based on talent, time-zone alignment, and communication.</li>
+      <li><b>Understand the numbers.</b> We compare salary benchmarks, expected hiring costs, and potential savings across the markets we recommend.</li>
+    </ul>
+  </div>
+</div>
+
+<section class="bk-cal" id="calendar">
+  <div class="bk-cal-in">
+    <!-- GHL booking calendar -->
+    <iframe
+      src="https://link.outsourceyourtasks.com/widget/booking/R13J4jsi0obuD3ySb5hv"
+      allow="payment"
+      scrolling="no"
+      style="width:100%;min-height:720px;border:none;overflow:hidden;"
+      id="R13J4jsi0obuD3ySb5hv_1788527594707"
+      title="Book a discovery call"></iframe>
+    <!-- END GHL booking calendar -->
   </div>
 </section>
-
-<section class="stp-sec" id="how">
-  <div class="stp">
-    <!-- REFERRAL IMAGE: drop the file at images/referral.jpg (square, 1100x1100) -->
-    <div class="stp-img">
-      <img src="images/referral.jpg" alt="A professional referred to OYT" width="1200" height="1049">
-    </div>
-    <div class="stp-txt">
-      <h2 class="stp-h">How it works</h2>
-      <div class="stp-row">
-        <p class="stp-n">01</p>
-        <div>
-          <h3 class="stp-t">You introduce us</h3>
-          <p class="stp-d">Share their details, or make the intro by email.</p>
-        </div>
-      </div>
-      <div class="stp-row">
-        <p class="stp-n">02</p>
-        <div>
-          <h3 class="stp-t">They sign with OYT</h3>
-          <p class="stp-d">We take the call and run the search from there.</p>
-        </div>
-      </div>
-      <div class="stp-row">
-        <p class="stp-n">03</p>
-        <div>
-          <h3 class="stp-t">You get rewarded</h3>
-          <p class="stp-d">Paid once the placement agreement is signed.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="fm" id="referral-form">
-  <h2 class="fm-h">Refer a business</h2>
-  <div class="form-wrap">
-    <div class="form-wrap-in">
-      <!-- GHL referral form -->
-      <iframe
-        src="https://link.outsourceyourtasks.com/widget/form/QrK966wBRiPrVkJVD9jl"
-        style="width:100%;height:820px;border:none;border-radius:3px"
-        id="inline-QrK966wBRiPrVkJVD9jl"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Referral Form"
-        data-height="820"
-        data-layout-iframe-id="inline-QrK966wBRiPrVkJVD9jl"
-        data-form-id="QrK966wBRiPrVkJVD9jl"
-        data-cookie-consent="true"
-        data-cookie-consent-provider="auto"
-        title="Referral Form"></iframe>
-      <!-- END GHL referral form -->
-    </div>
-  </div>
-</section>
-
-<section class="rfaq" id="referral-faq">
-  <h2 class="rfaq-h">Referral program FAQs</h2>
-  <div class="rfaq-acc">
-    <div class="rfaq-row">
-      <button class="rfaq-h3" aria-expanded="false"><span>Who can participate?</span><i class="rfaq-tog" aria-hidden="true"></i></button>
-      <div class="rfaq-b"><p>Anyone can participate. You do not need to be an OYT client.</p></div>
-    </div>
-    <div class="rfaq-row">
-      <button class="rfaq-h3" aria-expanded="false"><span>What can I earn?</span><i class="rfaq-tog" aria-hidden="true"></i></button>
-      <div class="rfaq-b"><p>Choose either $250 for each qualified referral or one free sourcing engagement after three qualified referrals.</p></div>
-    </div>
-    <div class="rfaq-row">
-      <button class="rfaq-h3" aria-expanded="false"><span>What counts as a qualified referral?</span><i class="rfaq-tog" aria-hidden="true"></i></button>
-      <div class="rfaq-b"><p>Any new business that is not already connected with OYT and signs up and pays for its first sourcing engagement.</p></div>
-    </div>
-    <div class="rfaq-row">
-      <button class="rfaq-h3" aria-expanded="false"><span>What if someone else refers the same company?</span><i class="rfaq-tog" aria-hidden="true"></i></button>
-      <div class="rfaq-b"><p>The reward goes to the first person who submits the referral.</p></div>
-    </div>
-    <div class="rfaq-row">
-      <button class="rfaq-h3" aria-expanded="false"><span>When will I receive my reward?</span><i class="rfaq-tog" aria-hidden="true"></i></button>
-      <div class="rfaq-b"><p>Cash bonuses are paid within 30 days after OYT receives full payment. Free sourcing becomes available after your third qualified referral and can be used within 12 months.</p></div>
-    </div>
-  </div>
-</section>
-
-
-
 <footer class="oyt-footer">
   <div class="oyt-ft-grid">
     <div>
@@ -346,18 +270,7 @@ h1,h2,h3,p{margin:0;} a{color:inherit;text-decoration:none;}
   var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
   t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});
 })();
-
-(function(){
-  document.querySelectorAll('.rfaq-row').forEach(function(r){
-    var h=r.querySelector('.rfaq-h3'), b=r.querySelector('.rfaq-b');
-    h.addEventListener('click',function(){
-      var open=r.classList.toggle('open');
-      h.setAttribute('aria-expanded',open);
-      b.style.maxHeight = open ? b.scrollHeight+'px' : '';
-    });
-  });
-})();
 </script>
-<script src="https://link.outsourceyourtasks.com/js/form_embed.js"></script>
+<script src="https://link.outsourceyourtasks.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
