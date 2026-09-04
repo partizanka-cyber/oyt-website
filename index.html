@@ -1366,7 +1366,7 @@
   #pricing{order:9;}
   #testimonials{order:10;}
   .oyt-footer{order:11;}
-  #industries.ind-sec{padding-top:44px;padding-bottom:8px;}
+  #industries .ind-sec{padding-top:44px;padding-bottom:8px;}
 }
 
 /* ===== MOBILE: calculator, second pass ===== */
@@ -1408,7 +1408,6 @@
   /* both column labels break before "monthly" */
   .calc-lbl2{display:block;}
 }
-}
 
 /* ===== MOBILE PRICING (<=860px only) ===== */
 @media(max-width:860px){
@@ -1441,6 +1440,20 @@
   /* full-width button */
   .pri-pr-cta{display:flex !important;width:100%;justify-content:center;padding:14px !important;}
   .pri-pr-note{margin-top:12px !important;font-size:12px !important;}
+}
+
+/* ---------- INDUSTRIES: dark strip on desktop, cards on mobile ---------- */
+.ind-strip{background:#1f1c22;}
+.ind-strip *{box-sizing:border-box;}
+.ind-inner{max-width:1180px;margin:0 auto;padding:24px clamp(28px,4vw,64px);display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap;}
+.ind-label{flex-shrink:0;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;color:#ef60a3;}
+.ind-items{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;}
+.ind-item{font-size:14.5px;font-weight:500;letter-spacing:.02em;white-space:nowrap;color:#c3bdc9;}
+.ind-dot{width:3px;height:3px;border-radius:50%;background:#4a444f;flex-shrink:0;margin:0 -15px;}
+.ind-sec{display:none;}
+@media(max-width:860px){
+  .ind-strip{display:none;}
+  .ind-sec{display:block;}
 }
 </style>
 </head>
@@ -1498,10 +1511,18 @@
         <p class="ch-meta">Argentina <span>&middot; $2,400/mo</span></p></div></div></div>
   </div>
 </section>
-<section class="ind-sec" id="industries">
+<section id="industries">
+  <div class="ind-strip">
+    <div class="ind-inner">
+      <span class="ind-label">Industries we serve</span>
+      <div class="ind-items"><span class="ind-item">Accounting</span><span class="ind-dot"></span><span class="ind-item">Legal</span><span class="ind-dot"></span><span class="ind-item">Healthcare</span><span class="ind-dot"></span><span class="ind-item">Insurance</span><span class="ind-dot"></span><span class="ind-item">Home Services</span><span class="ind-dot"></span><span class="ind-item">Staffing</span><span class="ind-dot"></span><span class="ind-item">Nonprofits</span></div>
+    </div>
+  </div>
+  <div class="ind-sec">
   <div class="ind-in">
     <div class="ind-head"><p class="ind-eyebrow">Industries we serve</p><h2 class="ind-h2">Built for your industry</h2></div>
     <div class="ind-grid"><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2.5h11a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-17a1 1 0 0 1 1-1z"/><path d="M8.8 6h6.4"/><path d="M9 10.2h1.6M13.4 10.2H15M9 13.6h1.6M13.4 13.6H15M9 17h1.6M13.4 17H15"/></svg></div><div><h3 class="ind-name">Accounting</h3><p class="ind-roles">Bookkeeper &middot; AP/AR Specialist</p></div></div><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.4v16.2"/><path d="M8.4 19.6h7.2"/><path d="M4.6 7.4h14.8"/><path d="M4.6 7.4 2.4 12.4a2.2 2.2 0 0 0 4.4 0z"/><path d="M19.4 7.4 17.2 12.4a2.2 2.2 0 0 0 4.4 0z"/></svg></div><div><h3 class="ind-name">Legal</h3><p class="ind-roles">Paralegal &middot; Client Intake</p></div></div><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 6.9a4.6 4.6 0 0 0-6.6 0L12 8.7l-1.8-1.8a4.6 4.6 0 1 0-6.6 6.5L12 21l8.4-7.6a4.6 4.6 0 0 0 0-6.5z"/><path d="M7 12.4h2.6L11 10.6l1.6 3.4 1.3-2h3"/></svg></div><div><h3 class="ind-name">Healthcare</h3><p class="ind-roles">Medical Billing &middot; Back Office</p></div></div><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 19 6v5.2c0 4.3-2.9 7.7-7 9.6-4.1-1.9-7-5.3-7-9.6V6l7-2.8z"/><path d="M9.4 11.9 11.3 13.8 15 10"/></svg></div><div><h3 class="ind-name">Insurance</h3><p class="ind-roles">Customer Service &middot; Back Office</p></div></div><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 10.6 12 4l8.4 6.6"/><path d="M5.8 9.9v9.5a1 1 0 0 0 1 1h10.4a1 1 0 0 0 1-1V9.9"/><path d="M10 20.4v-5.2h4v5.2"/></svg></div><div><h3 class="ind-name">Home Services</h3><p class="ind-roles">Dispatcher &middot; Sales</p></div></div><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.4" r="3"/><path d="M3.6 19.8a5.4 5.4 0 0 1 10.8 0"/><circle cx="17.2" cy="9.6" r="2.2"/><path d="M15.4 19.8a4 4 0 0 1 6.2-3.3"/></svg></div><div><h3 class="ind-name">Staffing</h3><p class="ind-roles">Sourcer &middot; Recruiter</p></div></div><div class="ind-card"><div class="ind-ic"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#ef60a3" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M12.2 7.6s-1-2.4-3.1-2.4a2.9 2.9 0 0 0 0 5.8h6.2a2.9 2.9 0 0 0 0-5.8c-2.1 0-3.1 2.4-3.1 2.4z"/><path d="M5.4 13h13.2v6a1 1 0 0 1-1 1H6.4a1 1 0 0 1-1-1z"/><path d="M12.2 13v7"/></svg></div><div><h3 class="ind-name">Nonprofits</h3><p class="ind-roles">Grant Support &middot; Donor Admin</p></div></div></div>
+  </div>
   </div>
 </section>
 <section id="dream-team" class="dt-wrap">
