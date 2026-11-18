@@ -1,6 +1,1016 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "**", "use": "@vercel/static" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "sh scripts/export-static-site.sh",
+  "outputDirectory": "static-out",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/20-tasks-you-can-outsource-to-freelancers-right-now",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/20-tasks-you-can-outsource-to-freelancers-right-now/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/20-tasks-you-can-outsource-to-freelancers-right-now/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/20-tasks-you-can-outsource-to-freelancers-right-now/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/affordable-virtual-assistants-austin-tx",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/affordable-virtual-assistants-austin-tx/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/affordable-virtual-assistants-austin-tx/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/affordable-virtual-assistants-austin-tx/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/apply-now",
+      "destination": "/apply",
+      "permanent": true
+    },
+    {
+      "source": "/apply-now/",
+      "destination": "/apply",
+      "permanent": true
+    },
+    {
+      "source": "/apply-now/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/apply-now/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/iliya",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/iliya/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/automation-tools",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/automation-tools/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/automation-tools/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/automation-tools/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-outsourcing-services-for-businesses-boston-ma",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-outsourcing-services-for-businesses-boston-ma/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-outsourcing-services-for-businesses-boston-ma/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-outsourcing-services-for-businesses-boston-ma/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-vitual-asistant-services-san-francico-ca",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-vitual-asistant-services-san-francico-ca/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-vitual-asistant-services-san-francico-ca/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-vitual-asistant-services-san-francico-ca/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/automation-tools",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/automation-tools/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-course",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-course/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-course/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-course/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-2/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-2/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-2/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-3",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-3/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-3/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duis-aute-irure-dolor-in-reprehenderit-in-voluptate-3/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/executive-virtual-assistant-services-tampa-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/executive-virtual-assistant-services-tampa-fl/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/executive-virtual-assistant-services-tampa-fl/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/executive-virtual-assistant-services-tampa-fl/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas-contact",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas-contact/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas-contact/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-vas-contact/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/first-post",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/first-post/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/first-post/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/first-post/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-enterprise",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-enterprise/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-enterprise/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-enterprise/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-professional",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-professional/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-professional/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-professional/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-starter",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-starter/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-starter/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started-starter/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/global-talent-sourcing-services-los-angeles-ca",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/global-talent-sourcing-services-los-angeles-ca/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/global-talent-sourcing-services-los-angeles-ca/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/global-talent-sourcing-services-los-angeles-ca/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hire-for-me",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/hire-for-me/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/hire-for-me/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hire-for-me/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-find-and-hire-the-right-people-for-outsourced-tasks",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-find-and-hire-the-right-people-for-outsourced-tasks/",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-find-and-hire-the-right-people-for-outsourced-tasks/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-find-and-hire-the-right-people-for-outsourced-tasks/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-hire",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-hire/",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-hire/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-hire/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/intake-form",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/intake-form/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/intake-form/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/intake-form/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-preferred-partners",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-preferred-partners/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-preferred-partners/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-preferred-partners/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-recommended-tools",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-recommended-tools/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-recommended-tools/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-recommended-tools/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sample-page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sample-page/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sample-page/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sample-page/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/scaling-roi",
+      "destination": "/resources",
+      "permanent": true
+    },
+    {
+      "source": "/scaling-roi/",
+      "destination": "/resources",
+      "permanent": true
+    },
+    {
+      "source": "/scaling-roi/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/scaling-roi/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today-2",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today-2/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today-2/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/start-scaling-today-2/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/submit",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/submit/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/submit/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/submit/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/submit-now",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/submit-now/",
+      "destination": "/book-a-call",
+      "permanent": true
+    },
+    {
+      "source": "/submit-now/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/submit-now/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions/",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-25-tasks-to-outsource",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-25-tasks-to-outsource/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-25-tasks-to-outsource/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-25-tasks-to-outsource/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-5-reasons-to-start-outsourcing-your-business-tasks-today",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-5-reasons-to-start-outsourcing-your-business-tasks-today/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-5-reasons-to-start-outsourcing-your-business-tasks-today/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/top-5-reasons-to-start-outsourcing-your-business-tasks-today/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/virtual-assistant-for-small-business-new-york-city-ny",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/virtual-assistant-for-small-business-new-york-city-ny/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/virtual-assistant-for-small-business-new-york-city-ny/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/virtual-assistant-for-small-business-new-york-city-ny/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-cron.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-signup.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page/:page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/:page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug/page/:page",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }

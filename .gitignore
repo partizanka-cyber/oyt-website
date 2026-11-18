@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# static export produced by scripts/export-static-site.sh
+/static-out
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
