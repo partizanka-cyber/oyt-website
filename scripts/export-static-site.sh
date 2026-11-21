@@ -7,3 +7,5 @@ cd "$(dirname "$0")/.."
 rm -rf static-out
 mkdir -p static-out
 cp -a *.html images public robots.txt sitemap.xml static-out/
+# Nested folders keep clean URLs (/industries/law-firms, /blog/...) in the static build.
+cp -a industries blog static-out/
